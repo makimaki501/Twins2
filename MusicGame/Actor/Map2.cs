@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using MusicGame.Actor.StageBlock;
 using MusicGame.Device;
 using MusicGame.Util;
 
@@ -47,6 +48,12 @@ namespace MusicGame.Actor
             objectList.Add("9", new Block("Idle",Vector2.Zero, gameDevice));
             objectList.Add("10", new GorlBlock(Vector2.Zero, gameDevice));
             objectList.Add("12", new StartBlock(Vector2.Zero, gameDevice));
+            objectList.Add("11", new Stage1Block(Vector2.Zero, gameDevice));
+            objectList.Add("21", new Stage2Block(Vector2.Zero, gameDevice));
+            objectList.Add("31", new Stage3Block(Vector2.Zero, gameDevice));
+            objectList.Add("41", new Stage4Block(Vector2.Zero, gameDevice));
+            objectList.Add("51", new Stage5Block(Vector2.Zero, gameDevice));
+
 
 
             //作業用

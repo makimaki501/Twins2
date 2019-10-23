@@ -8,6 +8,7 @@ using MusicGame.Device;
 using MusicGame.Scene;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using MusicGame.Actor.StageBlock;
 
 namespace MusicGame.Actor
 {
@@ -22,15 +23,17 @@ namespace MusicGame.Actor
         private Vector2 position2;
         private bool stop;
         private bool _hit;
+        public int nextscene;
 
         public Player(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator)
-            : base("player1", position, 24, 24, gameDevice)
+            : base("player3", position, 24, 24, gameDevice)
         {
             this.mediator = mediator;
             reset = false;
             stop = false;
             addRadian = 0.1f;
             _hit = false;
+            nextscene = 0;
         }
         public Player(Player other)
             : this(other.position, other.gameDevice, other.mediator)
@@ -73,6 +76,27 @@ namespace MusicGame.Actor
                         stop = !stop;
                     }
                 }
+            }
+
+            if(gameObject is Stage1Block && Input.GetKeyTrigger(Keys.Space))
+            {
+                nextscene = 1;
+            }
+            if (gameObject is Stage2Block && Input.GetKeyTrigger(Keys.Space))
+            {
+                nextscene = 1;
+            }
+            if (gameObject is Stage3Block && Input.GetKeyTrigger(Keys.Space))
+            {
+                nextscene = 1;
+            }
+            if (gameObject is Stage4Block && Input.GetKeyTrigger(Keys.Space))
+            {
+                nextscene = 1;
+            }
+            if (gameObject is Stage5Block && Input.GetKeyTrigger(Keys.Space))
+            {
+                nextscene = 1;
             }
         }
 
