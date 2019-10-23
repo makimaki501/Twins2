@@ -67,6 +67,8 @@ namespace MusicGame
 
             renderer.LoadContent("player1", "./Texture/");
             renderer.LoadContent("player2", "./Texture/");
+            renderer.LoadContent("player3", "./Texture/");
+            renderer.LoadContent("player4", "./Texture/");
             renderer.LoadContent("persona", "./Texture/");
             renderer.LoadContent("persona1", "./Texture/");
             renderer.LoadContent("Idle", "./Texture/");

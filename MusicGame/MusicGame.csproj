@@ -53,6 +53,11 @@
     <Compile Include="Actor\Select1Block.cs" />
     <Compile Include="Actor\Select2Block.cs" />
     <Compile Include="Actor\Select3Block.cs" />
+    <Compile Include="Actor\StageBlock\Stage1Block.cs" />
+    <Compile Include="Actor\StageBlock\Stage2Block.cs" />
+    <Compile Include="Actor\StageBlock\Stage3Block.cs" />
+    <Compile Include="Actor\StageBlock\Stage4Block.cs" />
+    <Compile Include="Actor\StageBlock\Stage5Block.cs" />
     <Compile Include="Actor\StartBlock.cs" />
     <Compile Include="Actor\TitleBlock.cs" />
     <Compile Include="Actor\TitleGorlBlock.cs" />
