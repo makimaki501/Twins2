@@ -1,0 +1,327 @@
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\Content\Texture\black.xnb
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\Content\Texture\persona.xnb
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\Content\Texture\persona1.xnb
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\Content\Texture\white.xnb
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\MusicGame.exe
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\MusicGame.pdb
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\obj\x86\Debug\MusicGame.csprojAssemblyReference.cache
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\obj\x86\Debug\MusicGame.csproj.CoreCompileInputs.cache
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\obj\x86\Debug\MusicGame.csproj.CopyComplete
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\obj\x86\Debug\MusicGame.exe
+C:\Users\sakam\Desktop\10月チーム制作\MusicGame\MusicGame\obj\x86\Debug\MusicGame.pdb
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\Content\Texture\black.xnb
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\Content\Texture\persona.xnb
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\Content\Texture\persona1.xnb
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\Content\Texture\white.xnb
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\MusicGame.exe
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\MusicGame.pdb
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\sakam\Desktop\OnePoint\MusicGame\obj\x86\Debug\MusicGame.csprojAssemblyReference.cache
+C:\Users\sakam\Desktop\OnePoint\MusicGame\obj\x86\Debug\MusicGame.csproj.CoreCompileInputs.cache
+C:\Users\sakam\Desktop\OnePoint\MusicGame\obj\x86\Debug\MusicGame.csproj.CopyComplete
+C:\Users\sakam\Desktop\OnePoint\MusicGame\obj\x86\Debug\MusicGame.exe
+C:\Users\sakam\Desktop\OnePoint\MusicGame\obj\x86\Debug\MusicGame.pdb
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\Content\Texture\Idle.xnb
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\Content\csv\Title.csv
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\Content\Texture\Idle128.xnb
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\Content\Texture\Idle96.xnb
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\Content\csv\Title128.csv
+C:\Users\sakam\Desktop\OnePoint\MusicGame\bin\Windows\x86\Debug\Content\csv\Title96.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\Title.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\Title128.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\Title96.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\Idle.xnb
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\Idle128.xnb
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\persona.xnb
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\persona1.xnb
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\MusicGame.exe
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\MusicGame.pdb
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\sakam\Desktop\Twins\MusicGame\obj\x86\Debug\MusicGame.csprojAssemblyReference.cache
+C:\Users\sakam\Desktop\Twins\MusicGame\obj\x86\Debug\MusicGame.csproj.CoreCompileInputs.cache
+C:\Users\sakam\Desktop\Twins\MusicGame\obj\x86\Debug\MusicGame.csproj.CopyComplete
+C:\Users\sakam\Desktop\Twins\MusicGame\obj\x86\Debug\MusicGame.exe
+C:\Users\sakam\Desktop\Twins\MusicGame\obj\x86\Debug\MusicGame.pdb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\Title.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\Title128.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\Title96.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\Idle.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\Idle128.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\persona.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\persona1.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\MusicGame.exe
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\MusicGame.pdb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\obj\x86\Debug\MusicGame.csprojAssemblyReference.cache
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\obj\x86\Debug\MusicGame.csproj.CoreCompileInputs.cache
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\obj\x86\Debug\MusicGame.csproj.CopyComplete
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\obj\x86\Debug\MusicGame.exe
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\obj\x86\Debug\MusicGame.pdb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Content\Texture\black.xnb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Content\Texture\Idle.xnb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Content\Texture\Idle128.xnb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Content\Texture\Idle96.xnb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Content\Texture\persona.xnb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Content\Texture\persona1.xnb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Content\Texture\white.xnb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\black.xnb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\Idle.xnb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\Idle128.xnb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\Idle96.xnb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\persona.xnb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\persona1.xnb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\white.xnb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Content\csv\Title.csv
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Content\csv\Title128.csv
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\Content\csv\Title96.csv
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\Title.csv
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\Title128.csv
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\Title96.csv
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\map1-1.csv
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\MusicGame.exe
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\MusicGame.pdb
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\obj\x86\Debug\MusicGame.csprojAssemblyReference.cache
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\obj\x86\Debug\MusicGame.csproj.CoreCompileInputs.cache
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\obj\x86\Debug\MusicGame.csproj.CopyComplete
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\obj\x86\Debug\MusicGame.exe
+C:\Users\KPC-018A1404\Desktop\ワンプッシュ\Twins\MusicGame\obj\x86\Debug\MusicGame.pdb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\1-1.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\1-2.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\1-3.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\1-4.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\1-5.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\2-1.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\2-2.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\2-3.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\2-4.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\2-5.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\map1-1.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect1.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect2.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect3.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\worldSelect.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\1-1.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\1-2.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\1-3.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\1-4.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\1-5.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\2-1.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\2-2.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\2-3.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\2-4.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\2-5.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\map1-1.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect1.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect2.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect3.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\worldSelect.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\onpu1.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\onpu2.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\onpu3.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\title.xnb
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\onpu1.xnb
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\onpu2.xnb
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\onpu3.xnb
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\title.xnb
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\csv\exSelect.csv
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\circle.xnb
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\star.xnb
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\player1.xnb
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\player2.xnb
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\player3.xnb
+C:\Users\sakam\Desktop\Twins\MusicGame\bin\Windows\x86\Debug\Content\Texture\player4.xnb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\1-1.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\1-2.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\1-3.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\1-4.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\1-5.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\2-1.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\2-2.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\2-3.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\2-4.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\2-5.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\exSelect.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\map1-1.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect1.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect2.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect3.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\Title.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\Title128.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\Title96.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\csv\worldSelect.csv
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\Texture\circle.xnb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\Texture\Idle.xnb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\Texture\Idle128.xnb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\Texture\onpu1.xnb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\Texture\onpu2.xnb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\Texture\onpu3.xnb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\Texture\persona.xnb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\Texture\persona1.xnb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\Texture\player1.xnb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\Texture\player2.xnb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\Texture\player3.xnb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\Texture\player4.xnb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\Texture\star.xnb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\Content\Texture\title.xnb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\MusicGame.exe
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\MusicGame.pdb
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\obj\x86\Debug\MusicGame.csprojAssemblyReference.cache
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\obj\x86\Debug\MusicGame.csproj.CoreCompileInputs.cache
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\obj\x86\Debug\MusicGame.csproj.CopyComplete
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\obj\x86\Debug\MusicGame.exe
+C:\Users\sakam\Desktop\新しいフォルダー (3)\MusicGame\obj\x86\Debug\MusicGame.pdb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\1-1.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\1-2.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\1-3.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\1-4.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\1-5.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\2-1.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\2-2.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\2-3.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\2-4.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\2-5.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\exSelect.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\map1-1.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect1.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect2.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect3.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\Title.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\Title128.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\Title96.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\worldSelect.csv
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\circle.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\Idle.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\Idle128.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\onpu1.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\onpu2.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\onpu3.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\persona.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\persona1.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\player1.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\player2.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\player3.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\player4.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\star.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\title.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\MusicGame.exe
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\MusicGame.pdb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\sakam\Desktop\Twins2\MusicGame\obj\x86\Debug\MusicGame.csprojAssemblyReference.cache
+C:\Users\sakam\Desktop\Twins2\MusicGame\obj\x86\Debug\MusicGame.csproj.CoreCompileInputs.cache
+C:\Users\sakam\Desktop\Twins2\MusicGame\obj\x86\Debug\MusicGame.csproj.CopyComplete
+C:\Users\sakam\Desktop\Twins2\MusicGame\obj\x86\Debug\MusicGame.exe
+C:\Users\sakam\Desktop\Twins2\MusicGame\obj\x86\Debug\MusicGame.pdb
