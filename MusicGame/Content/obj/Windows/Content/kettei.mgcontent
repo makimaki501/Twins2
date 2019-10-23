@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/kettei.wav</SourceFile>
+  <SourceTime>2019-10-21T15:39:10+09:00</SourceTime>
+  <DestFile>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/bin/Windows/Content/kettei.xnb</DestFile>
+  <DestTime>2019-10-23T21:29:34.3998815+09:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2018-12-09T01:35:54+09:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2018-12-09T01:35:54+09:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

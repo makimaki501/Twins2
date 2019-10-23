@@ -129,7 +129,7 @@ namespace MusicGame.Device
         /// <returns></returns>
         public static bool IsKeyUp(Keys key)
         {
-            return currentKey.IsKeyDown(key) && previousKey.IsKeyDown(key);
+            return currentKey.IsKeyUp(key) && previousKey.IsKeyDown(key);
         }
 
         /// <summary>

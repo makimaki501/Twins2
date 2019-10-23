@@ -24,7 +24,7 @@ namespace MusicGame.Actor
         private bool _hit;
 
         public Player2(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator)
-            : base("player4", position, 24, 24, gameDevice)
+            : base("player2", position, 24, 24, gameDevice)
         {
             this.mediator = mediator;
             reset = false;

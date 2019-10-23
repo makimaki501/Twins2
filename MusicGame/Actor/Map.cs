@@ -37,9 +37,21 @@ namespace MusicGame.Actor
             Dictionary<string, GameObject> objectList = new Dictionary<string, GameObject>();
 
             objectList.Add("0", new Space(Vector2.Zero, gameDevice));
-            objectList.Add("1", new Block("Yoko",Vector2.Zero, gameDevice));
+            objectList.Add("1", new TitleBlock(Vector2.Zero, gameDevice));
             objectList.Add("2", new TitleStartBlock(Vector2.Zero, gameDevice));
+            objectList.Add("3", new Select1Block(Vector2.Zero, gameDevice));
+            objectList.Add("4", new Select2Block(Vector2.Zero, gameDevice));
+            objectList.Add("5", new Select3Block(Vector2.Zero, gameDevice));
             objectList.Add("10", new TitleGorlBlock(Vector2.Zero, gameDevice));
+            //objectList.Add("3", new GravityChangeBlock(Vector2.Zero, gameDevice));
+            //objectList.Add("4", new GoalBlock(Vector2.Zero, gameDevice));
+            ////objectList.Add("5", new BrokenBlock(Vector2.Zero, gameDevice));
+            ////objectList.Add("6", new GravityChangeBlock2(Vector2.Zero, gameDevice));
+            ////ギミック用
+            ////objectList.Add("2", new Pitfall(Vector2.Zero, gameDevice));
+            //objectList.Add("2", new DeathBlock(Vector2.Zero, gameDevice));
+
+
 
             //作業用
             List<GameObject> workList = new List<GameObject>();
@@ -124,7 +136,7 @@ namespace MusicGame.Actor
             Point work = gameObject.getRectangle().Location;//左上の座標を取得 
             //配列の何行何列目にいるかを計算
             int x = work.X / 128;
-            int y = work.Y /128;
+            int y = work.Y / 128;
 
             //移動で食い込んでる時の修正
             if (x < 1)

@@ -26,6 +26,7 @@ namespace MusicGame.Scene
         private Player4 player4;
         private bool stop3, stop4;
 
+
         public Title()
         {
             isEndFlag = false;
@@ -61,11 +62,11 @@ namespace MusicGame.Scene
             gameObjectManager.Add(map);
 
             //最初に回っている
-            player3 = new Player3(new Vector2(128 * 6 + 15, 128 * 4 + 15), GameDevice.Instance(), gameObjectManager);
+            player3 = new Player3(new Vector2(128 * 6 + 15, 128 * 5 + 15), GameDevice.Instance(), gameObjectManager);
             gameObjectManager.Add(player3);
 
             //最初に止まっている
-            player4 = new Player4(new Vector2(128 * 7 + 18, 128 * 4 + 18), GameDevice.Instance(), gameObjectManager);
+            player4 = new Player4(new Vector2(128 * 7 + 18, 128 * 5 + 18), GameDevice.Instance(), gameObjectManager);
             gameObjectManager.Add(player4);
 
             player3.SetPos(player4.GetPosition());
@@ -85,7 +86,20 @@ namespace MusicGame.Scene
         public Scene Next()
         {
 
-            return Scene.Select;
+            Scene nextscene = Scene.Select1;
+            if (player4.nextscene == 1)
+            {
+                nextscene = Scene.Select1;
+            }
+            if (player4.nextscene == 2)
+            {
+                nextscene = Scene.Select2;
+            }
+            if (player4.nextscene == 3)
+            {
+                nextscene = Scene.Select3;
+            }
+            return nextscene;
         }
 
         public void Shutdown()
@@ -162,7 +176,18 @@ namespace MusicGame.Scene
             {
                 camera.Move(0, 1);
             }
-
+            if (player4.nextscene == 1)
+            {
+                isEndFlag = true;
+            }
+            if (player4.nextscene == 2)
+            {
+                isEndFlag = true;
+            }
+            if (player4.nextscene == 3)
+            {
+                isEndFlag = true;
+            }
         }
     }
 }

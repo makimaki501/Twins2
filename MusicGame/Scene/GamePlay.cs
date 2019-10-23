@@ -24,8 +24,8 @@ namespace MusicGame.Scene
         private Metoronome metoronome;
         private bool isstart;
         private ParticleManager particlemanager;
-   
-        
+
+        private Scene nextscene;
 
         private int select;
 
@@ -69,7 +69,7 @@ namespace MusicGame.Scene
             isEndFlag = false;
             gameObjectManager.Initialize();
             map2 = new Map2(GameDevice.Instance());
-            map2.Load("2-5.csv", "./csv/");
+            map2.Load("1-1.csv", "./csv/");
             gameObjectManager.Add(map2);
 
             //最初に回っている
@@ -83,6 +83,7 @@ namespace MusicGame.Scene
             player.SetPos(player2.GetPosition());
             metoronome.Initialize();
             metoronome.SetBpm(150);
+            nextscene = Scene.Title;
         }
 
         public bool IsEnd()
@@ -92,7 +93,7 @@ namespace MusicGame.Scene
 
         public Scene Next()
         {
-            return Scene.Title;
+            return nextscene;
         }
 
         public void Shutdown()
@@ -104,6 +105,14 @@ namespace MusicGame.Scene
         {
             map2.Update(gameTime);
             gameObjectManager.Update(gameTime);
+
+            nextscene = Scene.Title;
+
+            if (Input.GetKeyTrigger(Keys.M))
+            {
+                nextscene = Scene.Menu;
+                isEndFlag = true;
+            }
 
             if (player.IsHit())
             {

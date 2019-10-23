@@ -35,7 +35,7 @@ namespace MusicGame.Scene
         {
             isEndFlag = false;
             map2 = new Map2(GameDevice.Instance());
-            map2.Load("1-1.csv", "./csv/");
+            map2.Load("StageSelect1.csv", "./csv/");
             camera = new Camera(10, 10);
         }
 

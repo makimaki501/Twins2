@@ -50,7 +50,11 @@
     <Compile Include="Actor\Block.cs" />
     <Compile Include="Actor\Player3.cs" />
     <Compile Include="Actor\Player4.cs" />
+    <Compile Include="Actor\Select1Block.cs" />
+    <Compile Include="Actor\Select2Block.cs" />
+    <Compile Include="Actor\Select3Block.cs" />
     <Compile Include="Actor\StartBlock.cs" />
+    <Compile Include="Actor\TitleBlock.cs" />
     <Compile Include="Actor\TitleGorlBlock.cs" />
     <Compile Include="Actor\TitleStartBlock.cs" />
     <Compile Include="Actor\YokoBlock.cs" />
@@ -77,6 +81,7 @@
     <Compile Include="Scene\GamePlay.cs" />
     <Compile Include="Scene\IGameObjectMediator.cs" />
     <Compile Include="Scene\IScene.cs" />
+    <Compile Include="Scene\Menu.cs" />
     <Compile Include="Scene\Scene.cs" />
     <Compile Include="Scene\SceneManager.cs" />
     <Compile Include="Scene\Select.cs" />

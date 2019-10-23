@@ -14,5 +14,6 @@ namespace MusicGame.Scene
         Select2,
         Select3,
         GamePlay,
+        Menu
     }
 }

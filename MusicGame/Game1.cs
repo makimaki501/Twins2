@@ -17,7 +17,7 @@ namespace MusicGame
 
         private GameDevice gameDevice; //ゲームデバイスオブジェクト
         private Renderer renderer; //描画オブジェクト
-       
+
         private SceneManager sceneManager;
 
         public Game1()
@@ -50,6 +50,7 @@ namespace MusicGame
             sceneManager.Add(Scene.Scene.Select2, new Select2());
             sceneManager.Add(Scene.Scene.Select3, new Select3());
             sceneManager.Add(Scene.Scene.GamePlay, new GamePlay());
+            sceneManager.Add(Scene.Scene.Menu, new Menu());
 
             sceneManager.Change(Scene.Scene.Title);
 
@@ -66,8 +67,6 @@ namespace MusicGame
 
             renderer.LoadContent("player1", "./Texture/");
             renderer.LoadContent("player2", "./Texture/");
-            renderer.LoadContent("player3", "./Texture/");
-            renderer.LoadContent("player4", "./Texture/");
             renderer.LoadContent("persona", "./Texture/");
             renderer.LoadContent("persona1", "./Texture/");
             renderer.LoadContent("Idle", "./Texture/");
@@ -92,11 +91,33 @@ namespace MusicGame
             renderer.LoadContent("title", "./Texture/");
             renderer.LoadContent("star", "./Texture/");
             renderer.LoadContent("circle", "./Texture/");
+            renderer.LoadContent("titlebutton", "./Texture/");
+            renderer.LoadContent("retrybutton", "./Texture/");
+            renderer.LoadContent("selectbutton", "./Texture/");
+            renderer.LoadContent("menuanaunse", "./Texture/");
+            renderer.LoadContent("menuanaunse2", "./Texture/");
 
 
             Sound sound = gameDevice.GetSound();
             string filepath = "./";
             sound.LoadSE("switch", filepath);
+            sound.LoadSE("kettei", filepath);
+            sound.LoadSE("sentaku", filepath);
+            sound.LoadBGM("1-1", filepath);
+            sound.LoadBGM("1-2", filepath);
+            sound.LoadBGM("1-3", filepath);
+            sound.LoadBGM("1-4", filepath);
+            sound.LoadBGM("1-5", filepath);
+            sound.LoadBGM("2-1", filepath);
+            sound.LoadBGM("2-2", filepath);
+            sound.LoadBGM("2-3", filepath);
+            sound.LoadBGM("2-4", filepath);
+            sound.LoadBGM("2-5", filepath);
+            sound.LoadBGM("3-1", filepath);
+            sound.LoadBGM("3-2", filepath);
+            sound.LoadBGM("3-3", filepath);
+            sound.LoadBGM("3-4", filepath);
+            sound.LoadBGM("3-5", filepath);
         }
 
         /// <summary>
@@ -123,7 +144,7 @@ namespace MusicGame
             {
                 Exit();
             }
-                
+
 
             gameDevice.Update(gameTime); //他のところでこれをやると入力処理がおかしくなる
             sceneManager.Update(gameTime);

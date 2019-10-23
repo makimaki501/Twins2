@@ -21,10 +21,9 @@ namespace MusicGame.Actor
         private Vector2 Pos;
         private Vector2 position2;
         private bool reset;
-        public bool stop;
+        private bool stop;
         private bool _hit;
-        private bool push;
-
+        public int nextscene;
         public Player4(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator)
             : base("player2", position, 48, 48, gameDevice)
         {
@@ -33,7 +32,7 @@ namespace MusicGame.Actor
             stop = true;
             addRadian = 0.1f;
             _hit = false;
-            push = false;
+            nextscene = 0;
         }
         public Player4(Player4 other)
             : this(other.position, other.gameDevice, other.mediator)
@@ -49,9 +48,9 @@ namespace MusicGame.Actor
         {
             if (!stop)
             {
-                if (push && Input.GetKeyTrigger(Keys.Space))
+                if (Input.GetKeyTrigger(Keys.Space))
                 {
-                    if (gameObject is TitleGorlBlock || gameObject is TitleStartBlock)
+                    if (gameObject is TitleBlock || gameObject is TitleStartBlock)
                     {
                         reset = true;
                         stop = !stop;
@@ -74,6 +73,19 @@ namespace MusicGame.Actor
                 }
 
             }
+
+            if (gameObject is Select1Block && Input.GetKeyTrigger(Keys.Space))
+            {
+                nextscene = 1;
+            }
+            if (gameObject is Select2Block && Input.GetKeyTrigger(Keys.Space))
+            {
+                nextscene = 2;
+            }
+            if (gameObject is Select3Block && Input.GetKeyTrigger(Keys.Space))
+            {
+                nextscene = 3;
+            }
         }
 
         public override void Update(GameTime gameTime)
@@ -88,37 +100,10 @@ namespace MusicGame.Actor
                     reset = false;
                     _hit = false;
                 }
-                //下
-                if (position.Y > Pos.Y + 48 && position.X > Pos.X && position.X < Pos.X + 58)
-                {
-                    push = true;
-                }
-                //上
-                else if (position.Y < Pos.Y - 48 && position.X > Pos.X && position.X < Pos.X + 58)
-                {
-                    push = true;
-                }
-                //右
-                else if (position.X > Pos.X + 50 && position.Y > Pos.Y && position.Y < Pos.Y + 128)
-                {
-                    push = true;
-                }
-                //左
-                else if (position.X < Pos.X - 50 && position.Y > Pos.Y && position.Y < Pos.Y + 128)
-                {
-                    push = true;
-                }
-                //それ以外
-                else
-                {
-                    push = false;
-                }
                 radian -= addRadian;
                 position.X = r * (float)Math.Cos(radian) + Pos.X;
                 position.Y = r * (float)Math.Sin(radian) + Pos.Y;
             }
-
-            Console.WriteLine(Pos);
 
 
             if (Input.GetKeyState(Keys.Enter))
@@ -185,11 +170,6 @@ namespace MusicGame.Actor
         public bool IsHit()
         {
             return _hit;
-        }
-
-        public bool IsPush()
-        {
-            return push;
         }
     }
 }
