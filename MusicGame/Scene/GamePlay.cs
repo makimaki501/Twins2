@@ -24,6 +24,8 @@ namespace MusicGame.Scene
         private Metoronome metoronome;
         private bool isstart;
         private ParticleManager particlemanager;
+        private string csvname;
+        
 
         private Scene nextscene;
 
@@ -35,7 +37,7 @@ namespace MusicGame.Scene
         public GamePlay()
         {
             isEndFlag = false;
-
+            
             select = 0;
 
             camera = new Camera(Screen.Width, Screen.Height);
@@ -69,7 +71,9 @@ namespace MusicGame.Scene
             isEndFlag = false;
             gameObjectManager.Initialize();
             map2 = new Map2(GameDevice.Instance());
-            map2.Load("2-5.csv", "./csv/");
+
+            map2.Load(StageState.gamePlayState+".csv", "./csv/");
+            //map2.Load("2-2.csv", "./csv/");
             gameObjectManager.Add(map2);
 
             //最初に回っている

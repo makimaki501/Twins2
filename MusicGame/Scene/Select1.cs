@@ -1,13 +1,12 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
+using MusicGame.Actor;
+using MusicGame.Device;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using MusicGame.Actor;
-using MusicGame.Device;
 
 namespace MusicGame.Scene
 {
@@ -15,26 +14,20 @@ namespace MusicGame.Scene
     {
         private bool isEndFlag;
         private Map2 map2;
-        private Camera camera;
+        private GameObjectManager gameObjectManager;
         private Player player;
         private Player2 player2;
-        private GameObjectManager gameObjectManager;
 
         public Select1()
         {
             isEndFlag = false;
             gameObjectManager = new GameObjectManager();
+
         }
 
         public void Draw(Renderer renderer)
         {
-            renderer.Begin(SpriteSortMode.Deferred,
-                  BlendState.AlphaBlend,
-                  SamplerState.LinearClamp,
-                  DepthStencilState.None,
-                  RasterizerState.CullCounterClockwise,
-                   null,
-                   camera.GetMatrix());
+            renderer.Begin();
             renderer.DrawTexture("1", Vector2.Zero);
             map2.Draw(renderer);
             gameObjectManager.Draw(renderer);
@@ -45,16 +38,16 @@ namespace MusicGame.Scene
         {
             isEndFlag = false;
             map2 = new Map2(GameDevice.Instance());
-            map2.Load("StageSelect2.csv", "./csv/");
-            camera = new Camera(10, 10);
-            gameObjectManager.Initialize();
+            map2.Load("StageSelect1.csv", "./csv/");
+            gameObjectManager.Add(map2);
 
+            //最初に回っている
             player = new Player(new Vector2(96 * 8 + 15, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager);
             gameObjectManager.Add(player);
 
-            player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 4 + 18), GameDevice.Instance(), gameObjectManager);
+            //最初に止まっている
+            player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager);
             gameObjectManager.Add(player2);
-
             player.SetPos(player2.GetPosition());
         }
 
@@ -65,6 +58,43 @@ namespace MusicGame.Scene
 
         public Scene Next()
         {
+
+            switch (player.nextscene)
+            {
+                case 1:
+                    StageState.gamePlayState = "1-1";
+                    break;
+                case 2:
+                    StageState.gamePlayState = "1-2";
+                    break;
+                case 3:
+                    StageState.gamePlayState = "1-3";
+                    break;
+                case 4:
+                    StageState.gamePlayState = "1-4";
+                    break;
+                case 5:
+                    StageState.gamePlayState = "1-5";
+                    break;
+            }
+            switch (player2.nextscene)
+            {
+                case 1:
+                    StageState.gamePlayState = "1-1";
+                    break;
+                case 2:
+                    StageState.gamePlayState = "1-2";
+                    break;
+                case 3:
+                    StageState.gamePlayState = "1-3";
+                    break;
+                case 4:
+                    StageState.gamePlayState = "1-4";
+                    break;
+                case 5:
+                    StageState.gamePlayState = "1-5";
+                    break;
+            }
             return Scene.GamePlay;
         }
 
@@ -76,23 +106,20 @@ namespace MusicGame.Scene
         public void Update(GameTime gameTime)
         {
             map2.Update(gameTime);
-            gameObjectManager.Update(gameTime);
-            if (Input.GetKeyTrigger(Keys.D1))
+
+            if (player.nextscene != 0)
             {
                 isEndFlag = true;
             }
-            if (player.nextscene == 1)
-            {
-                isEndFlag = true;
-            }
-            if (player2.nextscene == 1)
+            if (player2.nextscene != 0)
             {
                 isEndFlag = true;
             }
 
+            gameObjectManager.Update(gameTime);
             if (player.IsHit())
             {
-                if (player.IsStop())
+                if (!player.IsStop())
                 {
                     player.SetPosition2(player2.GetPosition());
                 }
@@ -103,7 +130,7 @@ namespace MusicGame.Scene
             }
             if (player2.IsHit())
             {
-                if (player2.IsStop())
+                if (!player2.IsStop())
                 {
                     player2.SetPosition2(player.GetPosition());
                 }
@@ -112,24 +139,11 @@ namespace MusicGame.Scene
                     player2.SetPosition2(player.GetPosition());
                 }
             }
-
-
-            if (Input.GetKeyState(Keys.Right))
+            if (Input.GetKeyTrigger(Keys.D1))
             {
-                camera.Move(3, 0);
-            }
-            if (Input.GetKeyState(Keys.Left))
-            {
-                camera.Move(-3, 0);
-            }
-            if (Input.GetKeyState(Keys.Up))
-            {
-                camera.Move(0, -3);
-            }
-            if (Input.GetKeyState(Keys.Down))
-            {
-                camera.Move(0, 3);
+                isEndFlag = true;
             }
         }
     }
 }
+

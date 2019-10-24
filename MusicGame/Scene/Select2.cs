@@ -38,7 +38,7 @@ namespace MusicGame.Scene
         {
             isEndFlag = false;
             map2 = new Map2(GameDevice.Instance());
-            map2.Load("StageSelect2.csv", "./csv/");
+            map2.Load("StageSelect1.csv", "./csv/");
             gameObjectManager.Add(map2);
 
             //最初に回っている
@@ -58,6 +58,43 @@ namespace MusicGame.Scene
 
         public Scene Next()
         {
+           
+            switch (player.nextscene)
+            {
+                case 1:
+                    StageState.gamePlayState = "2-1";
+                    break;
+                case 2:
+                    StageState.gamePlayState = "2-2";
+                    break;
+                case 3:
+                    StageState.gamePlayState = "2-3";
+                    break;
+                case 4:
+                    StageState.gamePlayState = "2-4";
+                    break;
+                case 5:
+                    StageState.gamePlayState = "2-5";
+                    break;
+            }
+            switch (player2.nextscene)
+            {
+                case 1:
+                    StageState.gamePlayState = "2-1";
+                    break;
+                case 2:
+                    StageState.gamePlayState = "2-2";
+                    break;
+                case 3:
+                    StageState.gamePlayState = "2-3";
+                    break;
+                case 4:
+                    StageState.gamePlayState = "2-4";
+                    break;
+                case 5:
+                    StageState.gamePlayState = "2-5";
+                    break;
+            }
             return Scene.GamePlay;
         }
 
@@ -69,6 +106,15 @@ namespace MusicGame.Scene
         public void Update(GameTime gameTime)
         {
             map2.Update(gameTime);
+
+            if (player.nextscene !=0)
+            {
+                isEndFlag = true;
+            }
+            if (player2.nextscene !=0)
+            {
+                isEndFlag = true;
+            }
 
             gameObjectManager.Update(gameTime);
             if (player.IsHit())

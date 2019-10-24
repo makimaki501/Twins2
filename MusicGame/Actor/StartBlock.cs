@@ -10,11 +10,12 @@ namespace MusicGame.Actor
 {
     class StartBlock:GameObject
     {
+        private Vector2 position;
 
         public StartBlock(Vector2 position, GameDevice gameDevice) :
             base("Yoko", position, 96, 96, gameDevice)
         {
-
+            this.position = position;
         }
 
         public StartBlock(StartBlock other) : this(other.position, other.gameDevice)
@@ -33,6 +34,11 @@ namespace MusicGame.Actor
 
         public override void Update(GameTime gameTime)
         {
+        }
+
+        public Vector2 GetPosition()
+        {
+            return position;
         }
     }
 }

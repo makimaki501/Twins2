@@ -86,19 +86,19 @@ namespace MusicGame.Actor
             }
             if (gameObject is Stage2Block && Input.GetKeyTrigger(Keys.Space))
             {
-                nextscene = 1;
+                nextscene = 2;
             }
             if (gameObject is Stage3Block && Input.GetKeyTrigger(Keys.Space))
             {
-                nextscene = 1;
+                nextscene = 3;
             }
             if (gameObject is Stage4Block && Input.GetKeyTrigger(Keys.Space))
             {
-                nextscene = 1;
+                nextscene = 4;
             }
             if (gameObject is Stage5Block && Input.GetKeyTrigger(Keys.Space))
             {
-                nextscene = 1;
+                nextscene = 5;
             }
         }
 

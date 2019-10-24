@@ -58,6 +58,7 @@
     <Compile Include="Actor\StageBlock\Stage3Block.cs" />
     <Compile Include="Actor\StageBlock\Stage4Block.cs" />
     <Compile Include="Actor\StageBlock\Stage5Block.cs" />
+    <Compile Include="Actor\StageState.cs" />
     <Compile Include="Actor\StartBlock.cs" />
     <Compile Include="Actor\TitleBlock.cs" />
     <Compile Include="Actor\TitleGorlBlock.cs" />

@@ -14,7 +14,6 @@ namespace MusicGame.Actor
     {
         private List<List<GameObject>> mapList;//ListのListで縦横の２次元配列を表現
         private GameDevice gameDevice;
-
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -33,6 +32,7 @@ namespace MusicGame.Actor
         /// <returns></returns>
         private List<GameObject> addBlock(int lineCnt, string[] line)//privateメソッドなので戦闘小文字
         {
+            
             //コピー元オブジェクト登録用でディクショナリ
             Dictionary<string, GameObject> objectList = new Dictionary<string, GameObject>();
 
@@ -74,11 +74,11 @@ namespace MusicGame.Actor
                 try
                 {
                     string[] words = s.Split(':');
-                    string blockCode = words[0];
-                    string dirCode = words[1];
+                    //string blockCode = words[0];
+                    //string dirCode = words[1];
 
                     //ディクショナリから元データ取り出し、クローン機能で複製
-                    GameObject work = (GameObject)objectList[blockCode].Clone();
+                    GameObject work = (GameObject)objectList[words[0]].Clone();
                     work.SetPosition(new Vector2(colCnt * work.GetHight(),
                         lineCnt * work.GetWidth()));
                     workList.Add(work);
@@ -206,5 +206,6 @@ namespace MusicGame.Actor
                 }
             }
         }
+       
     }
 }
