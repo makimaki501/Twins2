@@ -13,6 +13,96 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin 1-1.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:1-1.mp3
+
+#begin 1-2.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:1-2.mp3
+
+#begin 1-3.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:1-3.mp3
+
+#begin 1-4.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:1-4.mp3
+
+#begin 1-5.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:1-5.mp3
+
+#begin 2-1.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:2-1.mp3
+
+#begin 2-2.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:2-2.mp3
+
+#begin 2-3.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:2-3.mp3
+
+#begin 2-4.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:2-4.mp3
+
+#begin 2-5.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:2-5.mp3
+
+#begin 3-1.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:3-1.mp3
+
+#begin 3-2.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:3-2.mp3
+
+#begin 3-3.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:3-3.mp3
+
+#begin 3-4.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:3-4.mp3
+
+#begin 3-5.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:3-5.mp3
+
 #begin csv/1-1.csv
 /copy:csv/1-1.csv
 
@@ -31,42 +121,17 @@
 #begin csv/2-1.csv
 /copy:csv/2-1.csv
 
-#begin csv/2-1.csv
-/importer:
-/processor:
-/build:csv/2-1.csv
-
 #begin csv/2-2.csv
 /copy:csv/2-2.csv
-
-#begin csv/2-2.csv
-/importer:
-/processor:
-/build:csv/2-2.csv
 
 #begin csv/2-3.csv
 /copy:csv/2-3.csv
 
-#begin csv/2-3.csv
-/importer:
-/processor:
-/build:csv/2-3.csv
-
 #begin csv/2-4.csv
 /copy:csv/2-4.csv
 
-#begin csv/2-4.csv
-/importer:
-/processor:
-/build:csv/2-4.csv
-
 #begin csv/2-5.csv
 /copy:csv/2-5.csv
-
-#begin csv/2-5.csv
-/importer:
-/processor:
-/build:csv/2-5.csv
 
 #begin csv/3-1.csv
 /copy:csv/3-1.csv

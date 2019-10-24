@@ -33,6 +33,8 @@ namespace MusicGame.Scene
 
         private Camera camera;
         int cnt = 0;
+        private Vector2 playerpos;
+        private Vector2 player2pos;
 
         public GamePlay()
         {
@@ -77,11 +79,60 @@ namespace MusicGame.Scene
             gameObjectManager.Add(map2);
 
             //最初に回っている
-            player = new Player(new Vector2(96 * 4 + 15, 96 * 24 + 15), GameDevice.Instance(), gameObjectManager);
+            switch (StageState.gamePlayState)
+            {
+                case "1-1":
+                    playerpos = new Vector2(96 * 6 + 15, 96 * 5 + 15);
+                    break;
+                case "1-2":
+                    playerpos = new Vector2(96 * 6 + 15, 96 * 5 + 15);
+                    break;
+                case "1-3":
+                    playerpos = new Vector2(96 * 6 + 15, 96 * 7 + 15);
+                    break;
+                case "1-4":
+                    playerpos = new Vector2(96 * 6 + 15, 96 * 6 + 15);
+                    break;
+                case "1-5":
+                    playerpos = new Vector2(96 * 6 + 15, 96 * 6 + 15);
+                    break;
+                case "2-1":
+                    playerpos = new Vector2(96 * 6 + 15, 96 * 5 + 15);
+                    break;
+                case "2-2":
+                    playerpos = new Vector2(96 * 6 + 15, 96 * 13 + 15);
+                    break;
+                case "2-3":
+                    playerpos = new Vector2(96 * 6 + 15, 96 * 7 + 15);
+                    break;
+                case "2-4":
+                    playerpos = new Vector2(96 * 6 + 15, 96 * 10 + 15);
+                    break;
+                case "2-5":
+                    playerpos = new Vector2(96 * 6 + 15, 96 * 24 + 15);
+                    break;
+                case "3-1":
+                    playerpos = new Vector2(96 * 6 + 15, 96 * 5 + 15);
+                    break;
+                case "3-2":
+                    playerpos = new Vector2(96 * 6 + 15, 96 * 4 + 15);
+                    break;
+                case "3-3":
+                    playerpos = new Vector2(96 * 6+15, 96 * 5 + 15);
+                    break;
+                case "3-4":
+                    playerpos = new Vector2(96 * 6 + 15, 96 * 11 + 15);
+                    break;
+                case "3-5":
+                    playerpos = new Vector2(96 * 6 + 15, 96 * 14 + 15);
+                    break;
+            }
+
+            player = new Player(playerpos, GameDevice.Instance(), gameObjectManager);
             gameObjectManager.Add(player);
 
             //最初に止まっている
-            player2 = new Player2(new Vector2(96 * 5 + 18, 96 * 24 + 18), GameDevice.Instance(), gameObjectManager);
+            player2 = new Player2(new Vector2(playerpos.X-96,playerpos.Y), GameDevice.Instance(), gameObjectManager);
             gameObjectManager.Add(player2);
 
             player.SetPos(player2.GetPosition());
