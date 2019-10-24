@@ -20,6 +20,12 @@ namespace MusicGame.Scene
         private Player2 player2;
         private GameObjectManager gameObjectManager;
 
+        public Select1()
+        {
+            isEndFlag = false;
+            gameObjectManager = new GameObjectManager();
+        }
+
         public void Draw(Renderer renderer)
         {
             renderer.Begin(SpriteSortMode.Deferred,
@@ -39,9 +45,8 @@ namespace MusicGame.Scene
         {
             isEndFlag = false;
             map2 = new Map2(GameDevice.Instance());
-            map2.Load("StageSelect1.csv", "./csv/");
+            map2.Load("StageSelect2.csv", "./csv/");
             camera = new Camera(10, 10);
-            gameObjectManager = new GameObjectManager();
             gameObjectManager.Initialize();
 
             player = new Player(new Vector2(96 * 8 + 15, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager);
@@ -70,8 +75,8 @@ namespace MusicGame.Scene
 
         public void Update(GameTime gameTime)
         {
-            gameObjectManager.Update(gameTime);
             map2.Update(gameTime);
+            gameObjectManager.Update(gameTime);
             if (Input.GetKeyTrigger(Keys.D1))
             {
                 isEndFlag = true;

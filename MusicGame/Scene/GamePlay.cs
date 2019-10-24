@@ -69,7 +69,7 @@ namespace MusicGame.Scene
             isEndFlag = false;
             gameObjectManager.Initialize();
             map2 = new Map2(GameDevice.Instance());
-            map2.Load("1-1.csv", "./csv/");
+            map2.Load("2-5.csv", "./csv/");
             gameObjectManager.Add(map2);
 
             //最初に回っている

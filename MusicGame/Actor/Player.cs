@@ -66,9 +66,9 @@ namespace MusicGame.Actor
             {
                 if (Input.GetKeyTrigger(Keys.Space))
                 {
-                     if (gameObject is TitleStartBlock || gameObject is Block
-                        || gameObject is TitleGorlBlock || gameObject is GorlBlock
-                        ||gameObject is StartBlock)
+                    if (gameObject is TitleStartBlock || gameObject is Block
+                       || gameObject is TitleGorlBlock || gameObject is GorlBlock
+                       || gameObject is StartBlock)
                     {
 
                         reset = true;
@@ -78,7 +78,7 @@ namespace MusicGame.Actor
                 }
             }
 
-            if(gameObject is Stage1Block && Input.GetKeyTrigger(Keys.Space))
+            if (gameObject is Stage1Block && Input.GetKeyTrigger(Keys.Space))
             {
                 nextscene = 1;
             }

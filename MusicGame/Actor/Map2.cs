@@ -54,7 +54,18 @@ namespace MusicGame.Actor
             objectList.Add("41", new Stage4Block(Vector2.Zero, gameDevice));
             objectList.Add("51", new Stage5Block(Vector2.Zero, gameDevice));
 
+            string[] keys = objectList.Keys.ToArray();
 
+            foreach(var t in keys)
+            {
+                t.Split('-');
+                foreach(var r in t)
+                {
+                    
+                }
+            }
+
+            
 
             //作業用
             List<GameObject> workList = new List<GameObject>();
