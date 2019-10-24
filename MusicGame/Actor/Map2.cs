@@ -58,11 +58,8 @@ namespace MusicGame.Actor
 
             foreach(var t in keys)
             {
-                t.Split('-');
-                foreach(var r in t)
-                {
-                    
-                }
+                string[]i = t.Split(':');
+                Console.WriteLine(i[0].ToString());
             }
 
             
@@ -76,8 +73,12 @@ namespace MusicGame.Actor
             {
                 try
                 {
+                    string[] words = s.Split(':');
+                    string blockCode = words[0];
+                    string dirCode = words[1];
+
                     //ディクショナリから元データ取り出し、クローン機能で複製
-                    GameObject work = (GameObject)objectList[s].Clone();
+                    GameObject work = (GameObject)objectList[blockCode].Clone();
                     work.SetPosition(new Vector2(colCnt * work.GetHight(),
                         lineCnt * work.GetWidth()));
                     workList.Add(work);
