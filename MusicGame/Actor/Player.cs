@@ -25,6 +25,7 @@ namespace MusicGame.Actor
         private bool _hit;
         public int nextscene;
 
+
         public Player(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator)
             : base("player3", position, 24, 24, gameDevice)
         {
@@ -47,57 +48,65 @@ namespace MusicGame.Actor
 
         public override void Hit(GameObject gameObject)
         {
-            if (!stop)
+            if (StageState.isMusic)
             {
-                if (Input.GetKeyTrigger(Keys.Space))
+                if (!stop)
                 {
-                    if (gameObject is TitleGorlBlock || gameObject is TitleStartBlock
-                        || gameObject is Block || gameObject is GorlBlock)
+                    if (Input.GetKeyTrigger(Keys.Space))
                     {
-                        reset = true;
-                        stop = !stop;
-                        _hit = true;
-                        position = new Vector2(gameObject.GetPosition().X + 16,
-                        gameObject.GetPosition().Y + 16);
+                        if (gameObject is TitleGorlBlock || gameObject is TitleStartBlock
+                            || gameObject is Block || gameObject is GorlBlock)
+                        {
+                            reset = true;
+                            stop = !stop;
+                            _hit = true;
+                            position = new Vector2(gameObject.GetPosition().X + 15,
+                            gameObject.GetPosition().Y + 15);
+                        }
                     }
                 }
-            }
-            else
-            {
-                if (Input.GetKeyTrigger(Keys.Space))
+                else
                 {
-                    if (gameObject is TitleStartBlock || gameObject is Block
-                       || gameObject is TitleGorlBlock || gameObject is GorlBlock
-                       || gameObject is StartBlock)
+                    if (Input.GetKeyTrigger(Keys.Space))
                     {
+                        if (gameObject is TitleStartBlock || gameObject is Block
+                           || gameObject is TitleGorlBlock || gameObject is GorlBlock
+                           || gameObject is StartBlock)
+                        {
 
-                        reset = true;
-                        _hit = true;
-                        stop = !stop;
+                            reset = true;
+                            _hit = true;
+                            stop = !stop;
+                        }
                     }
                 }
-            }
 
-            if (gameObject is Stage1Block && Input.GetKeyTrigger(Keys.Space))
-            {
-                nextscene = 1;
-   
-            }
-            if (gameObject is Stage2Block && Input.GetKeyTrigger(Keys.Space))
-            {
-                nextscene = 2;
-            }
-            if (gameObject is Stage3Block && Input.GetKeyTrigger(Keys.Space))
-            {
-                nextscene = 3;
-            }
-            if (gameObject is Stage4Block && Input.GetKeyTrigger(Keys.Space))
-            {
-                nextscene = 4;
-            }
-            if (gameObject is Stage5Block && Input.GetKeyTrigger(Keys.Space))
-            {
-                nextscene = 5;
+                if (gameObject is Stage1Block && Input.GetKeyTrigger(Keys.Space))
+                {
+                    nextscene = 1;
+
+                }
+                if (gameObject is Stage2Block && Input.GetKeyTrigger(Keys.Space))
+                {
+                    nextscene = 2;
+                }
+                if (gameObject is Stage3Block && Input.GetKeyTrigger(Keys.Space))
+                {
+                    nextscene = 3;
+                }
+                if (gameObject is Stage4Block && Input.GetKeyTrigger(Keys.Space))
+                {
+                    nextscene = 4;
+                }
+                if (gameObject is Stage5Block && Input.GetKeyTrigger(Keys.Space))
+                {
+                    nextscene = 5;
+                }
+
+                if(gameObject is GorlBlock && Input.GetKeyTrigger(Keys.Space))
+                {
+                    nextscene = 10;
+                }
             }
         }
 
