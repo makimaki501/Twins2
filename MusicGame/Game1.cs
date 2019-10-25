@@ -45,7 +45,7 @@ namespace MusicGame
 
             sceneManager = new SceneManager();
             sceneManager.Add(Scene.Scene.Title, new Title());
-            sceneManager.Add(Scene.Scene.Select, new Select());
+          
             sceneManager.Add(Scene.Scene.Select1, new Select1());
             sceneManager.Add(Scene.Scene.Select2, new Select2());
             sceneManager.Add(Scene.Scene.Select3, new Select3());
@@ -99,6 +99,25 @@ namespace MusicGame
             renderer.LoadContent("selectbutton", "./Texture/");
             renderer.LoadContent("menuanaunse", "./Texture/");
             renderer.LoadContent("menuanaunse2", "./Texture/");
+            renderer.LoadContent("1-1", "./Texture/");
+            renderer.LoadContent("1-2", "./Texture/");
+            renderer.LoadContent("1-3", "./Texture/");
+            renderer.LoadContent("1-4", "./Texture/");
+            renderer.LoadContent("1-5", "./Texture/");
+            renderer.LoadContent("2-1", "./Texture/");
+            renderer.LoadContent("2-2", "./Texture/");
+            renderer.LoadContent("2-3", "./Texture/");
+            renderer.LoadContent("2-4", "./Texture/");
+            renderer.LoadContent("2-5", "./Texture/");
+            renderer.LoadContent("3-1", "./Texture/");
+            renderer.LoadContent("3-2", "./Texture/");
+            renderer.LoadContent("3-3", "./Texture/");
+            renderer.LoadContent("3-4", "./Texture/");
+            renderer.LoadContent("3-5", "./Texture/");
+            renderer.LoadContent("3-5title", "./Texture/");
+            renderer.LoadContent("2-5title", "./Texture/");
+            renderer.LoadContent("1-1title", "./Texture/");
+
 
 
             Sound sound = gameDevice.GetSound();

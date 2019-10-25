@@ -63,12 +63,12 @@ namespace MusicGame.Scene
             gameObjectManager.Add(map2);
 
             //最初に回っている
-            player = new Player(new Vector2(96 * 8 + 15, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager);
+            player = new Player(new Vector2(96 * 8 + 15, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager,0.1f);
             gameObjectManager.Add(player);
            
 
             //最初に止まっている
-            player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager);
+            player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager,player.AddRadian());
             gameObjectManager.Add(player2);
             player.SetPos(player2.GetPosition());
             camera.SetPosition(player2.GetPosition());

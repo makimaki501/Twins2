@@ -1,4 +1,390 @@
-﻿using System;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+//using Microsoft.Xna.Framework;
+//using Microsoft.Xna.Framework.Input;
+//using MusicGame.Device;
+//using MusicGame.Actor;
+//using MusicGame.Util;
+//using MusicGame.Def;
+//using MusicGame.Actor.Effect;
+//using Microsoft.Xna.Framework.Graphics;
+
+//namespace MusicGame.Scene
+//{
+//    class GamePlay : IScene
+//    {
+//        private bool isEndFlag;
+//        private GameObjectManager gameObjectManager;
+//        private Player player;
+//        private Player2 player2;
+//        private Map2 map2;
+//        private Metoronome metoronome;
+//        private bool isstart;
+//        private ParticleManager particlemanager;
+
+//        //  private Sound sound;
+
+//        private Scene nextscene;
+
+
+//        private Camera camera;
+//        int cnt = 0;
+//        private Vector2 playerpos;
+//        private int cameracnt;
+//        private Vector2 cameraPos;
+//        private string stagename;
+
+//        private enum CameraDirection
+//        {
+//            UP, DOWN, RIGHT, LEFT, IDLE
+//        }
+//        private CameraDirection cameraDirection;
+
+//        public GamePlay()
+//        {
+//            isEndFlag = false;
+
+
+//            camera = new Camera(Screen.Width, Screen.Height);
+//            metoronome = new Metoronome();
+//            particlemanager = new ParticleManager();
+//            isstart = false;
+//            gameObjectManager = new GameObjectManager();
+//            cameracnt = 0;
+//            //   sound = GameDevice.Instance().GetSound();
+
+//        }
+//        public void Draw(Renderer renderer)
+//        {
+//            renderer.Begin();
+//            particlemanager.Draw(renderer);
+//            renderer.DrawTexture(stagename, new Vector2(Screen.Width / 2 - 100, 50));
+//            renderer.End();
+//            renderer.Begin(SpriteSortMode.Deferred,
+//                BlendState.AlphaBlend,
+//                SamplerState.LinearClamp,
+//                DepthStencilState.None,
+//                RasterizerState.CullCounterClockwise,
+//                null,
+//                camera.GetMatrix());
+
+//            map2.Draw(renderer);
+//            gameObjectManager.Draw(renderer);
+//            renderer.End();
+
+
+//        }
+
+//        public void Initialize()
+//        {
+//            isEndFlag = false;
+//            gameObjectManager.Initialize();
+//            map2 = new Map2(GameDevice.Instance());
+
+//            map2.Load(StageState.gamePlayState + ".csv", "./csv/");
+//            //map2.Load("2-2.csv", "./csv/");
+//            gameObjectManager.Add(map2);
+
+//            //最初に回っている
+//            switch (StageState.gamePlayState)
+//            {
+//                case "1-1":
+//                    playerpos = new Vector2(96 * 6 + 15, 96 * 5 + 15);
+//                    stagename = "1-1";
+//                    break;
+//                case "1-2":
+//                    playerpos = new Vector2(96 * 6 + 15, 96 * 5 + 15);
+//                    stagename = "1-2";
+//                    break;
+//                case "1-3":
+//                    playerpos = new Vector2(96 * 6 + 15, 96 * 7 + 15);
+//                    stagename = "1-3";
+//                    break;
+//                case "1-4":
+//                    playerpos = new Vector2(96 * 6 + 15, 96 * 6 + 15);
+//                    stagename = "1-4";
+//                    break;
+//                case "1-5":
+//                    playerpos = new Vector2(96 * 6 + 15, 96 * 6 + 15);
+//                    stagename = "1-1title";
+//                    break;
+//                case "2-1":
+//                    playerpos = new Vector2(96 * 6 + 15, 96 * 5 + 15);
+//                    stagename = "2-1";
+//                    break;
+//                case "2-2":
+//                    playerpos = new Vector2(96 * 6 + 15, 96 * 13 + 15);
+//                    stagename = "2-2";
+//                    break;
+//                case "2-3":
+//                    playerpos = new Vector2(96 * 6 + 15, 96 * 7 + 15);
+//                    stagename = "2-3";
+//                    break;
+//                case "2-4":
+//                    playerpos = new Vector2(96 * 6 + 15, 96 * 10 + 15);
+//                    stagename = "2-4";
+//                    break;
+//                case "2-5":
+//                    playerpos = new Vector2(96 * 6 + 15, 96 * 24 + 15);
+//                    stagename = "2-5title";
+//                    break;
+//                case "3-1":
+//                    playerpos = new Vector2(96 * 6 + 15, 96 * 5 + 15);
+//                    stagename = "3-1";
+//                    break;
+//                case "3-2":
+//                    playerpos = new Vector2(96 * 6 + 15, 96 * 4 + 15);
+//                    stagename = "3-2";
+//                    break;
+//                case "3-3":
+//                    playerpos = new Vector2(96 * 6 + 15, 96 * 5 + 15);
+//                    stagename = "3-3";
+//                    break;
+//                case "3-4":
+//                    playerpos = new Vector2(96 * 6 + 15, 96 * 11 + 15);
+//                    stagename = "3-4";
+//                    break;
+//                case "3-5":
+//                    playerpos = new Vector2(96 * 6 + 15, 96 * 14 + 15);
+//                    stagename = "3-5title";
+//                    break;
+//            }
+
+//            player = new Player(playerpos, GameDevice.Instance(), gameObjectManager, 0.1f);
+//            gameObjectManager.Add(player);
+
+//            //最初に止まっている
+//            player2 = new Player2(new Vector2(playerpos.X - 96, playerpos.Y), GameDevice.Instance(), gameObjectManager, 0.1f);
+//            gameObjectManager.Add(player2);
+//            camera.SetPosition(player2.GetPosition());
+//            cameraPos = player2.GetPosition();
+//            cameraDirection = CameraDirection.IDLE;
+
+//            player.SetPos(player2.GetPosition());
+//            metoronome.Initialize();
+//            metoronome.SetBpm(60);
+//            nextscene = Scene.Title;
+//        }
+
+//        public bool IsEnd()
+//        {
+//            return isEndFlag;
+//        }
+
+//        public Scene Next()
+//        {
+//            return nextscene;
+//        }
+
+//        public void Shutdown()
+//        {
+
+//        }
+
+//        public void Update(GameTime gameTime)
+//        {
+//            map2.Update(gameTime);
+//            gameObjectManager.Update(gameTime);
+
+//            nextscene = Scene.Title;
+
+//            if (Input.GetKeyTrigger(Keys.M) || player.nextscene == 10 || player2.nextscene == 10)
+//            {
+//                cameraDirection = CameraDirection.IDLE;
+//                nextscene = Scene.Menu;
+//                cnt++;
+//                if (cnt >= 120)
+//                {
+//                    isEndFlag = true;
+//                }
+//            }
+
+//            if (player.IsHit())
+//            {
+//                if (player.IsStop())
+//                {
+//                    player.SetPosition2(player2.GetPosition());
+//                }
+//                else
+//                {
+//                    player.SetPosition2(player2.GetPosition());
+//                }
+//            }
+//            if (player2.IsHit())
+//            {
+//                if (player2.IsStop())
+//                {
+//                    player2.SetPosition2(player.GetPosition());
+//                }
+//                else
+//                {
+//                    player2.SetPosition2(player.GetPosition());
+//                }
+//            }
+
+//            if (!player.IsStop() && !player2.IsStop())
+//            {
+//                nextscene = Scene.Menu;
+//                cnt++;
+//                StageState.isMusic = false;
+//                if (cnt >= 120)
+//                {
+//                    isEndFlag = true;
+//                }
+//            }
+
+//            if (particlemanager.IsCount(240))
+//            {
+//                particlemanager.Star("circle", 1, 0.1f, 20, 10, 1);
+//            }
+
+
+//            if (Input.GetKeyTrigger(Keys.D1))
+//            {
+//                isEndFlag = true;
+//            }
+
+//            float delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
+//            particlemanager.Update(delta);
+
+//            if (Input.GetKeyTrigger(Keys.Space))
+//            {
+//                isstart = true;
+//            }
+
+//            if (isstart)
+//            {
+
+//                metoronome.CountUpdate();
+
+//                if (metoronome.IsCount(0))
+//                {
+//                    particlemanager.DirectionTexture(new Vector2(Screen.Width / 2 - 400, Screen.Height / 2 - 200), 1, 0, 10f, 0);
+//                }
+//                if (metoronome.IsCount(1))
+//                {
+//                    particlemanager.Clear("3");
+//                    cnt++;
+//                    if (cnt >= 5)
+//                    {
+//                        particlemanager.DirectionTexture(new Vector2(Screen.Width / 2 - 400, Screen.Height / 2 - 200), 1, 0, 10f, 1);
+//                        cnt = 0;
+//                    }
+//                }
+//                if (metoronome.IsCount(2))
+//                {
+//                    particlemanager.Clear("2");
+//                    cnt++;
+//                    if (cnt >= 5)
+//                    {
+//                        particlemanager.DirectionTexture(new Vector2(Screen.Width / 2 - 400, Screen.Height / 2 - 200), 1, 0, 10f, 2);
+//                        cnt = 0;
+//                    }
+//                }
+//                if (metoronome.IsCount(3))
+//                {
+//                    particlemanager.Clear("1");
+//                    cnt++;
+//                    if (cnt >= 5)
+//                    {
+//                        particlemanager.DirectionTexture(new Vector2(Screen.Width / 2 - 400, Screen.Height / 2 - 200), 1, 0, 10f, 3);
+//                        cnt = 0;
+//                    }
+//                }
+//                if (metoronome.IsCount(4))
+//                {
+//                    particlemanager.Clear("go");
+//                    if (cnt >= 5)
+//                    {
+//                        isstart = false;
+//                        StageState.isMusic = true;
+//                        //sound.PlayBGM(stagename);
+//                    }
+//                }
+
+//            }
+
+//            cameracnt++;
+//            if (StageState.isMusic)
+//            {
+//                //if (cameracnt >= 60)
+//                //{
+
+
+//                if (player.IsStop())//もしプレイヤーが止まってたら
+//                {
+//                    if (cameraPos.X < player.GetPosition().X)
+//                    {
+//                        cameraDirection = CameraDirection.RIGHT;
+//                    }
+//                    if (cameraPos.X > player.GetPosition().X)
+//                    {
+//                        cameraDirection = CameraDirection.LEFT;
+//                    }
+//                    if (cameraPos.Y < player.GetPosition().Y)
+//                    {
+//                        cameraDirection = CameraDirection.UP;
+//                    }
+//                    if (cameraPos.Y > player.GetPosition().Y)
+//                    {
+//                        cameraDirection = CameraDirection.DOWN;
+//                    }
+
+//                    cameraPos = player.GetPosition();
+
+//                }
+//                if (player2.IsStop())//もしプレイヤーが止まってたら
+//                {
+//                    if (cameraPos.X < player2.GetPosition().X)
+//                    {
+//                        cameraDirection = CameraDirection.RIGHT;
+//                    }
+//                    if (cameraPos.X > player2.GetPosition().X)
+//                    {
+//                        cameraDirection = CameraDirection.LEFT;
+//                    }
+//                    if (cameraPos.Y < player2.GetPosition().Y)
+//                    {
+//                        cameraDirection = CameraDirection.UP;
+//                    }
+//                    if (cameraPos.Y > player2.GetPosition().Y)
+//                    {
+//                        cameraDirection = CameraDirection.DOWN;
+//                    }
+
+//                    cameraPos = player2.GetPosition();
+
+//                }
+
+
+//            }
+//            switch (cameraDirection)
+//            {
+//                case CameraDirection.IDLE:
+//                    camera.Move(0, 0);
+//                    break;
+//                case CameraDirection.RIGHT:
+//                    camera.Move(3, 0);
+//                    break;
+//                case CameraDirection.LEFT:
+//                    camera.Move(-3, 0);
+//                    break;
+//                case CameraDirection.UP:
+//                    camera.Move(0, 2);
+//                    break;
+//                case CameraDirection.DOWN:
+//                    camera.Move(0, -2);
+//                    break;
+
+//            }
+//        }
+
+//    }
+//}
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,6 +430,8 @@ namespace MusicGame.Scene
         }
         private CameraDirection cameraDirection;
 
+        private Sound sound;
+
         public GamePlay()
         {
             isEndFlag = false;
@@ -57,7 +445,7 @@ namespace MusicGame.Scene
             gameObjectManager = new GameObjectManager();
             cameracnt = 0;
 
-
+            sound = GameDevice.Instance().GetSound();
         }
         public void Draw(Renderer renderer)
         {
@@ -139,11 +527,11 @@ namespace MusicGame.Scene
                     break;
             }
 
-            player = new Player(playerpos, GameDevice.Instance(), gameObjectManager);
+            player = new Player(playerpos, GameDevice.Instance(), gameObjectManager,0.1f);
             gameObjectManager.Add(player);
 
             //最初に止まっている
-            player2 = new Player2(new Vector2(playerpos.X - 96, playerpos.Y), GameDevice.Instance(), gameObjectManager);
+            player2 = new Player2(new Vector2(playerpos.X - 96, playerpos.Y), GameDevice.Instance(), gameObjectManager,0.1f);
             gameObjectManager.Add(player2);
             camera.SetPosition(player2.GetPosition());
             cameraPos = player2.GetPosition();
@@ -305,7 +693,7 @@ namespace MusicGame.Scene
             //{
             //    camera.Move(0, 5);
             //}
-           
+
             cameracnt++;
             if (StageState.isMusic)
             {
@@ -357,7 +745,7 @@ namespace MusicGame.Scene
                     cameraPos = player2.GetPosition();
 
                 }
-               
+
 
             }
             switch (cameraDirection)
@@ -383,4 +771,5 @@ namespace MusicGame.Scene
 
     }
 }
+
 

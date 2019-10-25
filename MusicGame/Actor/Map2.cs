@@ -54,16 +54,6 @@ namespace MusicGame.Actor
             objectList.Add("41", new Stage4Block(Vector2.Zero, gameDevice));
             objectList.Add("51", new Stage5Block(Vector2.Zero, gameDevice));
 
-            string[] keys = objectList.Keys.ToArray();
-
-            foreach(var t in keys)
-            {
-                string[]i = t.Split(':');
-                Console.WriteLine(i[0].ToString());
-            }
-
-            
-
             //作業用
             List<GameObject> workList = new List<GameObject>();
 
@@ -73,12 +63,12 @@ namespace MusicGame.Actor
             {
                 try
                 {
-                    string[] words = s.Split(':');
+                    //string[] words = s.Split(':');
                     //string blockCode = words[0];
                     //string dirCode = words[1];
 
                     //ディクショナリから元データ取り出し、クローン機能で複製
-                    GameObject work = (GameObject)objectList[words[0]].Clone();
+                    GameObject work = (GameObject)objectList[s].Clone();
                     work.SetPosition(new Vector2(colCnt * work.GetHight(),
                         lineCnt * work.GetWidth()));
                     workList.Add(work);

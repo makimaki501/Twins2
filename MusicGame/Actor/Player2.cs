@@ -25,18 +25,18 @@ namespace MusicGame.Actor
         private bool _hit;
         public int nextscene;
 
-        public Player2(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator)
+        public Player2(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator,float addRadian)
             : base("player4", position, 24, 24, gameDevice)
         {
             this.mediator = mediator;
             reset = false;
             stop = true;
-            addRadian = 0.1f;
+            this.addRadian=addRadian;
             _hit = false;
             nextscene = 0;
         }
         public Player2(Player2 other)
-            : this(other.position, other.gameDevice, other.mediator)
+            : this(other.position, other.gameDevice, other.mediator,other.addRadian)
         {
 
         }
