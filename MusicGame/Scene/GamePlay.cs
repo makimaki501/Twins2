@@ -25,7 +25,7 @@ namespace MusicGame.Scene
         private bool isstart;
         private ParticleManager particlemanager;
         private string csvname;
-        
+
 
         private Scene nextscene;
 
@@ -35,11 +35,19 @@ namespace MusicGame.Scene
         int cnt = 0;
         private Vector2 playerpos;
         private Vector2 player2pos;
+        private int cameracnt;
+        private Vector2 cameraPos;
+        private Vector2 cameraMovePos;
+        private enum CameraDirection
+        {
+            UP, DOWN, RIGHT, LEFT, IDLE
+        }
+        private CameraDirection cameraDirection;
 
         public GamePlay()
         {
             isEndFlag = false;
-            
+
             select = 0;
 
             camera = new Camera(Screen.Width, Screen.Height);
@@ -47,10 +55,13 @@ namespace MusicGame.Scene
             particlemanager = new ParticleManager();
             isstart = false;
             gameObjectManager = new GameObjectManager();
+            cameracnt = 0;
+
+
         }
         public void Draw(Renderer renderer)
         {
-             renderer.Begin();
+            renderer.Begin();
             particlemanager.Draw(renderer);
             renderer.End();
             renderer.Begin(SpriteSortMode.Deferred,
@@ -60,11 +71,11 @@ namespace MusicGame.Scene
                 RasterizerState.CullCounterClockwise,
                 null,
                 camera.GetMatrix());
-           
+
             map2.Draw(renderer);
             gameObjectManager.Draw(renderer);
             renderer.End();
-           
+
 
         }
 
@@ -74,7 +85,7 @@ namespace MusicGame.Scene
             gameObjectManager.Initialize();
             map2 = new Map2(GameDevice.Instance());
 
-            map2.Load(StageState.gamePlayState+".csv", "./csv/");
+            map2.Load(StageState.gamePlayState + ".csv", "./csv/");
             //map2.Load("2-2.csv", "./csv/");
             gameObjectManager.Add(map2);
 
@@ -118,7 +129,7 @@ namespace MusicGame.Scene
                     playerpos = new Vector2(96 * 6 + 15, 96 * 4 + 15);
                     break;
                 case "3-3":
-                    playerpos = new Vector2(96 * 6+15, 96 * 5 + 15);
+                    playerpos = new Vector2(96 * 6 + 15, 96 * 5 + 15);
                     break;
                 case "3-4":
                     playerpos = new Vector2(96 * 6 + 15, 96 * 11 + 15);
@@ -132,12 +143,15 @@ namespace MusicGame.Scene
             gameObjectManager.Add(player);
 
             //最初に止まっている
-            player2 = new Player2(new Vector2(playerpos.X-96,playerpos.Y), GameDevice.Instance(), gameObjectManager);
+            player2 = new Player2(new Vector2(playerpos.X - 96, playerpos.Y), GameDevice.Instance(), gameObjectManager);
             gameObjectManager.Add(player2);
+            camera.SetPosition(player2.GetPosition());
+            cameraPos = player2.GetPosition();
+            cameraDirection = CameraDirection.IDLE;
 
             player.SetPos(player2.GetPosition());
             metoronome.Initialize();
-            metoronome.SetBpm(150);
+            metoronome.SetBpm(60);
             nextscene = Scene.Title;
         }
 
@@ -163,10 +177,15 @@ namespace MusicGame.Scene
 
             nextscene = Scene.Title;
 
-            if (Input.GetKeyTrigger(Keys.M))
+            if (Input.GetKeyTrigger(Keys.M) || player.nextscene == 10 || player2.nextscene == 10)
             {
+                cameraDirection = CameraDirection.IDLE;
                 nextscene = Scene.Menu;
-                isEndFlag = true;
+                cnt++;
+                if (cnt >= 120)
+                {
+                    isEndFlag = true;
+                }
             }
 
             if (player.IsHit())
@@ -192,17 +211,28 @@ namespace MusicGame.Scene
                 }
             }
 
+            if (!player.IsStop() && !player2.IsStop())
+            {
+                nextscene = Scene.Menu;
+                cnt++;
+                StageState.isMusic = false;
+                if (cnt >= 120)
+                {
+                    isEndFlag = true;
+                }
+            }
+
             if (particlemanager.IsCount(240))
             {
                 particlemanager.Star("circle", 1, 0.1f, 20, 10, 1);
             }
-            
+
 
             if (Input.GetKeyTrigger(Keys.D1))
             {
                 isEndFlag = true;
             }
-      
+
             float delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
             particlemanager.Update(delta);
 
@@ -254,25 +284,100 @@ namespace MusicGame.Scene
                 {
                     particlemanager.Clear("go");
                     isstart = false;
+                    StageState.isMusic = true;
                 }
 
             }
 
-            if (Input.GetKeyState(Keys.Right))
+            //if (Input.GetKeyState(Keys.Right))
+            //{
+            //    camera.Move(5, 0);
+            //}
+            //if (Input.GetKeyState(Keys.Left))
+            //{
+            //    camera.Move(-5, 0);
+            //}
+            //if (Input.GetKeyState(Keys.Up))
+            //{
+            //    camera.Move(0, -5);
+            //}
+            //if (Input.GetKeyState(Keys.Down))
+            //{
+            //    camera.Move(0, 5);
+            //}
+           
+            cameracnt++;
+            if (StageState.isMusic)
             {
-                camera.Move(5, 0);
+                //if (cameracnt >= 60)
+                //{
+
+
+                if (player.IsStop())//もしプレイヤーが止まってたら
+                {
+                    if (cameraPos.X < player.GetPosition().X)
+                    {
+                        cameraDirection = CameraDirection.RIGHT;
+                    }
+                    if (cameraPos.X > player.GetPosition().X)
+                    {
+                        cameraDirection = CameraDirection.LEFT;
+                    }
+                    if (cameraPos.Y < player.GetPosition().Y)
+                    {
+                        cameraDirection = CameraDirection.UP;
+                    }
+                    if (cameraPos.Y > player.GetPosition().Y)
+                    {
+                        cameraDirection = CameraDirection.DOWN;
+                    }
+
+                    cameraPos = player.GetPosition();
+
+                }
+                if (player2.IsStop())//もしプレイヤーが止まってたら
+                {
+                    if (cameraPos.X < player2.GetPosition().X)
+                    {
+                        cameraDirection = CameraDirection.RIGHT;
+                    }
+                    if (cameraPos.X > player2.GetPosition().X)
+                    {
+                        cameraDirection = CameraDirection.LEFT;
+                    }
+                    if (cameraPos.Y < player2.GetPosition().Y)
+                    {
+                        cameraDirection = CameraDirection.UP;
+                    }
+                    if (cameraPos.Y > player2.GetPosition().Y)
+                    {
+                        cameraDirection = CameraDirection.DOWN;
+                    }
+
+                    cameraPos = player2.GetPosition();
+
+                }
+               
+
             }
-            if (Input.GetKeyState(Keys.Left))
+            switch (cameraDirection)
             {
-                camera.Move(-5, 0);
-            }
-            if (Input.GetKeyState(Keys.Up))
-            {
-                camera.Move(0, -5);
-            }
-            if (Input.GetKeyState(Keys.Down))
-            {
-                camera.Move(0, 5);
+                case CameraDirection.IDLE:
+                    camera.Move(0, 0);
+                    break;
+                case CameraDirection.RIGHT:
+                    camera.Move(3, 0);
+                    break;
+                case CameraDirection.LEFT:
+                    camera.Move(-3, 0);
+                    break;
+                case CameraDirection.UP:
+                    camera.Move(0, 2);
+                    break;
+                case CameraDirection.DOWN:
+                    camera.Move(0, -2);
+                    break;
+
             }
         }
 

@@ -10,5 +10,7 @@ namespace MusicGame.Actor
     {
         //ステージ用
         public static string gamePlayState;
+
+        public static bool isMusic;
     }
 }

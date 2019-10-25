@@ -53,7 +53,8 @@ namespace MusicGame
             sceneManager.Add(Scene.Scene.Menu, new Menu());
 
             sceneManager.Change(Scene.Scene.Title);
-
+            
+           
             base.Initialize();
         }
 

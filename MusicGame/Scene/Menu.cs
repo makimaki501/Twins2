@@ -114,7 +114,7 @@ namespace MusicGame.Scene
                             isEndFlag = true;
                             break;
                         case 1:
-                            nextscene = Scene.Select;
+                            nextscene = Scene.Select1;
                             isEndFlag = true;
                             break;
                         case 2:
