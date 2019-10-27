@@ -113,7 +113,7 @@ namespace MusicGame.Scene
                     playerpos = new Vector2(96 * 6 + 15, 96 * 6 + 15);
                     break;
                 case "2-1":
-                    playerpos = new Vector2(96 * 6 + 15, 96 * 5 + 15);
+                    playerpos = new Vector2(96 * 5 + 15, 96 * 5 + 15);
                     break;
                 case "2-2":
                     playerpos = new Vector2(96 * 6 + 15, 96 * 13 + 15);

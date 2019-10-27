@@ -72,19 +72,20 @@ namespace MusicGame.Scene
         {
             isEndFlag = false;
             map2 = new Map2(GameDevice.Instance());
-            map2.Load("StageSelect1.csv", "./csv/");
+            map2.Load("StageSelect4csv.csv", "./csv/");
             gameObjectManager.Add(map2);
             sound.PlayBGM("WorldSelect");
 
             //最初に回っている
-            player = new Player(new Vector2(96 * 9 + 15, 96 * 2 + 15), GameDevice.Instance(), gameObjectManager,0.1f);
+            player = new Player(new Vector2(96 * 9 + 15, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager,0.1f);
             gameObjectManager.Add(player);
            
 
             //最初に止まっている
-            player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 1 + 15), GameDevice.Instance(), gameObjectManager,player.AddRadian());
+            player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager,player.AddRadian());
             gameObjectManager.Add(player2);
             player.SetPos(player2.GetPosition());
+
             camera.SetPosition(new Vector2(Screen.Width/2-48,Screen.Height/2+48));
             cameraPos = player2.GetPosition();
             cameraDirection = CameraDirection.IDLE;
