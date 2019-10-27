@@ -56,7 +56,7 @@ namespace MusicGame.Actor
         {
             if (StageState.isMusic)
             {
-                if (!stop)
+                 if (!stop)
                 {
                     if (Input.GetKeyTrigger(Keys.Space))
                     {
@@ -252,6 +252,8 @@ namespace MusicGame.Actor
             {
                 radian -= 0.095f;
             }
+
+            Console.WriteLine(_hit);
         }
 
         public Vector2 GetPosition2()
