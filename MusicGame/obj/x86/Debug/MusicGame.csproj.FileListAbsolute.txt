@@ -484,3 +484,12 @@ C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\Musi
 C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\world1.xnb
 C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\world2.xnb
 C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\world3.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\stagemark1.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\stagemark2.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\stagemark3.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\stagemark4.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\stagemark5.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Title.wma
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Title.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\WorldSelect.wma
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\WorldSelect.xnb

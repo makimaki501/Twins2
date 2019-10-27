@@ -165,7 +165,7 @@ namespace MusicGame.Device
         /// <param name="position">位置</param>
         /// <param name="rect">指定範囲</param>
         /// <param name="alpha">透明値</param>
-        public void DrawTexture(string assetName, Vector2 position, Rectangle rect, float alpha = 1.0f)
+        public void DrawTexture(string assetName, Vector2 position, Rectangle rect,Color color, float alpha = 1.0f)
         {
             //デバッグモードの時のみ、画像描画前のアセット名チェック
             Debug.Assert(
@@ -177,7 +177,7 @@ namespace MusicGame.Device
                 textures[assetName], //テクスチャ
                 position,            //位置
                 rect,                //指定範囲（矩形で指定：左上の座標、幅、高さ）
-                Color.White * alpha);//透明値
+                color* alpha);//透明値
         }
 
         /// <summary>

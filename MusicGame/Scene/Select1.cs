@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using MusicGame.Actor;
 using MusicGame.Def;
 using MusicGame.Device;
+using MusicGame.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,9 @@ namespace MusicGame.Scene
         private Player2 player2;
         private Camera camera;
         private Vector2 cameraPos;
+        private Motion motion;
+        private int cnt;
+        private Sound sound;
 
         private enum CameraDirection
         {
@@ -33,14 +37,18 @@ namespace MusicGame.Scene
             isEndFlag = false;
             gameObjectManager = new GameObjectManager();
             camera = new Camera(Screen.Width, Screen.Height);
+            motion = new Motion();
+            cnt = 0;
+            sound = GameDevice.Instance().GetSound();
         }
 
         public void Draw(Renderer renderer)
         {
             renderer.Begin();
-            renderer.DrawTexture("1", Vector2.Zero);
-           
-            
+            renderer.DrawTexture("world1", Vector2.Zero);
+            //map2.Draw(renderer);
+            //gameObjectManager.Draw(renderer);
+
             renderer.End();
 
             renderer.Begin(SpriteSortMode.Deferred,
@@ -52,6 +60,11 @@ namespace MusicGame.Scene
                 camera.GetMatrix());
             map2.Draw(renderer);
             gameObjectManager.Draw(renderer);
+            renderer.DrawTexture("stagemark1", new Vector2(950, -20), motion.DrawingRange(),Color.LightSalmon);
+            renderer.DrawTexture("stagemark2", new Vector2(370, 180), motion.DrawingRange(),Color.Coral);
+            renderer.DrawTexture("stagemark3", new Vector2(950, 370), motion.DrawingRange(),Color.Tomato);
+            renderer.DrawTexture("stagemark4", new Vector2(370, 570), motion.DrawingRange(),Color.OrangeRed);
+            renderer.DrawTexture("stagemark5", new Vector2(950, 750), motion.DrawingRange(),Color.Red);
             renderer.End();
         }
 
@@ -61,19 +74,36 @@ namespace MusicGame.Scene
             map2 = new Map2(GameDevice.Instance());
             map2.Load("StageSelect1.csv", "./csv/");
             gameObjectManager.Add(map2);
+            sound.PlayBGM("WorldSelect");
 
             //最初に回っている
-            player = new Player(new Vector2(96 * 8 + 15, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager,0.1f);
+            player = new Player(new Vector2(96 * 8 + 15, 96 * 1 + 15), GameDevice.Instance(), gameObjectManager,0.1f);
             gameObjectManager.Add(player);
            
 
             //最初に止まっている
-            player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager,player.AddRadian());
+            player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 1 + 15), GameDevice.Instance(), gameObjectManager,player.AddRadian());
             gameObjectManager.Add(player2);
             player.SetPos(player2.GetPosition());
-            camera.SetPosition(player2.GetPosition());
+            camera.SetPosition(new Vector2(Screen.Width/2-48,Screen.Height/2+48));
             cameraPos = player2.GetPosition();
             cameraDirection = CameraDirection.IDLE;
+
+            motion.Add(0, new Rectangle(500 * 0, 500 * 0, 500, 500));
+            motion.Add(1, new Rectangle(500 * 1, 500 * 0, 500, 500));
+            motion.Add(2, new Rectangle(500 * 2, 500 * 0, 500, 500));
+            motion.Add(3, new Rectangle(500 * 3, 500 * 0, 500, 500));
+            motion.Add(4, new Rectangle(500 * 0, 500 * 1, 500, 500));
+            motion.Add(5, new Rectangle(500 * 1, 500 * 1, 500, 500));
+            motion.Add(6, new Rectangle(500 * 2, 500 * 1, 500, 500));
+            motion.Add(7, new Rectangle(500 * 3, 500 * 1, 500, 500));
+            motion.Add(8, new Rectangle(500 * 2, 500 * 1, 500, 500));
+            motion.Add(9, new Rectangle(500 * 1, 500 * 1, 500, 500));
+            motion.Add(10, new Rectangle(500 * 0, 500 * 1, 500, 500));
+            motion.Add(11, new Rectangle(500 * 3, 500 * 0, 500, 500));
+            motion.Add(12, new Rectangle(500 * 2, 500 * 0, 500, 500));
+            motion.Add(13, new Rectangle(500 * 1, 500 * 0, 500, 500));
+            motion.Initialize(new Range(0, 13), new CountDownTimer(0.1f));
         }
 
         public bool IsEnd()
@@ -125,11 +155,12 @@ namespace MusicGame.Scene
 
         public void Shutdown()
         {
-
+            sound.StopBGM();
         }
 
         public void Update(GameTime gameTime)
         {
+            motion.Update(gameTime);
             map2.Update(gameTime);
             StageState.isMusic = true;
 
@@ -150,6 +181,7 @@ namespace MusicGame.Scene
                 if (!player.IsStop())
                 {
                     player.SetPosition2(player2.GetPosition());
+                   
                 }
                 else
                 {
@@ -174,6 +206,7 @@ namespace MusicGame.Scene
 
             if (player.IsStop())//もしプレイヤーが止まってたら
             {
+               
                 if (cameraPos.X < player.GetPosition().X)
                 {
                     cameraDirection = CameraDirection.RIGHT;
@@ -196,6 +229,7 @@ namespace MusicGame.Scene
             }
             if (player2.IsStop())//もしプレイヤーが止まってたら
             {
+               
                 if (cameraPos.X < player2.GetPosition().X)
                 {
                     cameraDirection = CameraDirection.RIGHT;
@@ -214,27 +248,6 @@ namespace MusicGame.Scene
                 }
 
                 cameraPos = player2.GetPosition();
-
-            }
-
-            switch (cameraDirection)
-            {
-                case CameraDirection.IDLE:
-                    camera.Move(0, 0);
-                    break;
-                case CameraDirection.RIGHT:
-                    camera.Move(3, 0);
-                    break;
-                case CameraDirection.LEFT:
-                    camera.Move(-3, 0);
-                    break;
-                case CameraDirection.UP:
-                    camera.Move(0, 2);
-                    break;
-                case CameraDirection.DOWN:
-                    camera.Move(0, -2);
-                    break;
-
             }
         }
 

@@ -117,6 +117,11 @@ namespace MusicGame
             renderer.LoadContent("world1", "./Texture/");
             renderer.LoadContent("world2", "./Texture/");
             renderer.LoadContent("world3", "./Texture/");
+            renderer.LoadContent("stagemark1", "./Texture/");
+            renderer.LoadContent("stagemark2", "./Texture/");
+            renderer.LoadContent("stagemark3", "./Texture/");
+            renderer.LoadContent("stagemark4", "./Texture/");
+            renderer.LoadContent("stagemark5", "./Texture/");
            
 
 
@@ -126,6 +131,11 @@ namespace MusicGame
             sound.LoadSE("switch", filepath);
             sound.LoadSE("kettei", filepath);
             sound.LoadSE("sentaku", filepath);
+            sound.LoadSE("WorldSelect", filepath);
+            sound.LoadSE("Title", filepath);
+
+            sound.LoadBGM("WorldSelect", filepath);
+            sound.LoadBGM("Title", filepath);
             sound.LoadBGM("1-1", filepath);
             sound.LoadBGM("1-2", filepath);
             sound.LoadBGM("1-3", filepath);
