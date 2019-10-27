@@ -56,5 +56,10 @@ namespace MusicGame.Device
             Matrix.CreateRotationZ(rotation) *
             Matrix.CreateTranslation(screenPos);
         }
+
+        public Vector2 GetPosition()
+        {
+            return new Vector2(position.X - 960, position.Y - 540);
+        }
     }
 }

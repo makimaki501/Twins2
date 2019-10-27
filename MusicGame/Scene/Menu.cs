@@ -36,9 +36,9 @@ namespace MusicGame.Scene
             renderer.Begin();
             renderer.DrawTexture("menuanaunse", new Vector2(Screen.Width / 2 - 400, 50));
             renderer.DrawTexture("menuanaunse2", new Vector2(Screen.Width / 2 - 400, 800));
-            renderer.DrawTexture("titlebutton", new Vector2(1320, 400), Tmotion.DrawingRange());
-            renderer.DrawTexture("selectbutton", new Vector2(835, 400), Smotion.DrawingRange());
-            renderer.DrawTexture("retrybutton", new Vector2(350, 400), Rmotion.DrawingRange());
+            renderer.DrawTexture("titlebutton", new Vector2(1320, 400), Tmotion.DrawingRange(),Color.White);
+            renderer.DrawTexture("selectbutton", new Vector2(835, 400), Smotion.DrawingRange(),Color.White);
+            renderer.DrawTexture("retrybutton", new Vector2(350, 400), Rmotion.DrawingRange(),Color.White);
             renderer.End();
         }
 

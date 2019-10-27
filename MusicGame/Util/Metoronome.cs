@@ -50,7 +50,7 @@ namespace MusicGame.Util
             if (cnt % fpsNumber == 0)
             {
                 beat++;//何拍たったかわかる
-                sound.PlaySE("switch");
+                //sound.PlaySE("switch");
                 isBeat = true;
             }
         }

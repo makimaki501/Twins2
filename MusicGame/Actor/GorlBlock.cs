@@ -42,7 +42,7 @@ namespace MusicGame.Actor
 
         public override void Draw(Renderer renderer)
         {
-            renderer.DrawTexture(name, position + gameDevice.GetDisplayModify(),motion.DrawingRange());
+            renderer.DrawTexture(name, position + gameDevice.GetDisplayModify(),motion.DrawingRange(),Color.White);
         }
 
         public override void Update(GameTime gameTime)
