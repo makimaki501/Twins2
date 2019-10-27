@@ -107,35 +107,12 @@ namespace MusicGame.Actor.Effect
 
         }
 
-        public void TitleParticle()
+        public void TitleParticle(string name, Vector2 position)
         {
-            List<Vector2> positions = new List<Vector2>()
-            {
-               new Vector2(100,200),
-               new Vector2(300,400),
-               new Vector2(1800,200),
-               new Vector2(200,600),
-               new Vector2(1700,500),
-               new Vector2(500,700),
-               new Vector2(1200,800),
-               new Vector2(1600,900),
-               new Vector2(900,900),
-               new Vector2(1400,500),
-               new Vector2(100,850),
-            };
-
-            for (int i = 0; i < positions.Count; i++)
-            {
-
                 var rnd = GameDevice.Instance().GetRandom();
-                string name = "onpu" + rnd.Next(1, 3);
                 Color color = Color.White;
-                Vector2 position = positions[i];
-                float duration = 1;
-                p = new Particle(name, position, 0, 0, 1, 0, duration, 1, 0, 2, color);
+                p = new Particle(name, position, 0, 0, 1, 0, 1, 1, 0, 2, color);
                 particles.Add(p);
-            }
-
         }
 
         public void TitleParticle(string name,float scale,float shrinkRate,float duration,float alpha,float alphaAmount,int amount)

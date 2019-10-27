@@ -21,10 +21,10 @@ namespace MusicGame.Actor
         private Vector2 Pos;
         private bool reset;
         private Vector2 position2;
-        private bool stop;
+        public bool stop;
         private bool _hit;
         public int nextscene;
-
+        public float alpha;
 
         public Player(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator,float addRadian)
             : base("player3", position, 24, 24, gameDevice)
@@ -35,6 +35,7 @@ namespace MusicGame.Actor
            this.addRadian= addRadian;
             _hit = false;
             nextscene = 0;
+            alpha = 1;
         }
         public Player(Player other)
             : this(other.position, other.gameDevice, other.mediator,other.addRadian)
@@ -44,6 +45,11 @@ namespace MusicGame.Actor
         public override object Clone()
         {
             return new Player(this);
+        }
+
+        public override void Draw(Renderer renderer)
+        {
+            renderer.DrawTexturealpha(name, position, alpha);
         }
 
         public override void Hit(GameObject gameObject)

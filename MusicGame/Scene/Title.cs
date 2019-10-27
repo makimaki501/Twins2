@@ -11,6 +11,8 @@ using MusicGame.Actor;
 
 using Microsoft.Xna.Framework.Graphics;
 using MusicGame.Util;
+using MusicGame.Actor.Effect;
+using MusicGame.Def;
 
 namespace MusicGame.Scene
 {
@@ -25,7 +27,8 @@ namespace MusicGame.Scene
         private Player3 player3;
         private Player4 player4;
         private bool stop3, stop4;
-
+        private Sound sound;
+        private ParticleManager particleManager;
 
         public Title()
         {
@@ -34,8 +37,8 @@ namespace MusicGame.Scene
             camera = new Camera(10, 10);
             metoronome = new Metoronome();
             select = 0;
-
-            
+            sound = GameDevice.Instance().GetSound();
+            particleManager = new ParticleManager();
         }
 
         public void Draw(Renderer renderer)
@@ -47,6 +50,7 @@ namespace MusicGame.Scene
                 RasterizerState.CullCounterClockwise,
                 null,
                 camera.GetMatrix());
+            particleManager.Draw(renderer);
             map.Draw(renderer);
             gameObjectManager.Draw(renderer);
             renderer.End();
@@ -76,6 +80,8 @@ namespace MusicGame.Scene
 
             metoronome.Initialize();
             metoronome.SetBpm(60);
+
+
         }
 
         public bool IsEnd()
@@ -104,15 +110,22 @@ namespace MusicGame.Scene
 
         public void Shutdown()
         {
-
+            sound.StopBGM();
         }
 
         public void Update(GameTime gameTime)
         {
             metoronome.Update(gameTime);
             map.Update(gameTime);
-
+            sound.PlayBGM("Title");
             gameObjectManager.Update(gameTime);
+
+            float delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            particleManager.Update(delta);
+            if (particleManager.IsCount(30))
+            {
+                particleManager.TitleParticle("title", new Vector2(Screen.Width / 2, 200));
+            }
 
             if (player3.IsHit())
             {
@@ -129,7 +142,7 @@ namespace MusicGame.Scene
                 {
                     player3.SetPosition2(player4.GetPosition());
                 }
-                
+
             }
             if (player4.IsHit())
             {
@@ -147,7 +160,7 @@ namespace MusicGame.Scene
                 {
                     player4.SetPosition2(player3.GetPosition());
                 }
-               
+
             }
 
             if (!player3.IsStop() && !player4.IsStop())

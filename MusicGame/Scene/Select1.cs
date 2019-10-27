@@ -77,7 +77,7 @@ namespace MusicGame.Scene
             sound.PlayBGM("WorldSelect");
 
             //最初に回っている
-            player = new Player(new Vector2(96 * 8 + 15, 96 * 1 + 15), GameDevice.Instance(), gameObjectManager,0.1f);
+            player = new Player(new Vector2(96 * 9 + 15, 96 * 2 + 15), GameDevice.Instance(), gameObjectManager,0.1f);
             gameObjectManager.Add(player);
            
 
