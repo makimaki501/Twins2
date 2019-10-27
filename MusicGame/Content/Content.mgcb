@@ -154,15 +154,6 @@
 #begin csv/StageSelect1.csv
 /copy:csv/StageSelect1.csv
 
-#begin csv/StageSelect2.csv
-/copy:csv/StageSelect2.csv
-
-#begin csv/StageSelect3.csv
-/copy:csv/StageSelect3.csv
-
-#begin csv/StageSelect4csv.csv
-/copy:csv/StageSelect4csv.csv
-
 #begin csv/Title.csv
 /copy:csv/Title.csv
 

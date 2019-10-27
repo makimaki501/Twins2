@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/sakam/Desktop/Twins2/MusicGame/Content/Title.mp3</SourceFile>
-  <SourceTime>2019-10-27T17:54:39.981948+09:00</SourceTime>
-  <DestFile>C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/Title.xnb</DestFile>
-  <DestTime>2019-10-27T21:33:51.3960622+09:00</DestTime>
+  <SourceFile>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/Title.mp3</SourceFile>
+  <SourceTime>2019-10-27T17:45:14.2176774+09:00</SourceTime>
+  <DestFile>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/bin/Windows/Content/Title.xnb</DestFile>
+  <DestTime>2019-10-28T00:25:23.3110571+09:00</DestTime>
   <Importer>Mp3Importer</Importer>
-  <ImporterTime>2019-08-05T22:24:48+09:00</ImporterTime>
+  <ImporterTime>2018-12-09T01:35:54+09:00</ImporterTime>
   <Processor>SongProcessor</Processor>
-  <ProcessorTime>2019-08-05T22:24:48+09:00</ProcessorTime>
+  <ProcessorTime>2018-12-09T01:35:54+09:00</ProcessorTime>
   <Parameters>
     <Key>Quality</Key>
     <Value>Best</Value>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/Title.wma</string>
+    <string>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/bin/Windows/Content/Title.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>
