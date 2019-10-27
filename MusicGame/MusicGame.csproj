@@ -92,8 +92,6 @@
     <Compile Include="Scene\SceneManager.cs" />
     <Compile Include="Scene\Select.cs" />
     <Compile Include="Scene\Select1.cs" />
-    <Compile Include="Scene\Select2.cs" />
-    <Compile Include="Scene\Select3.cs" />
     <Compile Include="Scene\Title.cs" />
     <Compile Include="Util\CountDownTimer.cs" />
     <Compile Include="Util\CountUpTimer.cs" />
