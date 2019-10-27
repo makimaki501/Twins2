@@ -157,6 +157,16 @@ namespace MusicGame.Device
 
             spriteBatch.Draw(textures[assetName], position, Color.White * alpha);
         }
+        public void DrawTexturealpha(string assetName, Vector2 position, float alpha)
+        {
+            //デバッグモードの時のみ、画像描画前のアセット名チェック
+            Debug.Assert(
+                textures.ContainsKey(assetName),
+                "描画時にアセット名の指定を間違えたか、" +
+                "画像の読み込み自体できていません");
+
+            spriteBatch.Draw(textures[assetName], position, Color.White * alpha);
+        }
 
         /// <summary>
         /// 画像の描画（画像を指定範囲内だけ描画）
@@ -165,7 +175,7 @@ namespace MusicGame.Device
         /// <param name="position">位置</param>
         /// <param name="rect">指定範囲</param>
         /// <param name="alpha">透明値</param>
-        public void DrawTexture(string assetName, Vector2 position, Rectangle rect, float alpha = 1.0f)
+        public void DrawTexture(string assetName, Vector2 position, Rectangle rect,Color color, float alpha = 1.0f)
         {
             //デバッグモードの時のみ、画像描画前のアセット名チェック
             Debug.Assert(
@@ -177,7 +187,7 @@ namespace MusicGame.Device
                 textures[assetName], //テクスチャ
                 position,            //位置
                 rect,                //指定範囲（矩形で指定：左上の座標、幅、高さ）
-                Color.White * alpha);//透明値
+                color* alpha);//透明値
         }
 
         /// <summary>
