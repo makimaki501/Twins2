@@ -105,13 +105,13 @@ namespace MusicGame.Scene
             else
             {
                 bpm = 120;
-                addradian=0.1f;
+                addradian = 0.1f;
             }
 
             positions = new int[,]
             {
                 {5,5,7,6,6 },
-                {5,13,7,10,24 },
+                {5,13,7,10,24},
                 {5,4,5,11,14},
             };
             for (int i = 0; i < 3; i++)
