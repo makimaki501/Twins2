@@ -97,7 +97,6 @@ namespace MusicGame.Scene
             map2 = new Map2(GameDevice.Instance());
 
             map2.Load(StageState.worldsStage + "-" + StageState.stageStage + ".csv", "./csv/");
-            //map2.Load("2-2.csv", "./csv/");
             gameObjectManager.Add(map2);
 
             if (StageState.worldsStage == 2 || (StageState.worldsStage == 1 && StageState.stageStage == 5))
@@ -117,9 +116,9 @@ namespace MusicGame.Scene
                 {5,13,7,10,24},
                 {5,4,5,11,14},
             };
-            for (int i = 0; i < 3; i++)
+            for (int i = 1; i <= 3; i++)
             {
-                for (int j = 0; j < 5; j++)
+                for (int j = 1; j <= 5; j++)
                 {
                     if (StageState.worldsStage == i)
                     {
