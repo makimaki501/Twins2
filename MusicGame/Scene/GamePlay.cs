@@ -23,6 +23,7 @@ namespace MusicGame.Scene
         private Map2 map2;
         private Metoronome metoronome;
         private bool isstart;
+        private bool playNow;
         private ParticleManager particlemanager;
         private Motion motion;
         private enum StartMotion { NULL, START }
@@ -88,6 +89,8 @@ namespace MusicGame.Scene
         public void Initialize()
         {
             isEndFlag = false;
+            playNow = false;
+            cnt = 0;
             gameObjectManager.Initialize();
             firstpositions = new List<int>() { 5, 5, 7, 6, 6, 5, 13, 7, 10, 24, 5, 14, 5, 11, 14 };
             alpha = 0;
@@ -247,7 +250,7 @@ namespace MusicGame.Scene
             float delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
             particlemanager.Update(delta);
 
-            if (Input.GetKeyTrigger(Keys.Space))
+            if (!playNow&&Input.GetKeyTrigger(Keys.Space))
             {
                 isstart = true;
             }
@@ -257,6 +260,7 @@ namespace MusicGame.Scene
                 metoronome.CountUpdate();
 
                 player.stop = false;
+                playNow = true;
                 player.alpha = 1;
                 sound.PlayBGM(StageState.worldsStage + "-" + StageState.stageStage);
 

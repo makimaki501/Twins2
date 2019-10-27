@@ -25,18 +25,18 @@ namespace MusicGame.Actor
         private bool _hit;
         public int nextscene;
 
-        public Player2(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator,float addRadian)
+        public Player2(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator, float addRadian)
             : base("player4", position, 24, 24, gameDevice)
         {
             this.mediator = mediator;
             reset = false;
             stop = true;
-            this.addRadian=addRadian;
+            this.addRadian = addRadian;
             _hit = false;
             nextscene = 0;
         }
         public Player2(Player2 other)
-            : this(other.position, other.gameDevice, other.mediator,other.addRadian)
+            : this(other.position, other.gameDevice, other.mediator, other.addRadian)
         {
 
         }
@@ -89,7 +89,7 @@ namespace MusicGame.Actor
 
                                     break;
                                 case Direction.Right:
-                                    if (position.X > Pos.X + 30 && position.Y > Pos.Y - 35 && position.Y < Pos.Y + 126)
+                                    if (position.X > Pos.X +48 && position.Y > Pos.Y - 35 && position.Y < Pos.Y + 96)
                                     {
                                         reset = true;
                                         stop = !stop;
@@ -172,7 +172,7 @@ namespace MusicGame.Actor
                     if (Input.GetKeyTrigger(Keys.Space))
                     {
                         if (gameObject is TitleStartBlock || gameObject is Block ||
-                            gameObject is TitleGorlBlock|| gameObject is StartBlock)
+                            gameObject is TitleGorlBlock || gameObject is StartBlock)
                         {
                             reset = true;
                             _hit = true;
