@@ -59,7 +59,7 @@ namespace MusicGame.Scene
         {
             isEndFlag = false;
             map2 = new Map2(GameDevice.Instance());
-            map2.Load("StageSelect4csv.csv", "./csv/");
+            map2.Load("StageSelect3.csv", "./csv/");
             gameObjectManager.Add(map2);
 
             //最初に回っている
@@ -67,7 +67,7 @@ namespace MusicGame.Scene
             gameObjectManager.Add(player);
 
             //最初に止まっている
-            player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager,0.1f);
+            player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager,player.AddRadian());
             gameObjectManager.Add(player2);
             player.SetPos(player2.GetPosition());
 
