@@ -65,14 +65,16 @@ namespace MusicGame.Scene
             //最初に回っている
             player = new Player(new Vector2(96 * 8 + 15, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager);
             gameObjectManager.Add(player);
-            camera.SetPosition(player2.GetPosition());
-            cameraPos = player2.GetPosition();
-            cameraDirection = CameraDirection.IDLE;
-
             //最初に止まっている
             player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager);
             gameObjectManager.Add(player2);
             player.SetPos(player2.GetPosition());
+
+
+            camera.SetPosition(player2.GetPosition());
+            cameraPos = player2.GetPosition();
+            cameraDirection = CameraDirection.IDLE;
+
         }
 
         public bool IsEnd()

@@ -54,16 +54,6 @@ namespace MusicGame.Actor
             objectList.Add("41", new Stage4Block(Vector2.Zero, gameDevice));
             objectList.Add("51", new Stage5Block(Vector2.Zero, gameDevice));
 
-            string[] keys = objectList.Keys.ToArray();
-
-            foreach(var t in keys)
-            {
-                string[]i = t.Split(':');
-                Console.WriteLine(i[0].ToString());
-            }
-
-            
-
             //作業用
             List<GameObject> workList = new List<GameObject>();
 
@@ -73,14 +63,37 @@ namespace MusicGame.Actor
             {
                 try
                 {
-                    string[] words = s.Split(':');
-                    //string blockCode = words[0];
-                    //string dirCode = words[1];
-
+                    string[] words = s.Split('-');
                     //ディクショナリから元データ取り出し、クローン機能で複製
                     GameObject work = (GameObject)objectList[words[0]].Clone();
+                    if (words.Length == 2)
+                    {
+                        switch (words[1])
+                        {
+                            case "u":
+                                work.dir = Direction.Top;
+                                break;
+                            case "d":
+                                work.dir = Direction.Bottom;
+                                break;
+                            case "r":
+                                work.dir = Direction.Right;
+                                break;
+                            case "l":
+                                work.dir = Direction.Left;
+                                break;
+                            case "rd":
+                                break;
+                            case "f":
+                                work.dir = Direction.Free;
+                                break;
+                        }
+                    }
+
                     work.SetPosition(new Vector2(colCnt * work.GetHight(),
                         lineCnt * work.GetWidth()));
+
+                    //Console.WriteLine(words[1]);
                     workList.Add(work);
                 }
                 catch (Exception e)

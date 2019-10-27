@@ -15,6 +15,7 @@ namespace MusicGame.Actor
         Bottom,//下
         Left,//左
         Right,//右
+        Free,
     }
 
 
@@ -27,6 +28,7 @@ namespace MusicGame.Actor
         protected bool isDeadFlag = false;//死亡フラグ
         protected GameDevice gameDevice;//ゲームデバイス
         protected GameObjectID id = GameObjectID.NONE;
+        public Direction dir;
 
         /// <summary>
         /// コンストラクタ

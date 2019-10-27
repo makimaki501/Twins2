@@ -53,18 +53,118 @@ namespace MusicGame.Actor
                 {
                     if (Input.GetKeyTrigger(Keys.Space))
                     {
-                        if (gameObject is TitleGorlBlock || gameObject is Block ||
-                            gameObject is TitleStartBlock || gameObject is GorlBlock
-                            || gameObject is StartBlock)
+                        if (gameObject is Block)
                         {
+                            switch (gameObject.dir)
                             {
-                                reset = true;
-                                stop = !stop;
-                                _hit = true;
-                                position = new Vector2(gameObject.GetPosition().X + 15,
-                                gameObject.GetPosition().Y + 15);
+                                case Direction.Top:
+                                    if (position.Y < Pos.Y && position.X > Pos.X - 35 && position.X < Pos.X + 126)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                    }
+                                    break;
+                                case Direction.Bottom:
+                                    if (position.Y > Pos.Y + 30 && position.X > Pos.X && position.X - 35 < Pos.X + 126)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                    }
+                                    break;
+                                case Direction.Left:
+                                    if (position.X < Pos.X && position.Y > Pos.Y - 35 && position.Y < Pos.Y + 96)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                    }
+
+                                    break;
+                                case Direction.Right:
+                                    if (position.X > Pos.X + 30 && position.Y > Pos.Y - 35 && position.Y < Pos.Y + 126)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                    }
+                                    break;
+                                case Direction.Free:
+                                    reset = true;
+                                    stop = !stop;
+                                    _hit = true;
+                                    position = new Vector2(gameObject.GetPosition().X + 16,
+                                    gameObject.GetPosition().Y + 16);
+                                    break;
+                            }
+                            Console.WriteLine(gameObject.dir);
+                        }
+                        else if (gameObject is TitleGorlBlock || gameObject is TitleStartBlock/*||gameObject is Block*/)
+                        {
+
+                            reset = true;
+                            stop = !stop;
+                            _hit = true;
+                            position = new Vector2(gameObject.GetPosition().X + 16,
+                            gameObject.GetPosition().Y + 16);
+                        }
+                        else if (gameObject is GorlBlock)
+                        {
+                            switch (gameObject.dir)
+                            {
+                                case Direction.Top:
+                                    if (position.Y < Pos.Y && position.X > Pos.X - 35 && position.X < Pos.X + 126)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                    }
+                                    break;
+                                case Direction.Bottom:
+                                    if (position.Y > Pos.Y + 30 && position.X > Pos.X && position.X - 35 < Pos.X + 126)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                    }
+                                    break;
+                                case Direction.Left:
+                                    if (position.X < Pos.X && position.Y > Pos.Y - 35 && position.Y < Pos.Y + 126)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                    }
+
+                                    break;
+                                case Direction.Right:
+                                    if (position.X > Pos.X + 30 && position.Y > Pos.Y - 35 && position.Y < Pos.Y + 126)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                    }
+                                    break;
                             }
                         }
+
                     }
                 }
                 else
@@ -72,8 +172,7 @@ namespace MusicGame.Actor
                     if (Input.GetKeyTrigger(Keys.Space))
                     {
                         if (gameObject is TitleStartBlock || gameObject is Block ||
-                            gameObject is TitleGorlBlock || gameObject is GorlBlock
-                            || gameObject is StartBlock)
+                            gameObject is TitleGorlBlock|| gameObject is StartBlock)
                         {
                             reset = true;
                             _hit = true;
