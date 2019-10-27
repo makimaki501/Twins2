@@ -45,7 +45,7 @@ namespace MusicGame.Scene
         public void Draw(Renderer renderer)
         {
             renderer.Begin();
-            renderer.DrawTexture("world1", Vector2.Zero);
+            renderer.DrawTexture("world"+StageState.worldsStage, Vector2.Zero);
             //map2.Draw(renderer);
             //gameObjectManager.Draw(renderer);
 
@@ -60,11 +60,11 @@ namespace MusicGame.Scene
                 camera.GetMatrix());
             map2.Draw(renderer);
             gameObjectManager.Draw(renderer);
-            renderer.DrawTexture("stagemark1", new Vector2(950, -20), motion.DrawingRange(),Color.LightSalmon);
-            renderer.DrawTexture("stagemark2", new Vector2(370, 180), motion.DrawingRange(),Color.Coral);
-            renderer.DrawTexture("stagemark3", new Vector2(950, 370), motion.DrawingRange(),Color.Tomato);
-            renderer.DrawTexture("stagemark4", new Vector2(370, 570), motion.DrawingRange(),Color.OrangeRed);
-            renderer.DrawTexture("stagemark5", new Vector2(950, 750), motion.DrawingRange(),Color.Red);
+            renderer.DrawTexture("stagemark1", new Vector2(950, -20), motion.DrawingRange(), Color.LightSalmon);
+            renderer.DrawTexture("stagemark2", new Vector2(370, 180), motion.DrawingRange(), Color.Coral);
+            renderer.DrawTexture("stagemark3", new Vector2(950, 370), motion.DrawingRange(), Color.Tomato);
+            renderer.DrawTexture("stagemark4", new Vector2(370, 570), motion.DrawingRange(), Color.OrangeRed);
+            renderer.DrawTexture("stagemark5", new Vector2(950, 750), motion.DrawingRange(), Color.Red);
             renderer.End();
         }
 
@@ -72,21 +72,20 @@ namespace MusicGame.Scene
         {
             isEndFlag = false;
             map2 = new Map2(GameDevice.Instance());
-            map2.Load("StageSelect4csv.csv", "./csv/");
+            map2.Load("StageSelect1.csv", "./csv/");
             gameObjectManager.Add(map2);
             sound.PlayBGM("WorldSelect");
 
             //最初に回っている
-            player = new Player(new Vector2(96 * 9 + 15, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager,0.1f);
+            player = new Player(new Vector2(96 * 9 + 15, 96 * 2 + 15), GameDevice.Instance(), gameObjectManager, 0.1f);
             gameObjectManager.Add(player);
-           
+
 
             //最初に止まっている
-            player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 4 + 15), GameDevice.Instance(), gameObjectManager,player.AddRadian());
+            player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 1 + 15), GameDevice.Instance(), gameObjectManager, player.AddRadian());
             gameObjectManager.Add(player2);
             player.SetPos(player2.GetPosition());
-
-            camera.SetPosition(new Vector2(Screen.Width/2-48,Screen.Height/2+48));
+            camera.SetPosition(new Vector2(Screen.Width / 2 - 48, Screen.Height / 2 + 48));
             cameraPos = player2.GetPosition();
             cameraDirection = CameraDirection.IDLE;
 
@@ -114,43 +113,6 @@ namespace MusicGame.Scene
 
         public Scene Next()
         {
-
-            switch (player.nextscene)
-            {
-                case 1:
-                    StageState.gamePlayState = "1-1";
-                    break;
-                case 2:
-                    StageState.gamePlayState = "1-2";
-                    break;
-                case 3:
-                    StageState.gamePlayState = "1-3";
-                    break;
-                case 4:
-                    StageState.gamePlayState = "1-4";
-                    break;
-                case 5:
-                    StageState.gamePlayState = "1-5";
-                    break;
-            }
-            switch (player2.nextscene)
-            {
-                case 1:
-                    StageState.gamePlayState = "1-1";
-                    break;
-                case 2:
-                    StageState.gamePlayState = "1-2";
-                    break;
-                case 3:
-                    StageState.gamePlayState = "1-3";
-                    break;
-                case 4:
-                    StageState.gamePlayState = "1-4";
-                    break;
-                case 5:
-                    StageState.gamePlayState = "1-5";
-                    break;
-            }
             return Scene.GamePlay;
         }
 
@@ -165,12 +127,12 @@ namespace MusicGame.Scene
             map2.Update(gameTime);
             StageState.isMusic = true;
 
-            if (player.nextscene != 0)
+            if (player.IsDead())
             {
                 StageState.isMusic = false;
                 isEndFlag = true;
             }
-            if (player2.nextscene != 0)
+            if (player2.IsDead())
             {
                 StageState.isMusic = false;
                 isEndFlag = true;
@@ -182,7 +144,7 @@ namespace MusicGame.Scene
                 if (!player.IsStop())
                 {
                     player.SetPosition2(player2.GetPosition());
-                   
+
                 }
                 else
                 {
@@ -207,7 +169,7 @@ namespace MusicGame.Scene
 
             if (player.IsStop())//もしプレイヤーが止まってたら
             {
-               
+
                 if (cameraPos.X < player.GetPosition().X)
                 {
                     cameraDirection = CameraDirection.RIGHT;
@@ -230,7 +192,7 @@ namespace MusicGame.Scene
             }
             if (player2.IsStop())//もしプレイヤーが止まってたら
             {
-               
+
                 if (cameraPos.X < player2.GetPosition().X)
                 {
                     cameraDirection = CameraDirection.RIGHT;
@@ -254,5 +216,6 @@ namespace MusicGame.Scene
 
     }
 }
+
 
 

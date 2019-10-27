@@ -24,18 +24,16 @@ namespace MusicGame.Scene
         private Metoronome metoronome;
         private bool isstart;
         private ParticleManager particlemanager;
-        private string csvname;
-
-
-        private Scene nextscene;
-
-        private int select;
+        private Motion motion;
+        private enum StartMotion { NULL, START }
+        private StartMotion startmotion;
+        private Dictionary<StartMotion, Range> startmotions;
 
         private Camera camera;
         int cnt = 0;
-        private Vector2 playerpos;
-        private int cameracnt;
         private Vector2 cameraPos;
+        private int bpm;
+
         private enum CameraDirection
         {
             UP, DOWN, RIGHT, LEFT, IDLE
@@ -45,27 +43,30 @@ namespace MusicGame.Scene
         private Sound sound;
 
         private float alpha;
+        private List<int> firstpositions;
+        private int[,] positions;
+        private Vector2 playerposition;
+        private float addradian;
 
         public GamePlay()
         {
             isEndFlag = false;
 
-            select = 0;
-
             camera = new Camera(Screen.Width, Screen.Height);
             metoronome = new Metoronome();
             particlemanager = new ParticleManager();
-            isstart = false;
+
             gameObjectManager = new GameObjectManager();
-            cameracnt = 0;
+
 
             sound = GameDevice.Instance().GetSound();
+
         }
         public void Draw(Renderer renderer)
         {
             renderer.Begin();
             particlemanager.Draw(renderer);
-            renderer.DrawTexture(StageState.gamePlayState, new Vector2(Screen.Width / 2, 50));
+            renderer.DrawTexture(StageState.worldsStage + "-" + StageState.stageStage, new Vector2(Screen.Width / 2, 50));
             renderer.End();
             renderer.Begin(SpriteSortMode.Deferred,
                 BlendState.AlphaBlend,
@@ -77,6 +78,7 @@ namespace MusicGame.Scene
 
             map2.Draw(renderer);
             gameObjectManager.Draw(renderer);
+            renderer.DrawTexture("start", new Vector2(player2.GetPosition().X - 40, player2.GetPosition().Y - 250), motion.DrawingRange(), Color.White);
             renderer.DrawTexturealpha("gameover", camera.GetPosition(), alpha);
             renderer.End();
 
@@ -87,79 +89,79 @@ namespace MusicGame.Scene
         {
             isEndFlag = false;
             gameObjectManager.Initialize();
+            firstpositions = new List<int>() { 5, 5, 7, 6, 6, 5, 13, 7, 10, 24, 5, 14, 5, 11, 14 };
             alpha = 0;
             map2 = new Map2(GameDevice.Instance());
 
-            map2.Load(StageState.gamePlayState + ".csv", "./csv/");
+            map2.Load(StageState.worldsStage + "-" + StageState.stageStage + ".csv", "./csv/");
             //map2.Load("2-2.csv", "./csv/");
             gameObjectManager.Add(map2);
 
-            //最初に回っている
-            switch (StageState.gamePlayState)
+            if (StageState.worldsStage == 2 || (StageState.worldsStage == 1 && StageState.stageStage == 5))
             {
-                case "1-1":
-                    playerpos = new Vector2(96 * 5 + 15, 96 * 5 + 15);
-                    break;
-                case "1-2":
-                    playerpos = new Vector2(96 * 6 + 15, 96 * 5 + 15);
-                    break;
-                case "1-3":
-                    playerpos = new Vector2(96 * 6 + 15, 96 * 7 + 15);
-                    break;
-                case "1-4":
-                    playerpos = new Vector2(96 * 6 + 15, 96 * 6 + 15);
-                    break;
-                case "1-5":
-                    playerpos = new Vector2(96 * 6 + 15, 96 * 6 + 15);
-                    break;
-                case "2-1":
-                    playerpos = new Vector2(96 * 5 + 15, 96 * 5 + 15);
-                    break;
-                case "2-2":
-                    playerpos = new Vector2(96 * 6 + 15, 96 * 13 + 15);
-                    break;
-                case "2-3":
-                    playerpos = new Vector2(96 * 6 + 15, 96 * 7 + 15);
-                    break;
-                case "2-4":
-                    playerpos = new Vector2(96 * 6 + 15, 96 * 10 + 15);
-                    break;
-                case "2-5":
-                    playerpos = new Vector2(96 * 6 + 15, 96 * 24 + 15);
-                    break;
-                case "3-1":
-                    playerpos = new Vector2(96 * 6 + 15, 96 * 5 + 15);
-                    break;
-                case "3-2":
-                    playerpos = new Vector2(96 * 6 + 15, 96 * 4 + 15);
-                    break;
-                case "3-3":
-                    playerpos = new Vector2(96 * 6 + 15, 96 * 5 + 15);
-                    break;
-                case "3-4":
-                    playerpos = new Vector2(96 * 6 + 15, 96 * 11 + 15);
-                    break;
-                case "3-5":
-                    playerpos = new Vector2(96 * 6 + 15, 96 * 14 + 15);
-                    break;
+                bpm = 150;
+                addradian = 0.125f;
+            }
+            else
+            {
+                bpm = 120;
+                addradian=0.1f;
             }
 
-            player = new Player(new Vector2(playerpos.X + 96, playerpos.Y), GameDevice.Instance(), gameObjectManager, 0.1f);
+            positions = new int[,]
+            {
+                {5,5,7,6,6 },
+                {5,13,7,10,24 },
+                {5,4,5,11,14},
+            };
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    if (StageState.worldsStage == i)
+                    {
+                        if (StageState.stageStage == j)
+                        {
+                            playerposition = new Vector2(96 * 5 + 16, 96 * positions[i - 1, j - 1] + 16);
+                        }
+                    }
+                }
+            }
+
+            player = new Player(new Vector2(playerposition.X + 96, playerposition.Y), GameDevice.Instance(), gameObjectManager, addradian);
             player.stop = true;
             player.alpha = 0;
             gameObjectManager.Add(player);
 
             //最初に止まっている
-            player2 = new Player2(playerpos, GameDevice.Instance(), gameObjectManager, 0.11f);
+            player2 = new Player2(playerposition, GameDevice.Instance(), gameObjectManager, player.AddRadian());
             gameObjectManager.Add(player2);
             camera.SetPosition(player2.GetPosition());
             cameraPos = player2.GetPosition();
             cameraDirection = CameraDirection.IDLE;
 
+
+
             player.SetPos(player2.GetPosition());
             metoronome.Initialize();
-            metoronome.SetBpm(150);
-            nextscene = Scene.Title;
+            metoronome.SetBpm(bpm);
+            motion = new Motion();
+            motion.Add(0, new Rectangle(200 * 0, 200 * 0, 200, 200));
+            motion.Add(1, new Rectangle(200 * 1, 200 * 0, 200, 200));
+            motion.Add(2, new Rectangle(200 * 0, 200 * 1, 200, 200));
+            motion.Add(3, new Rectangle(200 * 1, 200 * 1, 200, 200));
+            motion.Add(4, new Rectangle(1, 1, 1, 1));
+            motion.Add(5, new Rectangle(1, 1, 1, 1));
+            motion.Initialize(new Range(4, 5), new CountDownTimer(0.5f));
+            startmotion = StartMotion.NULL;
+            startmotions = new Dictionary<StartMotion, Range>()
+            {
+                {StartMotion.START,new Range(0,3) },
+                {StartMotion.NULL,new Range(4,5) },
+            };
+            isstart = false;
+
+
         }
 
         public bool IsEnd()
@@ -169,7 +171,7 @@ namespace MusicGame.Scene
 
         public Scene Next()
         {
-            return nextscene;
+            return Scene.Menu;
         }
 
         public void Shutdown()
@@ -181,18 +183,18 @@ namespace MusicGame.Scene
         {
             map2.Update(gameTime);
             gameObjectManager.Update(gameTime);
+            motion.Update(gameTime);
+            UpdateMotion();
 
-            nextscene = Scene.Title;
-
-            if (Input.GetKeyTrigger(Keys.M) || player.nextscene == 10 || player2.nextscene == 10)
+            if (Input.GetKeyTrigger(Keys.M) || StageState.isClear)
             {
                 cameraDirection = CameraDirection.IDLE;
-                nextscene = Scene.Menu;
 
                 cnt++;
                 if (cnt >= 120)
                 {
                     sound.StopBGM();
+                    StageState.isClear = false;
                     isEndFlag = true;
                 }
             }
@@ -222,7 +224,6 @@ namespace MusicGame.Scene
 
             if (!player.IsStop() && !player2.IsStop())
             {
-                nextscene = Scene.Menu;
                 cameraDirection = CameraDirection.IDLE;
                 alpha += 0.05f;
                 if (alpha >= 0.5f)
@@ -243,74 +244,102 @@ namespace MusicGame.Scene
                 particlemanager.Star("circle", 1, 0.1f, 20, 10, 1);
             }
 
-
-            if (Input.GetKeyTrigger(Keys.D1))
-            {
-                isEndFlag = true;
-            }
-
             float delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
             particlemanager.Update(delta);
 
             if (Input.GetKeyTrigger(Keys.Space))
             {
                 isstart = true;
-
             }
 
             if (isstart)
             {
-
                 metoronome.CountUpdate();
 
-                if (metoronome.IsCount(0))
-                {
-                    player.stop = false;
-                    player.alpha = 1;
-                    particlemanager.DirectionTexture(new Vector2(Screen.Width / 2 - 400, Screen.Height / 2 - 200), 1, 0, 10f, 0);
-                    sound.PlayBGM(StageState.gamePlayState);
-                }
-                if (metoronome.IsCount(1))
-                {
-                    particlemanager.Clear("3");
-                    cnt++;
-                    if (cnt >= 5)
-                    {
-                        particlemanager.DirectionTexture(new Vector2(Screen.Width / 2 - 400, Screen.Height / 2 - 200), 1, 0, 10f, 1);
-                        cnt = 0;
-                    }
-                }
-                if (metoronome.IsCount(2))
-                {
-                    particlemanager.Clear("2");
-                    cnt++;
-                    if (cnt >= 5)
-                    {
-                        particlemanager.DirectionTexture(new Vector2(Screen.Width / 2 - 400, Screen.Height / 2 - 200), 1, 0, 10f, 2);
-                        cnt = 0;
-                    }
-                }
-                if (metoronome.IsCount(3))
-                {
-                    particlemanager.Clear("1");
-                    cnt++;
-                    if (cnt >= 5)
-                    {
-                        particlemanager.DirectionTexture(new Vector2(Screen.Width / 2 - 400, Screen.Height / 2 - 200), 1, 0, 10f, 3);
-                        cnt = 0;
-                    }
-                }
+                player.stop = false;
+                player.alpha = 1;
+                sound.PlayBGM(StageState.worldsStage + "-" + StageState.stageStage);
+
+
                 if (metoronome.IsCount(4))
                 {
                     StageState.isMusic = true;
-                    particlemanager.Clear("go");
                     isstart = false;
-
-
                 }
-
             }
 
+            if (StageState.isMusic)
+            {
+                CameraMove(3);
+            }
+
+
+        }
+
+        public void CameraMove(float speed)
+        {
+            if (player2.IsStop())//もしプレイヤーが止まってたら
+            {
+                if (cameraPos.X < player2.GetPosition().X)
+                {
+                    cameraDirection = CameraDirection.RIGHT;
+                }
+                if (cameraPos.X > player2.GetPosition().X)
+                {
+                    cameraDirection = CameraDirection.LEFT;
+                }
+                if (cameraPos.Y < player2.GetPosition().Y)
+                {
+                    cameraDirection = CameraDirection.UP;
+                }
+                if (cameraPos.Y > player2.GetPosition().Y)
+                {
+                    cameraDirection = CameraDirection.DOWN;
+                }
+
+                cameraPos = player2.GetPosition();
+
+            }
+            else if (player.IsStop())//もしプレイヤーが止まってたら
+            {
+                if (cameraPos.X < player.GetPosition().X)
+                {
+                    cameraDirection = CameraDirection.RIGHT;
+                }
+                if (cameraPos.X > player.GetPosition().X)
+                {
+                    cameraDirection = CameraDirection.LEFT;
+                }
+                if (cameraPos.Y < player.GetPosition().Y)
+                {
+                    cameraDirection = CameraDirection.UP;
+                }
+                if (cameraPos.Y > player.GetPosition().Y)
+                {
+                    cameraDirection = CameraDirection.DOWN;
+                }
+                cameraPos = player.GetPosition();
+            }
+
+            //カメラの向きに合わせて動く
+            switch (cameraDirection)
+            {
+                case CameraDirection.IDLE:
+                    camera.Move(0, 0);
+                    break;
+                case CameraDirection.RIGHT:
+                    camera.Move(speed, 0);
+                    break;
+                case CameraDirection.LEFT:
+                    camera.Move(-speed, 0);
+                    break;
+                case CameraDirection.UP:
+                    camera.Move(0, speed);
+                    break;
+                case CameraDirection.DOWN:
+                    camera.Move(0, -speed);
+                    break;
+            }
             if (Input.GetKeyState(Keys.Right))
             {
                 camera.Move(5, 0);
@@ -327,79 +356,24 @@ namespace MusicGame.Scene
             {
                 camera.Move(0, 5);
             }
+        }
 
-            cameracnt++;
-            if (StageState.isMusic)
+        private void ChangeMotion(StartMotion startmotion)
+        {
+            this.startmotion = startmotion;
+            motion.Initialize(startmotions[startmotion],
+                new CountDownTimer(0.5f));
+        }
+
+        private void UpdateMotion()
+        {
+            if (isstart && startmotion != StartMotion.START)
             {
-                //if (cameracnt >= 60)
-                //{
-
-
-                if (player.IsStop())//もしプレイヤーが止まってたら
-                {
-                    if (cameraPos.X < player.GetPosition().X)
-                    {
-                        cameraDirection = CameraDirection.RIGHT;
-                    }
-                    if (cameraPos.X > player.GetPosition().X)
-                    {
-                        cameraDirection = CameraDirection.LEFT;
-                    }
-                    if (cameraPos.Y < player.GetPosition().Y)
-                    {
-                        cameraDirection = CameraDirection.UP;
-                    }
-                    if (cameraPos.Y > player.GetPosition().Y)
-                    {
-                        cameraDirection = CameraDirection.DOWN;
-                    }
-
-                    cameraPos = player.GetPosition();
-
-                }
-                if (player2.IsStop())//もしプレイヤーが止まってたら
-                {
-                    if (cameraPos.X < player2.GetPosition().X)
-                    {
-                        cameraDirection = CameraDirection.RIGHT;
-                    }
-                    if (cameraPos.X > player2.GetPosition().X)
-                    {
-                        cameraDirection = CameraDirection.LEFT;
-                    }
-                    if (cameraPos.Y < player2.GetPosition().Y)
-                    {
-                        cameraDirection = CameraDirection.UP;
-                    }
-                    if (cameraPos.Y > player2.GetPosition().Y)
-                    {
-                        cameraDirection = CameraDirection.DOWN;
-                    }
-
-                    cameraPos = player2.GetPosition();
-
-                }
-
-
+                ChangeMotion(StartMotion.START);
             }
-            switch (cameraDirection)
+            if (!isstart && startmotion != StartMotion.NULL)
             {
-                case CameraDirection.IDLE:
-                    camera.Move(0, 0);
-                    break;
-                case CameraDirection.RIGHT:
-                    camera.Move(3, 0);
-                    break;
-                case CameraDirection.LEFT:
-                    camera.Move(-3, 0);
-                    break;
-                case CameraDirection.UP:
-                    camera.Move(0, 3);
-                    break;
-                case CameraDirection.DOWN:
-                    camera.Move(0, -3);
-                    break;
-
+                ChangeMotion(StartMotion.NULL);
             }
         }
 

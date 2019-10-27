@@ -91,21 +91,7 @@ namespace MusicGame.Scene
 
         public Scene Next()
         {
-
-            Scene nextscene = Scene.Select1;
-            if (player4.nextscene == 1)
-            {
-                nextscene = Scene.Select1;
-            }
-            if (player4.nextscene == 2)
-            {
-                nextscene = Scene.Select2;
-            }
-            if (player4.nextscene == 3)
-            {
-                nextscene = Scene.Select3;
-            }
-            return nextscene;
+            return Scene.Select1;
         }
 
         public void Shutdown()
@@ -189,15 +175,7 @@ namespace MusicGame.Scene
             {
                 camera.Move(0, 1);
             }
-            if (player4.nextscene == 1)
-            {
-                isEndFlag = true;
-            }
-            if (player4.nextscene == 2)
-            {
-                isEndFlag = true;
-            }
-            if (player4.nextscene == 3)
+            if (player3.IsDead()||player4.IsDead())
             {
                 isEndFlag = true;
             }

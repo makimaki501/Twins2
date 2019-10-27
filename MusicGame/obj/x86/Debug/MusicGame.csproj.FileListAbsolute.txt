@@ -523,3 +523,5 @@ C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Title.xnb
 C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\WorldSelect.wma
 C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\WorldSelect.xnb
 C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect4csv.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\csv\StageSelect4csv.csv
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\start.xnb

@@ -183,27 +183,34 @@ namespace MusicGame.Actor
 
                 if (gameObject is Stage1Block && Input.GetKeyTrigger(Keys.Space))
                 {
-                    nextscene = 1;
+                    StageState.stageStage = 1;
+                    isDeadFlag = true;
                 }
                 if (gameObject is Stage2Block && Input.GetKeyTrigger(Keys.Space))
                 {
-                    nextscene = 2;
+                    StageState.stageStage = 2;
+                    isDeadFlag = true;
                 }
                 if (gameObject is Stage3Block && Input.GetKeyTrigger(Keys.Space))
                 {
-                    nextscene = 3;
+                    StageState.stageStage = 3;
+                    isDeadFlag = true;
                 }
                 if (gameObject is Stage4Block && Input.GetKeyTrigger(Keys.Space))
                 {
-                    nextscene = 4;
+                    StageState.stageStage = 4;
+                    isDeadFlag = true;
                 }
                 if (gameObject is Stage5Block && Input.GetKeyTrigger(Keys.Space))
                 {
-                    nextscene = 5;
+                    StageState.stageStage = 5;
+                    isDeadFlag = true;
                 }
+
                 if (gameObject is GorlBlock && Input.GetKeyTrigger(Keys.Space))
                 {
-                    nextscene = 10;
+                    StageState.isClear = true;
+                    isDeadFlag = true;
                 }
             }
         }

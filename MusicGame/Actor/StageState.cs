@@ -9,8 +9,12 @@ namespace MusicGame.Actor
     public class StageState
     {
         //ステージ用
-        public static string gamePlayState;
+        public static int stageStage;
+
+        public static int worldsStage;
 
         public static bool isMusic;
+
+        public static bool isClear=false;
     }
 }

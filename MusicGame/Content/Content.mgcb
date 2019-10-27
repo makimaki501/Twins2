@@ -637,6 +637,18 @@
 /processorParam:TextureFormat=Color
 /build:Texture/star.png
 
+#begin Texture/start.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Texture/start.png
+
 #begin Texture/title.png
 /importer:TextureImporter
 /processor:TextureProcessor

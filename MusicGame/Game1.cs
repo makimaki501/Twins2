@@ -47,8 +47,8 @@ namespace MusicGame
             sceneManager.Add(Scene.Scene.Title, new Title());
           
             sceneManager.Add(Scene.Scene.Select1, new Select1());
-            sceneManager.Add(Scene.Scene.Select2, new Select2());
-            sceneManager.Add(Scene.Scene.Select3, new Select3());
+            //sceneManager.Add(Scene.Scene.Select2, new Select2());
+            //sceneManager.Add(Scene.Scene.Select3, new Select3());
             sceneManager.Add(Scene.Scene.GamePlay, new GamePlay());
             sceneManager.Add(Scene.Scene.Menu, new Menu());
 
@@ -83,7 +83,7 @@ namespace MusicGame
             renderer.LoadContent("TateYoko", "./Texture/");
             renderer.LoadContent("Yoko", "./Texture/");
             renderer.LoadContent("GorlMove", "./Texture/");
-            renderer.LoadContent("Start", "./Texture/");
+            renderer.LoadContent("start", "./Texture/");
             renderer.LoadContent("1", "./Texture/");
             renderer.LoadContent("2", "./Texture/");
             renderer.LoadContent("3", "./Texture/");

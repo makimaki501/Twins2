@@ -82,15 +82,18 @@ namespace MusicGame.Actor
 
             if (gameObject is Select1Block && Input.GetKeyTrigger(Keys.Space))
             {
-                nextscene = 1;
+                StageState.worldsStage = 1;
+                isDeadFlag = true;
             }
             if (gameObject is Select2Block && Input.GetKeyTrigger(Keys.Space))
             {
-                nextscene = 2;
+                StageState.worldsStage = 2;
+                isDeadFlag = true;
             }
             if (gameObject is Select3Block && Input.GetKeyTrigger(Keys.Space))
             {
-                nextscene = 3;
+                StageState.worldsStage = 3;
+                isDeadFlag = true;
             }
         }
 

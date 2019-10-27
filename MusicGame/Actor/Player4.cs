@@ -23,7 +23,7 @@ namespace MusicGame.Actor
         private bool reset;
         private bool stop;
         private bool _hit;
-        public int nextscene;
+  
         public Player4(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator)
             : base("player2", position, 48, 48, gameDevice)
         {
@@ -32,7 +32,6 @@ namespace MusicGame.Actor
             stop = true;
             addRadian = 0.1f;
             _hit = false;
-            nextscene = 0;
         }
         public Player4(Player4 other)
             : this(other.position, other.gameDevice, other.mediator)
@@ -76,15 +75,18 @@ namespace MusicGame.Actor
 
             if (gameObject is Select1Block && Input.GetKeyTrigger(Keys.Space))
             {
-                nextscene = 1;
+                StageState.worldsStage = 1;
+                isDeadFlag = true;
             }
             if (gameObject is Select2Block && Input.GetKeyTrigger(Keys.Space))
             {
-                nextscene = 2;
+                StageState.worldsStage = 2;
+                isDeadFlag = true;
             }
             if (gameObject is Select3Block && Input.GetKeyTrigger(Keys.Space))
             {
-                nextscene = 3;
+                StageState.worldsStage = 3;
+                isDeadFlag = true;
             }
         }
 
