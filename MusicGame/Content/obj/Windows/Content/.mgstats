@@ -14,7 +14,7 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/3-3.mp3","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/3-3.xnb","SongProcessor","SongContent",425063,121,0.3291192
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/3-4.mp3","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/3-4.xnb","SongProcessor","SongContent",401239,121,0.3480681
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/3-5.mp3","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/3-5.xnb","SongProcessor","SongContent",1329109,121,0.7450065
-"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/csv/1-1.csv","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content\csv/1-1.csv","CopyItem","File",514,514,0.001994
+"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/csv/1-1.csv","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content\csv/1-1.csv","CopyItem","File",514,514,0.0009973
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/csv/StageSelect1.csv","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content\csv/StageSelect1.csv","CopyItem","File",733,733,0.001995
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/csv/StageSelect4csv.csv","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content\csv/StageSelect4csv.csv","CopyItem","File",854,854,0.0009962
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/kettei.wav","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/kettei.xnb","SoundEffectProcessor","SoundEffectContent",264644,264705,0.158575
