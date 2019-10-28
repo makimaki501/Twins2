@@ -68,7 +68,7 @@ namespace MusicGame.Actor
                                     }
                                     break;
                                 case Direction.Bottom:
-                                    if (position.Y > Pos.Y + 30 && position.X > Pos.X + 48 && position.X < Pos.X + 48)
+                                    if (position.Y > Pos.Y + 30 && position.X > Pos.X - 48 && position.X < Pos.X + 48)
                                     {
                                         reset = true;
                                         stop = !stop;

@@ -1,5 +1,9 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/csv/1-1.csv","C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/bin/Windows/Content\csv/1-1.csv","CopyItem","File",514,514,0.0019935
-"C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/Texture/backGround1.png","C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/bin/Windows/Content/Texture/backGround1.xnb","TextureProcessor","Texture2DContent",140796,8800085,0.365049
-"C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/Texture/backGround2.png","C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/bin/Windows/Content/Texture/backGround2.xnb","TextureProcessor","Texture2DContent",1588131,8800085,0.2772591
-"C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/Texture/backGround3.png","C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/bin/Windows/Content/Texture/backGround3.xnb","TextureProcessor","Texture2DContent",121454,8800085,0.228414
+"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/csv/1-5.csv","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content\csv/1-5.csv","CopyItem","File",3868,3868,0.0019946
+"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/csv/3-1.csv","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content\csv/3-1.csv","CopyItem","File",973,973,0.0009981
+"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/csv/3-2.csv","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content\csv/3-2.csv","CopyItem","File",1117,1117,0.0009973
+"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/csv/3-3.csv","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content\csv/3-3.csv","CopyItem","File",1023,1023,0.0009968
+"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/csv/3-4.csv","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content\csv/3-4.csv","CopyItem","File",1164,1164,0.0009973
+"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/Texture/backGround1.png","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/Texture/backGround1.xnb","TextureProcessor","Texture2DContent",140796,8800085,0.3390913
+"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/Texture/backGround2.png","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/Texture/backGround2.xnb","TextureProcessor","Texture2DContent",1588131,8800085,0.2423521
+"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/Texture/backGround3.png","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/Texture/backGround3.xnb","TextureProcessor","Texture2DContent",121454,8800085,0.2074454
