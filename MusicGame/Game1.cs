@@ -125,6 +125,11 @@ namespace MusicGame
             renderer.LoadContent("backGround1", "./Texture/");
             renderer.LoadContent("backGround2", "./Texture/");
             renderer.LoadContent("backGround3", "./Texture/");
+            renderer.LoadContent("titleselect1", "./Texture/");
+            renderer.LoadContent("titleselect2", "./Texture/");
+            renderer.LoadContent("titleselect3", "./Texture/");
+            renderer.LoadContent("snow1", "./Texture/");
+            renderer.LoadContent("snow2", "./Texture/");
            
 
 

@@ -115,7 +115,7 @@ namespace MusicGame.Actor.Effect
                 cnt++;
                 if (cnt >= 30)
                 {
-                    scale = 1.01f;
+                    scale = 1.1f;
                     cnt = 0;
                 }
                 position += direction * speed * delta;

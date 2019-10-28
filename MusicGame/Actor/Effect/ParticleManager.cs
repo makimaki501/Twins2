@@ -82,6 +82,19 @@ namespace MusicGame.Actor.Effect
             particles.Add(p);
         }
 
+        public void Backparticle(string name, float scale, float shrinkRate,float amount, float duration)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                var rnd = GameDevice.Instance().GetRandom();
+                Vector2 position = new Vector2(rnd.Next(1920), rnd.Next(1080));
+                p = new Particle(name, position, 0, 0, scale, shrinkRate, duration, 1, 0, 3, Color.White);
+
+                //パーティクルを足す
+                particles.Add(p);
+            }
+        }
+
         public void Star(string name, float scale, float shrinkRate, float duration, int amount, int count)
         {
             for (int i = 0; i < amount; i++)

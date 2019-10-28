@@ -53,6 +53,9 @@ namespace MusicGame.Scene
             particleManager.Draw(renderer);
             map.Draw(renderer);
             gameObjectManager.Draw(renderer);
+            renderer.DrawTexture("titleselect1", new Vector2(610, 430));
+            renderer.DrawTexture("titleselect2", new Vector2(765, 300));
+            renderer.DrawTexture("titleselect3", new Vector2(910, 430));
             renderer.End();
         }
 
