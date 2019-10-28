@@ -81,10 +81,10 @@ namespace MusicGame
             renderer.LoadContent("Yoko", "./Texture/");
             renderer.LoadContent("GorlMove", "./Texture/");
             renderer.LoadContent("start", "./Texture/");
-            renderer.LoadContent("1", "./Texture/");
-            renderer.LoadContent("2", "./Texture/");
-            renderer.LoadContent("3", "./Texture/");
-            renderer.LoadContent("go", "./Texture/");
+            //renderer.LoadContent("1", "./Texture/");
+            //renderer.LoadContent("2", "./Texture/");
+            //renderer.LoadContent("3", "./Texture/");
+            //renderer.LoadContent("go", "./Texture/");
             renderer.LoadContent("onpu1", "./Texture/");
             renderer.LoadContent("onpu2", "./Texture/");
             renderer.LoadContent("onpu3", "./Texture/");

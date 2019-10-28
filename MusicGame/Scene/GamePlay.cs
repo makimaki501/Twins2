@@ -446,11 +446,11 @@ namespace MusicGame.Scene
                             camera.Move(-3, 0);
                             break;
                         case CameraDirection.UP:
-                            camera.Move(0, 4.5f);
+                            camera.Move(0, 3f);
                             a = 30;
                             break;
                         case CameraDirection.DOWN:
-                            camera.Move(0, -4.5f);
+                            camera.Move(0, -3f);
                             a = 40;
                             break;
                     }
