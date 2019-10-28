@@ -94,6 +94,7 @@ namespace MusicGame
             renderer.LoadContent("title", "./Texture/");
             renderer.LoadContent("star", "./Texture/");
             renderer.LoadContent("circle", "./Texture/");
+            renderer.LoadContent("clear", "./Texture/");
             renderer.LoadContent("titlebutton", "./Texture/");
             renderer.LoadContent("retrybutton", "./Texture/");
             renderer.LoadContent("selectbutton", "./Texture/");
@@ -132,11 +133,10 @@ namespace MusicGame
 
             Sound sound = gameDevice.GetSound();
             string filepath = "./";
-            sound.LoadSE("switch", filepath);
             sound.LoadSE("kettei", filepath);
             sound.LoadSE("sentaku", filepath);
-            //sound.LoadSE("WorldSelect", filepath);
-            //sound.LoadSE("Title", filepath);
+           
+            
 
             sound.LoadBGM("WorldSelect", filepath);
             sound.LoadBGM("Title", filepath);

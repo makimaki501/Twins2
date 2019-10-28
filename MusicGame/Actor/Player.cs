@@ -16,8 +16,8 @@ namespace MusicGame.Actor
     {
         private IGameObjectMediator mediator;
         private float r = 96;//半径
-        private float radian;
-        private float addRadian;
+        private double radian;
+        private double addRadian;
         private Vector2 Pos;
         private bool reset;
         private Vector2 position2;
@@ -27,7 +27,7 @@ namespace MusicGame.Actor
         public float alpha;
         private bool _dead;
 
-        public Player(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator, float addRadian)
+        public Player(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator, double addRadian)
             : base("player3", position, 48, 48, gameDevice)
         {
             this.mediator = mediator;
@@ -179,6 +179,7 @@ namespace MusicGame.Actor
                                     gameObject.GetPosition().Y + 16);
                                     break;
                             }
+                            StageState.isClear = true;
                         }
                     }
                 }
@@ -221,12 +222,6 @@ namespace MusicGame.Actor
                 if (gameObject is Stage5Block && Input.GetKeyTrigger(Keys.Space))
                 {
                     StageState.stageStage = 5;
-                    isDeadFlag = true;
-                }
-
-                if (gameObject is GorlBlock && Input.GetKeyTrigger(Keys.Space))
-                {
-                    StageState.isClear = true;
                     isDeadFlag = true;
                 }
             }
@@ -278,7 +273,7 @@ namespace MusicGame.Actor
         /// ラジアンの取得
         /// </summary>
         /// <returns></returns>
-        public float GetRadian()
+        public double GetRadian()
         {
             return radian;
         }
@@ -286,9 +281,9 @@ namespace MusicGame.Actor
         /// 角度の取得
         /// </summary>
         /// <returns></returns>
-        public float GetDegree()
+        public double GetDegree()
         {
-            float degree = radian / 2 * MathHelper.Pi * 360;
+            double degree = radian / 2 * MathHelper.Pi * 360;
             return degree;
         }
         /// <summary>
@@ -319,7 +314,7 @@ namespace MusicGame.Actor
             return _hit;
         }
 
-        public float AddRadian()
+        public double AddRadian()
         {
             return addRadian;
         }

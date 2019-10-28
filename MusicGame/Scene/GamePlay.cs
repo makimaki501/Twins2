@@ -34,6 +34,7 @@ namespace MusicGame.Scene
         int cnt = 0;
         private Vector2 cameraPos;
         private int bpm;
+        private float motionbpm;
 
         private enum CameraDirection
         {
@@ -47,7 +48,8 @@ namespace MusicGame.Scene
         private List<int> firstpositions;
         private int[,] positions;
         private Vector2 playerposition;
-        private float addradian;
+        private double addradian;
+        private bool isp;
 
         public GamePlay()
         {
@@ -93,6 +95,8 @@ namespace MusicGame.Scene
 
         public void Initialize()
         {
+            StageState.isClear = false;
+            StageState.isMusic = false;
             isEndFlag = false;
             playNow = false;
             isstart = false;
@@ -109,11 +113,13 @@ namespace MusicGame.Scene
             {
                 bpm = 150;
                 addradian = 0.125f;
+                motionbpm = 0.4f;
             }
             else
             {
                 bpm = 120;
                 addradian = 0.1f;
+                motionbpm = 0.5f;
             }
 
             positions = new int[,]
@@ -160,13 +166,16 @@ namespace MusicGame.Scene
             motion.Add(3, new Rectangle(200 * 1, 200 * 1, 200, 200));
             motion.Add(4, new Rectangle(1, 1, 1, 1));
             motion.Add(5, new Rectangle(1, 1, 1, 1));
-            motion.Initialize(new Range(4, 5), new CountDownTimer(0.5f));
+            motion.Initialize(new Range(4, 5), new CountDownTimer(motionbpm));
             startmotion = StartMotion.NULL;
             startmotions = new Dictionary<StartMotion, Range>()
             {
                 {StartMotion.START,new Range(0,3) },
                 {StartMotion.NULL,new Range(4,5) },
             };
+            isp = false;
+
+
         }
 
         public bool IsEnd()
@@ -188,17 +197,25 @@ namespace MusicGame.Scene
         {
             map2.Update(gameTime);
             gameObjectManager.Update(gameTime);
-            motion.Update(gameTime);
-            UpdateMotion();
+            float delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            particlemanager.Update(delta);
 
             if (Input.GetKeyTrigger(Keys.M) || StageState.isClear)
             {
                 cameraDirection = CameraDirection.IDLE;
 
-                particlemanager.Texture("clear",new Vector2(Screen.Width/2), 1, 0, 3, 2);
+
+                if (!isp)
+                {
+                    particlemanager.Texture("clear", new Vector2(Screen.Width / 2, 300), 1, 0, 2f, 3);
+                    particlemanager.RightCraccar("star", new Vector2(Screen.Width / 2 - 900, 1000), 0.1f, 1, 500, 10000);
+                    particlemanager.LeftCraccar("star", new Vector2(Screen.Width / 2 +900, 1000), 0.1f, 1, 500, 10000);
+                    isp = true;
+                }
+
 
                 cnt++;
-                if (cnt >= 120)
+                if (cnt > 120)
                 {
                     sound.StopBGM();
                     StageState.isClear = false;
@@ -251,8 +268,7 @@ namespace MusicGame.Scene
                 particlemanager.Star("circle", 1, 0.1f, 20, 10, 1);
             }
 
-            float delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            particlemanager.Update(delta);
+
 
             if (!playNow && Input.GetKeyTrigger(Keys.Space))
             {
@@ -275,7 +291,8 @@ namespace MusicGame.Scene
                     isstart = false;
                 }
             }
-
+            motion.Update(gameTime);
+            UpdateMotion();
             if (StageState.isMusic)
             {
                 CameraMove(3);
@@ -336,16 +353,16 @@ namespace MusicGame.Scene
                     camera.Move(0, 0);
                     break;
                 case CameraDirection.RIGHT:
-                    camera.Move(speed, 0);
+                    camera.Move(5, 0);
                     break;
                 case CameraDirection.LEFT:
-                    camera.Move(-speed, 0);
+                    camera.Move(-5, 0);
                     break;
                 case CameraDirection.UP:
-                    camera.Move(0, speed);
+                    camera.Move(0, 3);
                     break;
                 case CameraDirection.DOWN:
-                    camera.Move(0, -speed);
+                    camera.Move(0, -3);
                     break;
             }
             if (Input.GetKeyState(Keys.Right))
@@ -368,9 +385,10 @@ namespace MusicGame.Scene
 
         private void ChangeMotion(StartMotion startmotion)
         {
+
             this.startmotion = startmotion;
             motion.Initialize(startmotions[startmotion],
-                new CountDownTimer(0.5f));
+                new CountDownTimer(motionbpm));
         }
 
         private void UpdateMotion()

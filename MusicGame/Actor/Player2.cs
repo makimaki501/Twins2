@@ -16,8 +16,8 @@ namespace MusicGame.Actor
     {
         private IGameObjectMediator mediator;
         private float r = 96;//半径
-        private float radian;
-        private float addRadian;
+        private double radian;
+        private double addRadian;
         private Vector2 Pos;
         private bool reset;
         private Vector2 position2;
@@ -25,7 +25,7 @@ namespace MusicGame.Actor
         private bool _hit;
         public int nextscene;
 
-        public Player2(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator, float addRadian)
+        public Player2(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator, double addRadian)
             : base("player4", position, 48, 48, gameDevice)
         {
             this.mediator = mediator;
@@ -163,6 +163,7 @@ namespace MusicGame.Actor
                                     }
                                     break;
                             }
+                            StageState.isClear = true;
                         }
 
                     }
@@ -207,11 +208,7 @@ namespace MusicGame.Actor
                     isDeadFlag = true;
                 }
 
-                if (gameObject is GorlBlock && Input.GetKeyTrigger(Keys.Space))
-                {
-                    StageState.isClear = true;
-                    isDeadFlag = true;
-                }
+              
             }
         }
 
@@ -260,7 +257,7 @@ namespace MusicGame.Actor
         /// ラジアンの取得
         /// </summary>
         /// <returns></returns>
-        public float GetRadian()
+        public double GetRadian()
         {
             return radian;
         }
@@ -268,9 +265,9 @@ namespace MusicGame.Actor
         /// 角度の取得
         /// </summary>
         /// <returns></returns>
-        public float GetDegree()
+        public double GetDegree()
         {
-            float degree = radian / 2 * MathHelper.Pi * 360;
+            double degree = radian / 2 * MathHelper.Pi * 360;
             return degree;
         }
         /// <summary>

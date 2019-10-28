@@ -28,6 +28,7 @@ namespace MusicGame.Actor.Effect
         private float durationTime;
         private int type;
         private int cnt;
+        
 
 
         /// <summary>

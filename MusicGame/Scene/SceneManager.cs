@@ -77,7 +77,7 @@ namespace MusicGame.Scene
             currentScene.Update(gameTime);
 
             //現在のシーンが終了しているか？
-            if (currentScene.IsEnd())
+             if (currentScene.IsEnd())
             {
                 //次のシーンを取り出し、シーン切り替え
                 Change(currentScene.Next());

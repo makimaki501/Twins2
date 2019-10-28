@@ -76,7 +76,7 @@ namespace MusicGame.Actor.Effect
 
         public void Texture(string name,Vector2 position, float scale, float shrinkRate, float duration, int count)
         {
-            p = new Particle(name, position, 0, 0, scale, shrinkRate, duration, 0,1,1, Color.White);
+            p = new Particle(name, position, 0, 0, scale, shrinkRate, duration, 1,0,count, Color.White);
 
             //パーティクルを足す
             particles.Add(p);
@@ -176,7 +176,7 @@ namespace MusicGame.Actor.Effect
             this.name = name;
             for (int i = 0; i < amount; i++)
             {
-                int angle = rnd.Next(-50, -5);//ランダムな角度取得
+                int angle = rnd.Next(-65, -15);//ランダムな角度取得
 
                 float alpha = 1;
                 float alphaAmount = 0;
@@ -226,7 +226,7 @@ namespace MusicGame.Actor.Effect
             this.name = name;
             for (int i = 0; i < amount; i++)
             {
-                int angle = rnd.Next(5, 50);//ランダムな角度取得
+                int angle = rnd.Next(15, 65);//ランダムな角度取得
 
                 float alpha = 1;
                 float alphaAmount = 0;
