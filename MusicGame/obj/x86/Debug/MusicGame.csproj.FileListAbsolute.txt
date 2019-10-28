@@ -534,3 +534,5 @@ C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\Musi
 C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\WorldSelect.xnb
 C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\clear.xnb
 C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\nextbutton.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\clear.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\nextbutton.xnb
