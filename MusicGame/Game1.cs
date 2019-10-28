@@ -98,6 +98,7 @@ namespace MusicGame
             renderer.LoadContent("titlebutton", "./Texture/");
             renderer.LoadContent("retrybutton", "./Texture/");
             renderer.LoadContent("selectbutton", "./Texture/");
+            renderer.LoadContent("nextbutton", "./Texture/");
             renderer.LoadContent("menuanaunse", "./Texture/");
             renderer.LoadContent("menuanaunse2", "./Texture/");
             renderer.LoadContent("1-1", "./Texture/");

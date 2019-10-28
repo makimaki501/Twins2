@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using MusicGame.Actor;
+using MusicGame.Actor.Effect;
 using MusicGame.Def;
 using MusicGame.Device;
 using MusicGame.Util;
@@ -18,12 +20,15 @@ namespace MusicGame.Scene
         private Motion Tmotion;
         private Motion Smotion;
         private Motion Rmotion;
+        private Motion Nmotion;
         private Dictionary<Direction, Range> directiondic;
         private Direction Tdirection;
         private Direction Sdirection;
         private Direction Rdirection;
+        private Direction Ndirection;
         private int sentakucnt;
         private int cnt = 0;
+        private ParticleManager particleManager;
 
         public enum Direction
         {
@@ -34,11 +39,20 @@ namespace MusicGame.Scene
         public void Draw(Renderer renderer)
         {
             renderer.Begin();
+            particleManager.Draw(renderer);
             renderer.DrawTexture("menuanaunse", new Vector2(Screen.Width / 2 - 400, 50));
             renderer.DrawTexture("menuanaunse2", new Vector2(Screen.Width / 2 - 400, 800));
-            renderer.DrawTexture("titlebutton", new Vector2(1320, 400), Tmotion.DrawingRange(),Color.White);
-            renderer.DrawTexture("selectbutton", new Vector2(835, 400), Smotion.DrawingRange(),Color.White);
-            renderer.DrawTexture("retrybutton", new Vector2(350, 400), Rmotion.DrawingRange(),Color.White);
+            renderer.DrawTexture("titlebutton", new Vector2(1320, 400), Tmotion.DrawingRange(), Color.White);
+            renderer.DrawTexture("selectbutton", new Vector2(835, 400), Smotion.DrawingRange(), Color.White);
+            if (!StageState.isClear)
+            {
+                renderer.DrawTexture("retrybutton", new Vector2(350, 400), Rmotion.DrawingRange(), Color.White);
+            }
+            else if (StageState.isClear)
+            {
+                renderer.DrawTexture("nextbutton", new Vector2(350, 400), Rmotion.DrawingRange(), Color.White);
+            }
+
             renderer.End();
         }
 
@@ -77,6 +91,7 @@ namespace MusicGame.Scene
             };
 
             sentakucnt = 0;
+            particleManager = new ParticleManager();
 
         }
 
@@ -96,22 +111,65 @@ namespace MusicGame.Scene
 
         public void Update(GameTime gameTime)
         {
+            float delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            particleManager.Update(delta);
             Tmotion.Update(gameTime);
             Smotion.Update(gameTime);
             Rmotion.Update(gameTime);
             MotionUpdate();
             if (Input.GetKeyState(Keys.Space))
             {
-
                 cnt++;
+
+                if (cnt >= 40)
+                {
+                    if (particleManager.IsCount(20))
+                    {
+                        switch (sentakucnt)
+                        {
+                            case 0:
+                                particleManager.Circle2("star", new Vector2(475, 525), 0, 360, 1, 0.1f, 1, 1, 0.1f, 100, 200, Color.Yellow);
+                                break;
+                            case 1:
+                                particleManager.Circle2("star", new Vector2(960, 525), 0, 360, 1, 0.1f, 1, 1, 0.1f, 100, 200, Color.Yellow);
+                                break;
+                            case 2:
+                                particleManager.Circle2("star", new Vector2(1445, 525), 0, 360, 1, 0.1f, 1, 1, 0.1f, 100, 200, Color.Yellow);
+                                break;
+                        }
+                    }
+
+                }
 
                 if (cnt >= 120)
                 {
                     switch (sentakucnt)
                     {
                         case 0:
+                            if (StageState.isClear)
+                            {
+                                if (StageState.stageStage == 5)
+                                {
+                                    if (StageState.worldsStage == 3)
+                                    {
+                                        nextscene = Scene.Select1;
+                                    }
+                                    else
+                                    {
+                                        StageState.stageStage = 1;
+                                        StageState.worldsStage += 1;
+                                    }
+                                }
+                                else
+                                {
+                                    StageState.stageStage += 1;
+                                }
+                            }
+
                             nextscene = Scene.GamePlay;
                             isEndFlag = true;
+
+
                             break;
                         case 1:
                             nextscene = Scene.Select1;
@@ -135,8 +193,11 @@ namespace MusicGame.Scene
             {
                 sentakucnt = 0;
             }
+            if (Input.GetKeyState(Keys.Space))
+            {
 
 
+            }
 
 
         }

@@ -46,6 +46,7 @@
     <File>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/Texture/Idle128.png</File>
     <File>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/Texture/menuanaunse.png</File>
     <File>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/Texture/menuanaunse2.png</File>
+    <File>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/Texture/nextbutton.png</File>
     <File>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/Texture/onpu1.png</File>
     <File>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/Texture/onpu2.png</File>
     <File>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/Texture/onpu3.png</File>
@@ -73,6 +74,7 @@
     <File>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/WorldSelect.mp3</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/3-2.mp3</SourceFile>
-  <SourceTime>2019-10-27T21:39:18+09:00</SourceTime>
+  <SourceTime>2019-10-28T18:18:42.2702637+09:00</SourceTime>
   <DestFile>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/bin/Windows/3-2.xnb</DestFile>
-  <DestTime>2019-10-28T15:37:07.3143528+09:00</DestTime>
+  <DestTime>2019-10-28T22:05:57.9730427+09:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2018-12-09T01:35:54+09:00</ImporterTime>
   <Processor>SongProcessor</Processor>

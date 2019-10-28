@@ -74,9 +74,9 @@ namespace MusicGame.Actor.Effect
 
         }
 
-        public void Texture(string name,Vector2 position, float scale, float shrinkRate, float duration, int count)
+        public void Texture(string name, Vector2 position, float scale, float shrinkRate, float duration, int count)
         {
-            p = new Particle(name, position, 0, 0, scale, shrinkRate, duration, 1,0,count, Color.White);
+            p = new Particle(name, position, 0, 0, scale, shrinkRate, duration, 1, 0, count, Color.White);
 
             //パーティクルを足す
             particles.Add(p);
@@ -91,34 +91,38 @@ namespace MusicGame.Actor.Effect
                 Vector2 position = new Vector2(rnd.Next(1920), rnd.Next(1080));
 
 
-                p = new Particle(name, position, 0, 0, scale, shrinkRate, duration, 1, 0, 1, Color.White);
+                p = new Particle(name, position, 0, 0, scale, shrinkRate, duration, 1, 0.5f, 4, Color.White);
 
                 //パーティクルを足す
                 particles.Add(p);
             }
 
         }
+        public void Down(string name,float shrinkRate, float duration, float alpha, float alphaAmount, int amount, int maxSpeed, Color color)
+        {
+            var rnd = GameDevice.Instance().GetRandom();
+
+            for (int i = 0; i < amount; i++)
+            {
+                float angle = 180;
+                float scale = rnd.Next(1, 2);
+                float speed = rnd.Next(10, maxSpeed);
+                Vector2 position = new Vector2(rnd.Next(1920), rnd.Next(1080));
+
+                //新しいパーティクルを作る
+                p = new Particle(name, position, speed, angle, scale, shrinkRate, duration, alpha, alphaAmount, 1, color);
+
+                particles.Add(p);
+            }
+        }
+
 
         public void TitleParticle(string name, Vector2 position)
         {
-                var rnd = GameDevice.Instance().GetRandom();
-                Color color = Color.White;
-                p = new Particle(name, position, 0, 0, 1, 0, 1, 1, 0, 2, color);
-                particles.Add(p);
-        }
-
-        public void TitleParticle(string name,float scale,float shrinkRate,float duration,float alpha,float alphaAmount,int amount)
-        {
-            for (int i = 0; i < amount; i++)
-            {
-
-                var rnd = GameDevice.Instance().GetRandom();
-                Color color = Color.White;
-                Vector2 position = new Vector2(rnd.Next(1920), rnd.Next(1080));
-                p = new Particle(name, position,0, 0, scale, shrinkRate, duration, alpha, alphaAmount, 3, Color.White);
-                particles.Add(p);
-            }
-
+            var rnd = GameDevice.Instance().GetRandom();
+            Color color = Color.White;
+            p = new Particle(name, position, 0, 0, 1, 0, 1, 1, 0, 2, color);
+            particles.Add(p);
         }
 
         public void Circle(string name, Vector2 position, float shrinkRate, float duration, float alpha, float alphaAmount, int amount, int maxSpeed, Color color)
@@ -264,7 +268,7 @@ namespace MusicGame.Actor.Effect
         {
             if (cnt % number == 0)
             {
-               iscount= true;
+                iscount = true;
             }
             else
             {

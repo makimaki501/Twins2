@@ -126,6 +126,29 @@ namespace MusicGame.Actor.Effect
 
               
             }
+            if (type == 4)
+            {
+                position += direction * speed * delta;
+
+                scale += shrinkRate * delta;
+
+                duration -= delta;
+
+                if (duration > durationTime)
+                {
+                    alpha += alphaAmount;
+                }
+
+                if (alpha >= 1f)
+                {
+                    alpha = 1f;
+                }
+
+                if (duration < 3)
+                {
+                    alpha -= alpha * delta;
+                }
+            }
 
 
             if (scale <= 0.0f || duration <= 0.0f)

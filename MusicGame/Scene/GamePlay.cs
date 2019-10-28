@@ -68,12 +68,13 @@ namespace MusicGame.Scene
         public void Draw(Renderer renderer)
         {
             renderer.Begin();
-            particlemanager.Draw(renderer);
-            renderer.DrawTexture(StageState.worldsStage + "-" + StageState.stageStage, new Vector2(Screen.Width / 2, 50));
             if (StageState.stageStage == 5)
             {
                 renderer.DrawTexture("backGround" + StageState.worldsStage, Vector2.Zero);
             }
+            particlemanager.Draw(renderer);
+            renderer.DrawTexture(StageState.worldsStage + "-" + StageState.stageStage,Vector2.Zero);
+            
             renderer.End();
             renderer.Begin(SpriteSortMode.Deferred,
                 BlendState.AlphaBlend,
@@ -86,7 +87,7 @@ namespace MusicGame.Scene
 
             map2.Draw(renderer);
             gameObjectManager.Draw(renderer);
-            renderer.DrawTexture("start", new Vector2(player2.GetPosition().X - 40, player2.GetPosition().Y - 250), motion.DrawingRange(), Color.White);
+            renderer.DrawTexture("start", new Vector2(camera.Position.X-50, player2.GetPosition().Y - 250), motion.DrawingRange(), Color.White);
             renderer.DrawTexturealpha("gameover", camera.GetPosition(), alpha);
             renderer.End();
 
@@ -218,7 +219,7 @@ namespace MusicGame.Scene
                 if (cnt > 120)
                 {
                     sound.StopBGM();
-                    StageState.isClear = false;
+                    
                     isEndFlag = true;
                 }
             }
@@ -246,7 +247,7 @@ namespace MusicGame.Scene
                 }
             }
 
-            if (!player.IsStop() && !player2.IsStop())
+            if (!player.IsStop() && !player2.IsStop()&&!StageState.isClear)
             {
                 cameraDirection = CameraDirection.IDLE;
                 alpha += 0.05f;
@@ -262,13 +263,6 @@ namespace MusicGame.Scene
                     isEndFlag = true;
                 }
             }
-
-            if (particlemanager.IsCount(240))
-            {
-                particlemanager.Star("circle", 1, 0.1f, 20, 10, 1);
-            }
-
-
 
             if (!playNow && Input.GetKeyTrigger(Keys.Space))
             {
