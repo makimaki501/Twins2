@@ -533,4 +533,3 @@ C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\ba
 C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\WorldSelect.wma
 C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\WorldSelect.xnb
 C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\clear.xnb
-C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\clear.xnb

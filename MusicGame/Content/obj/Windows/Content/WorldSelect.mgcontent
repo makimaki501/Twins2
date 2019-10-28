@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/sakam/Desktop/Twins2/MusicGame/Content/WorldSelect.mp3</SourceFile>
-  <SourceTime>2019-10-27T17:54:39.9849346+09:00</SourceTime>
-  <DestFile>C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/WorldSelect.xnb</DestFile>
-  <DestTime>2019-10-28T23:09:16.0831792+09:00</DestTime>
+  <SourceFile>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/WorldSelect.mp3</SourceFile>
+  <SourceTime>2019-10-22T18:01:34+09:00</SourceTime>
+  <DestFile>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/bin/Windows/Content/WorldSelect.xnb</DestFile>
+  <DestTime>2019-10-28T15:39:47.8514319+09:00</DestTime>
   <Importer>Mp3Importer</Importer>
-  <ImporterTime>2019-08-05T22:24:48+09:00</ImporterTime>
+  <ImporterTime>2018-12-09T01:35:54+09:00</ImporterTime>
   <Processor>SongProcessor</Processor>
-  <ProcessorTime>2019-08-05T22:24:48+09:00</ProcessorTime>
+  <ProcessorTime>2018-12-09T01:35:54+09:00</ProcessorTime>
   <Parameters>
     <Key>Quality</Key>
     <Value>Best</Value>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/WorldSelect.wma</string>
+    <string>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/bin/Windows/Content/WorldSelect.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>

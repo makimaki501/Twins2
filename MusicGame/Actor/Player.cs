@@ -164,48 +164,44 @@ namespace MusicGame.Actor
                             switch (gameObject.dir)
                             {
                                 case Direction.Top:
-                                    if (position.Y < Pos.Y && position.X > Pos.X - 48 && position.X < Pos.X + 48)
+                                    if (position.Y < Pos.Y && position.X > Pos.X - 20 && position.X < Pos.X + 126)
                                     {
                                         reset = true;
                                         stop = !stop;
                                         _hit = true;
                                         position = new Vector2(gameObject.GetPosition().X + 16,
                                         gameObject.GetPosition().Y + 16);
-                                        StageState.isClear = true;
                                     }
                                     break;
                                 case Direction.Bottom:
-                                    if (position.Y > Pos.Y + 30 && position.X > Pos.X - 48 && position.X < Pos.X + 48)
+                                    if (position.Y > Pos.Y + 48 && position.X > Pos.X - 20 && position.X - 35 < Pos.X + 126)
                                     {
                                         reset = true;
                                         stop = !stop;
                                         _hit = true;
                                         position = new Vector2(gameObject.GetPosition().X + 16,
                                         gameObject.GetPosition().Y + 16);
-                                        StageState.isClear = true;
                                     }
                                     break;
                                 case Direction.Left:
-                                    if (position.X < Pos.X && position.Y > Pos.Y - 35 && position.Y < Pos.Y + 96)
+                                    if (position.X < Pos.X && position.Y > Pos.Y - 20 && position.Y < Pos.Y + 126)
                                     {
                                         reset = true;
                                         stop = !stop;
                                         _hit = true;
                                         position = new Vector2(gameObject.GetPosition().X + 16,
                                         gameObject.GetPosition().Y + 16);
-                                        StageState.isClear = true;
                                     }
 
                                     break;
                                 case Direction.Right:
-                                    if (position.X > Pos.X + 48 && position.Y > Pos.Y - 48 && position.Y < Pos.Y + 48)
+                                    if (position.X > Pos.X + 20 && position.Y > Pos.Y - 20 && position.Y < Pos.Y + 126)
                                     {
                                         reset = true;
                                         stop = !stop;
                                         _hit = true;
                                         position = new Vector2(gameObject.GetPosition().X + 16,
                                         gameObject.GetPosition().Y + 16);
-                                        StageState.isClear = true;
                                     }
                                     break;
                                 case Direction.Free:
@@ -214,9 +210,10 @@ namespace MusicGame.Actor
                                     _hit = true;
                                     position = new Vector2(gameObject.GetPosition().X + 16,
                                     gameObject.GetPosition().Y + 16);
-                                    StageState.isClear = true;
                                     break;
                             }
+
+                            StageState.isClear = true;
                         }
                     }
                 }

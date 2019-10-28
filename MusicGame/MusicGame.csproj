@@ -88,7 +88,6 @@
     <Compile Include="Scene\IGameObjectMediator.cs" />
     <Compile Include="Scene\IScene.cs" />
     <Compile Include="Scene\Menu.cs" />
-    <Compile Include="Scene\NewSelect.cs" />
     <Compile Include="Scene\Scene.cs" />
     <Compile Include="Scene\SceneManager.cs" />
     <Compile Include="Scene\Select.cs" />
