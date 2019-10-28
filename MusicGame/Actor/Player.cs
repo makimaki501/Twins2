@@ -107,6 +107,39 @@ namespace MusicGame.Actor
                                         gameObject.GetPosition().Y + 16);
                                     }
                                     break;
+                                case Direction.RightD:
+                                    if (position.X > Pos.X + 48 && position.Y > Pos.Y - 48 && position.Y < Pos.Y + 48)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                        gameObject.dir = Direction.Bottom;
+                                    }
+                                    break;
+                                case Direction.DownL:
+                                    if (position.Y > Pos.Y + 30 && position.X > Pos.X - 48 && position.X < Pos.X + 48)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                        gameObject.dir = Direction.Left;
+                                    }
+                                    break;
+                                case Direction.UpR:
+                                    if (position.Y < Pos.Y && position.X > Pos.X - 48 && position.X < Pos.X + 48)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                        gameObject.dir = Direction.Right;
+                                    }
+                                    break;
                                 case Direction.Free:
                                     reset = true;
                                     stop = !stop;
@@ -179,6 +212,8 @@ namespace MusicGame.Actor
                                     gameObject.GetPosition().Y + 16);
                                     break;
                             }
+
+                            StageState.isClear = true;
                         }
                     }
                 }
@@ -224,11 +259,6 @@ namespace MusicGame.Actor
                     isDeadFlag = true;
                 }
 
-                if (gameObject is GorlBlock && Input.GetKeyTrigger(Keys.Space))
-                {
-                    StageState.isClear = true;
-                    isDeadFlag = true;
-                }
             }
         }
 

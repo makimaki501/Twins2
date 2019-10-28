@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/Texture/2-3.png</SourceFile>
-  <SourceTime>2019-10-27T17:45:14.1727985+09:00</SourceTime>
-  <DestFile>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/bin/Windows/Content/Texture/2-3.xnb</DestFile>
-  <DestTime>2019-10-28T14:06:15.1582936+09:00</DestTime>
+  <SourceFile>C:/Users/sakam/Desktop/Twins2/MusicGame/Content/Texture/2-3.png</SourceFile>
+  <SourceTime>2019-10-27T17:54:39.9617491+09:00</SourceTime>
+  <DestFile>C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/Texture/2-3.xnb</DestFile>
+  <DestTime>2019-10-28T15:35:19.8731507+09:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2018-12-09T01:35:54+09:00</ImporterTime>
+  <ImporterTime>2019-08-05T22:24:48+09:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2018-12-09T01:35:54+09:00</ProcessorTime>
+  <ProcessorTime>2019-08-05T22:24:48+09:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>

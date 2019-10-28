@@ -21,7 +21,7 @@ namespace MusicGame.Actor
         private Vector2 Pos;
         private bool reset;
         private Vector2 position2;
-        private bool stop;
+        public bool stop;
         private bool _hit;
         public int nextscene;
 
@@ -89,13 +89,46 @@ namespace MusicGame.Actor
 
                                     break;
                                 case Direction.Right:
-                                    if (position.X > Pos.X + 48 && position.Y > Pos.Y - 48 && position.Y < Pos.Y +48)
+                                    if (position.X > Pos.X + 48 && position.Y > Pos.Y - 48 && position.Y < Pos.Y + 48)
                                     {
                                         reset = true;
                                         stop = !stop;
                                         _hit = true;
                                         position = new Vector2(gameObject.GetPosition().X + 16,
                                         gameObject.GetPosition().Y + 16);
+                                    }
+                                    break;
+                                case Direction.RightD:
+                                    if (position.X > Pos.X + 48 && position.Y > Pos.Y - 48 && position.Y < Pos.Y + 48)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                        gameObject.dir = Direction.Bottom;
+                                    }
+                                    break;
+                                case Direction.DownL:
+                                    if (position.Y > Pos.Y + 30 && position.X > Pos.X - 48 && position.X < Pos.X + 48)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                        gameObject.dir = Direction.Left;
+                                    }
+                                    break;
+                                case Direction.UpR:
+                                    if (position.Y < Pos.Y && position.X > Pos.X - 48 && position.X < Pos.X + 48)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                        gameObject.dir = Direction.Right;
                                     }
                                     break;
                                 case Direction.Free:
@@ -163,6 +196,8 @@ namespace MusicGame.Actor
                                     }
                                     break;
                             }
+
+                            StageState.isClear = true;
                         }
 
                     }
@@ -204,12 +239,6 @@ namespace MusicGame.Actor
                 if (gameObject is Stage5Block && Input.GetKeyTrigger(Keys.Space))
                 {
                     StageState.stageStage = 5;
-                    isDeadFlag = true;
-                }
-
-                if (gameObject is GorlBlock && Input.GetKeyTrigger(Keys.Space))
-                {
-                    StageState.isClear = true;
                     isDeadFlag = true;
                 }
             }

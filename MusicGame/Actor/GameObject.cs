@@ -15,6 +15,9 @@ namespace MusicGame.Actor
         Bottom,//下
         Left,//左
         Right,//右
+        RightD,//右から下
+        DownL,//下から左
+        UpR,//上から右
         Free,
     }
 
