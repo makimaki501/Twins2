@@ -50,6 +50,7 @@ namespace MusicGame.Scene
         private Vector2 playerposition;
         private float addradian;
         private bool isp;
+        
 
         public GamePlay()
         {

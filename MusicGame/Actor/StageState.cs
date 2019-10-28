@@ -16,5 +16,7 @@ namespace MusicGame.Actor
         public static bool isMusic;
 
         public static bool isClear=false;
+
+        public static bool isDead;
     }
 }

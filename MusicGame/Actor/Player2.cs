@@ -222,27 +222,27 @@ namespace MusicGame.Actor
                 if (gameObject is Stage1Block && Input.GetKeyTrigger(Keys.Space))
                 {
                     StageState.stageStage = 1;
-                    isDeadFlag = true;
+                    StageState.isDead = true;
                 }
                 if (gameObject is Stage2Block && Input.GetKeyTrigger(Keys.Space))
                 {
                     StageState.stageStage = 2;
-                    isDeadFlag = true;
+                    StageState.isDead = true;
                 }
                 if (gameObject is Stage3Block && Input.GetKeyTrigger(Keys.Space))
                 {
                     StageState.stageStage = 3;
-                    isDeadFlag = true;
+                    StageState.isDead = true;
                 }
                 if (gameObject is Stage4Block && Input.GetKeyTrigger(Keys.Space))
                 {
                     StageState.stageStage = 4;
-                    isDeadFlag = true;
+                    StageState.isDead = true;
                 }
                 if (gameObject is Stage5Block && Input.GetKeyTrigger(Keys.Space))
                 {
                     StageState.stageStage = 5;
-                    isDeadFlag = true;
+                    StageState.isDead = true;
                 }
             }
         }
@@ -261,6 +261,12 @@ namespace MusicGame.Actor
                 radian += addRadian;
                 position.X = r * (float)Math.Cos(radian) + Pos.X;
                 position.Y = r * (float)Math.Sin(radian) + Pos.Y;
+            }
+
+            if (StageState.isDead)
+            {
+                isDeadFlag = true;
+                StageState.isDead = false;
             }
 
             if (Input.GetKeyTrigger(Keys.Space))
