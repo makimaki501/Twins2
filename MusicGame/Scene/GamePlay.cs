@@ -68,6 +68,10 @@ namespace MusicGame.Scene
             renderer.Begin();
             particlemanager.Draw(renderer);
             renderer.DrawTexture(StageState.worldsStage + "-" + StageState.stageStage, new Vector2(Screen.Width / 2, 50));
+            if (StageState.stageStage == 5)
+            {
+                renderer.DrawTexture("backGround" + StageState.worldsStage, Vector2.Zero);
+            }
             renderer.End();
             renderer.Begin(SpriteSortMode.Deferred,
                 BlendState.AlphaBlend,
@@ -76,6 +80,7 @@ namespace MusicGame.Scene
                 RasterizerState.CullCounterClockwise,
                 null,
                 camera.GetMatrix());
+
 
             map2.Draw(renderer);
             gameObjectManager.Draw(renderer);
@@ -192,6 +197,8 @@ namespace MusicGame.Scene
             {
                 cameraDirection = CameraDirection.IDLE;
 
+                particlemanager.Texture("clear",new Vector2(Screen.Width/2), 1, 0, 3, 2);
+
                 cnt++;
                 if (cnt >= 120)
                 {
@@ -249,7 +256,7 @@ namespace MusicGame.Scene
             float delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
             particlemanager.Update(delta);
 
-            if (!playNow&&Input.GetKeyTrigger(Keys.Space))
+            if (!playNow && Input.GetKeyTrigger(Keys.Space))
             {
                 isstart = true;
             }
