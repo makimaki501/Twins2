@@ -32,20 +32,20 @@ namespace MusicGame.Actor
         /// <returns></returns>
         private List<GameObject> addBlock(int lineCnt, string[] line)//privateメソッドなので戦闘小文字
         {
-            
+
             //コピー元オブジェクト登録用でディクショナリ
             Dictionary<string, GameObject> objectList = new Dictionary<string, GameObject>();
 
             objectList.Add("0", new Space(Vector2.Zero, gameDevice));
-            objectList.Add("1", new Block("Yoko",Vector2.Zero, gameDevice));
-            objectList.Add("2", new Block("Tate",Vector2.Zero, gameDevice));
+            objectList.Add("1", new Block("Yoko", Vector2.Zero, gameDevice));
+            objectList.Add("2", new Block("Tate", Vector2.Zero, gameDevice));
             objectList.Add("3", new Block("LeftUp", Vector2.Zero, gameDevice));
             objectList.Add("4", new Block("LeftDown", Vector2.Zero, gameDevice));
             objectList.Add("5", new Block("RightUp", Vector2.Zero, gameDevice));
             objectList.Add("6", new Block("RightDown", Vector2.Zero, gameDevice));
             objectList.Add("7", new Block("YokoTate", Vector2.Zero, gameDevice));
             objectList.Add("8", new Block("TateYoko", Vector2.Zero, gameDevice));
-            objectList.Add("9", new Block("Idle",Vector2.Zero, gameDevice));
+            objectList.Add("9", new Block("Idle", Vector2.Zero, gameDevice));
             objectList.Add("10", new GorlBlock(Vector2.Zero, gameDevice));
             objectList.Add("12", new StartBlock(Vector2.Zero, gameDevice));
             objectList.Add("11", new Stage1Block(Vector2.Zero, gameDevice));
@@ -83,6 +83,13 @@ namespace MusicGame.Actor
                                 work.dir = Direction.Left;
                                 break;
                             case "rd":
+                                work.dir = Direction.RightD;
+                                break;
+                            case "dl":
+                                work.dir = Direction.DownL;
+                                break;
+                            case "ur":
+                                work.dir = Direction.UpR;
                                 break;
                             case "f":
                                 work.dir = Direction.Free;
@@ -92,7 +99,7 @@ namespace MusicGame.Actor
 
                     work.SetPosition(new Vector2(colCnt * work.GetHight(),
                         lineCnt * work.GetWidth()));
-                    
+
                     workList.Add(work);
                 }
                 catch (Exception e)
@@ -218,6 +225,6 @@ namespace MusicGame.Actor
                 }
             }
         }
-       
+
     }
 }

@@ -149,10 +149,13 @@ namespace MusicGame.Scene
 
             }
 
-            //if (!player3.IsStop() && !player4.IsStop())
-            //{
-            //    isEndFlag = true;
-            //}
+            if (!player3.IsStop() && !player4.IsStop())
+            {
+                player3.SetPosition(new Vector2(128 * 6 + 15, 128 * 5 + 15));
+                player4.SetPosition(new Vector2(128 * 7 + 18, 128 * 5 + 18));
+                player4.stop = true;
+                player3.stop = false;
+            }
 
             if (Input.GetKeyState(Keys.Right))
             {

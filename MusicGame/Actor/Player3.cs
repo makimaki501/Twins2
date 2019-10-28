@@ -22,7 +22,7 @@ namespace MusicGame.Actor
         private bool reset;
         private bool moving;
         private Vector2 position2;
-        private bool stop;
+        public bool stop;
         private bool _hit;
         public int nextscene;
 
@@ -55,11 +55,63 @@ namespace MusicGame.Actor
                 {
                     if (gameObject is TitleBlock || gameObject is TitleStartBlock)
                     {
-                        reset = true;
-                        stop = !stop;
-                        _hit = true;
-                        position = new Vector2(gameObject.GetPosition().X + 16,
-                        gameObject.GetPosition().Y + 16);
+                        switch (gameObject.dir)
+                        {
+                            case Direction.Top:
+                                if (position.Y < Pos.Y && position.X > Pos.X - 48 && position.X < Pos.X + 48)
+                                {
+                                    reset = true;
+                                    stop = !stop;
+                                    _hit = true;
+                                    position = new Vector2(gameObject.GetPosition().X + 16,
+                                    gameObject.GetPosition().Y + 16);
+                                }
+                                break;
+                            case Direction.Bottom:
+                                if (position.Y > Pos.Y + 30 && position.X > Pos.X - 48 && position.X < Pos.X + 48)
+                                {
+                                    reset = true;
+                                    stop = !stop;
+                                    _hit = true;
+                                    position = new Vector2(gameObject.GetPosition().X + 16,
+                                    gameObject.GetPosition().Y + 16);
+                                }
+                                break;
+                            case Direction.Left:
+                                if (position.X < Pos.X && position.Y > Pos.Y - 35 && position.Y < Pos.Y + 96)
+                                {
+                                    reset = true;
+                                    stop = !stop;
+                                    _hit = true;
+                                    position = new Vector2(gameObject.GetPosition().X + 16,
+                                    gameObject.GetPosition().Y + 16);
+                                }
+                                break;
+                            case Direction.Right:
+                                if (position.X > Pos.X + 48 && position.Y > Pos.Y - 48 && position.Y < Pos.Y + 48)
+                                {
+                                    reset = true;
+                                    stop = !stop;
+                                    _hit = true;
+                                    position = new Vector2(gameObject.GetPosition().X + 16,
+                                    gameObject.GetPosition().Y + 16);
+                                }
+                                break;
+
+                            case Direction.Free:
+                                reset = true;
+                                stop = !stop;
+                                _hit = true;
+                                position = new Vector2(gameObject.GetPosition().X + 16,
+                                gameObject.GetPosition().Y + 16);
+                                break;
+
+                        }
+                        //reset = true;
+                        //stop = !stop;
+                        //_hit = true;
+                        //position = new Vector2(gameObject.GetPosition().X + 16,
+                        //gameObject.GetPosition().Y + 16);
                     }
                 }
             }

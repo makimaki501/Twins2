@@ -62,8 +62,36 @@ namespace MusicGame.Actor
             {
                 try
                 {
+                    string[] words = s.Split('-');
                     //ディクショナリから元データ取り出し、クローン機能で複製
-                    GameObject work = (GameObject)objectList[s].Clone();
+                    GameObject work = (GameObject)objectList[words[0]].Clone();
+                    if (words.Length == 2)
+                    {
+                        switch (words[1])
+                        {
+                            case "u":
+                                work.dir = Direction.Top;
+                                break;
+                            case "d":
+                                work.dir = Direction.Bottom;
+                                break;
+                            case "r":
+                                work.dir = Direction.Right;
+                                break;
+                            case "l":
+                                work.dir = Direction.Left;
+                                break;
+                            case "rd":
+                                work.dir = Direction.RightD;
+                                break;
+                            case "dl":
+                                work.dir = Direction.DownL;
+                                break;
+                            case "f":
+                                work.dir = Direction.Free;
+                                break;
+                        }
+                    }
                     work.SetPosition(new Vector2(colCnt * work.GetHight(),
                         lineCnt * work.GetWidth()));
                     workList.Add(work);

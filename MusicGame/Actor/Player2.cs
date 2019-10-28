@@ -16,16 +16,16 @@ namespace MusicGame.Actor
     {
         private IGameObjectMediator mediator;
         private float r = 96;//半径
-        private double radian;
-        private double addRadian;
+        private float radian;
+        private float addRadian;
         private Vector2 Pos;
         private bool reset;
         private Vector2 position2;
-        private bool stop;
+        public bool stop;
         private bool _hit;
         public int nextscene;
 
-        public Player2(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator, double addRadian)
+        public Player2(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator, float addRadian)
             : base("player4", position, 48, 48, gameDevice)
         {
             this.mediator = mediator;
@@ -89,13 +89,46 @@ namespace MusicGame.Actor
 
                                     break;
                                 case Direction.Right:
-                                    if (position.X > Pos.X + 48 && position.Y > Pos.Y - 48 && position.Y < Pos.Y +48)
+                                    if (position.X > Pos.X + 48 && position.Y > Pos.Y - 48 && position.Y < Pos.Y + 48)
                                     {
                                         reset = true;
                                         stop = !stop;
                                         _hit = true;
                                         position = new Vector2(gameObject.GetPosition().X + 16,
                                         gameObject.GetPosition().Y + 16);
+                                    }
+                                    break;
+                                case Direction.RightD:
+                                    if (position.X > Pos.X + 48 && position.Y > Pos.Y - 48 && position.Y < Pos.Y + 48)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                        gameObject.dir = Direction.Bottom;
+                                    }
+                                    break;
+                                case Direction.DownL:
+                                    if (position.Y > Pos.Y + 30 && position.X > Pos.X - 48 && position.X < Pos.X + 48)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                        gameObject.dir = Direction.Left;
+                                    }
+                                    break;
+                                case Direction.UpR:
+                                    if (position.Y < Pos.Y && position.X > Pos.X - 48 && position.X < Pos.X + 48)
+                                    {
+                                        reset = true;
+                                        stop = !stop;
+                                        _hit = true;
+                                        position = new Vector2(gameObject.GetPosition().X + 16,
+                                        gameObject.GetPosition().Y + 16);
+                                        gameObject.dir = Direction.Right;
                                     }
                                     break;
                                 case Direction.Free:
@@ -163,6 +196,7 @@ namespace MusicGame.Actor
                                     }
                                     break;
                             }
+
                             StageState.isClear = true;
                         }
 
@@ -207,8 +241,6 @@ namespace MusicGame.Actor
                     StageState.stageStage = 5;
                     isDeadFlag = true;
                 }
-
-              
             }
         }
 
@@ -257,7 +289,7 @@ namespace MusicGame.Actor
         /// ラジアンの取得
         /// </summary>
         /// <returns></returns>
-        public double GetRadian()
+        public float GetRadian()
         {
             return radian;
         }
@@ -265,9 +297,9 @@ namespace MusicGame.Actor
         /// 角度の取得
         /// </summary>
         /// <returns></returns>
-        public double GetDegree()
+        public float GetDegree()
         {
-            double degree = radian / 2 * MathHelper.Pi * 360;
+            float degree = radian / 2 * MathHelper.Pi * 360;
             return degree;
         }
         /// <summary>
