@@ -50,7 +50,9 @@ namespace MusicGame.Scene
         private Vector2 playerposition;
         private float addradian;
         private bool isp;
-        
+        private int a;
+        private int startcnt;
+        private int cameracnt;
 
         public GamePlay()
         {
@@ -74,8 +76,8 @@ namespace MusicGame.Scene
                 renderer.DrawTexture("backGround" + StageState.worldsStage, Vector2.Zero);
             }
             particlemanager.Draw(renderer);
-            renderer.DrawTexture(StageState.worldsStage + "-" + StageState.stageStage,Vector2.Zero);
-            
+            renderer.DrawTexture(StageState.worldsStage + "-" + StageState.stageStage, Vector2.Zero);
+
             renderer.End();
             renderer.Begin(SpriteSortMode.Deferred,
                 BlendState.AlphaBlend,
@@ -146,7 +148,7 @@ namespace MusicGame.Scene
 
             player = new Player(new Vector2(playerposition.X + 96, playerposition.Y), GameDevice.Instance(), gameObjectManager, addradian);
             player.stop = true;
-            player.alpha = 0;
+            player.alpha = 1;
             gameObjectManager.Add(player);
 
             //最初に止まっている
@@ -176,7 +178,9 @@ namespace MusicGame.Scene
                 {StartMotion.NULL,new Range(4,5) },
             };
             isp = false;
-
+            startcnt = 0;
+            cameracnt = 0;
+            a = 60;
 
         }
 
@@ -282,12 +286,14 @@ namespace MusicGame.Scene
 
                 if (metoronome.IsCount(4))
                 {
+                    ChangeMotion(StartMotion.NULL);
                     StageState.isMusic = true;
                     isstart = false;
+                    startcnt = 0;
                 }
             }
             motion.Update(gameTime);
-            UpdateMotion();
+            //UpdateMotion();
             if (StageState.isMusic)
             {
                 CameraMove(3);
@@ -298,47 +304,162 @@ namespace MusicGame.Scene
 
         public void CameraMove(float speed)
         {
-            if (player2.IsStop())//もしプレイヤーが止まってたら
+            cameracnt++;
+            if (cameracnt >= a)
             {
-                if (cameraPos.X < player2.GetPosition().X)
+                if (player2.IsStop())//もしプレイヤーが止まってたら
                 {
-                    cameraDirection = CameraDirection.RIGHT;
-                }
-                if (cameraPos.X > player2.GetPosition().X)
-                {
-                    cameraDirection = CameraDirection.LEFT;
-                }
-                if (cameraPos.Y < player2.GetPosition().Y)
-                {
-                    cameraDirection = CameraDirection.UP;
-                }
-                if (cameraPos.Y > player2.GetPosition().Y)
-                {
-                    cameraDirection = CameraDirection.DOWN;
-                }
+                    if (cameraPos.X < player2.GetPosition().X)
+                    {
+                        cameraDirection = CameraDirection.RIGHT;
+                    }
+                    if (cameraPos.X > player2.GetPosition().X)
+                    {
+                        cameraDirection = CameraDirection.LEFT;
+                    }
+                    if (cameraPos.Y < player2.GetPosition().Y)
+                    {
+                        cameraDirection = CameraDirection.UP;
+                    }
+                    if (cameraPos.Y > player2.GetPosition().Y)
+                    {
+                        cameraDirection = CameraDirection.DOWN;
+                    }
 
-                cameraPos = player2.GetPosition();
+                    cameraPos = player2.GetPosition();
 
+                }
+                else if (player.IsStop())//もしプレイヤーが止まってたら
+                {
+                    if (cameraPos.X < player.GetPosition().X)
+                    {
+                        cameraDirection = CameraDirection.RIGHT;
+                    }
+                    if (cameraPos.X > player.GetPosition().X)
+                    {
+                        cameraDirection = CameraDirection.LEFT;
+                    }
+                    if (cameraPos.Y < player.GetPosition().Y)
+                    {
+                        cameraDirection = CameraDirection.UP;
+                    }
+                    if (cameraPos.Y > player.GetPosition().Y)
+                    {
+                        cameraDirection = CameraDirection.DOWN;
+                    }
+                    cameraPos = player.GetPosition();
+                }
+                cameracnt = 0;
             }
-            else if (player.IsStop())//もしプレイヤーが止まってたら
+
+            if (bpm == 150)
             {
-                if (cameraPos.X < player.GetPosition().X)
+                if (StageState.worldsStage == 1)
                 {
-                    cameraDirection = CameraDirection.RIGHT;
+                    switch (cameraDirection)
+                    {
+                        case CameraDirection.IDLE:
+                            camera.Move(0, 0);
+                            a = 20;
+                            break;
+                        case CameraDirection.RIGHT:
+                            camera.Move(3.5f, 0);
+                            a = 60;
+                            break;
+                        case CameraDirection.LEFT:
+                            camera.Move(-3, 0);
+                            a = 60;
+                            break;
+                        case CameraDirection.UP:
+                            camera.Move(0, 2);
+                            a = 3;
+                            break;
+                        case CameraDirection.DOWN:
+                            camera.Move(0, -2);
+                            a = 3;
+                            break;
+                    }
                 }
-                if (cameraPos.X > player.GetPosition().X)
+                else
                 {
-                    cameraDirection = CameraDirection.LEFT;
+                    switch (cameraDirection)
+                    {
+                        case CameraDirection.IDLE:
+                            camera.Move(0, 0);
+                            a = 60;
+                            break;
+                        case CameraDirection.RIGHT:
+                            camera.Move(4, 0);
+                            a = 60;
+                            break;
+                        case CameraDirection.LEFT:
+                            camera.Move(-3, 0);
+                            break;
+                        case CameraDirection.UP:
+                            camera.Move(0, 4);
+                            a = 30;
+                            break;
+                        case CameraDirection.DOWN:
+                            camera.Move(0, -4);
+                            a = 40;
+                            break;
+                    }
                 }
-                if (cameraPos.Y < player.GetPosition().Y)
+            }
+            if (bpm == 120)
+            {
+                if (StageState.worldsStage == 3 && StageState.stageStage == 5)
                 {
-                    cameraDirection = CameraDirection.UP;
+                    switch (cameraDirection)
+                    {
+                        case CameraDirection.IDLE:
+                            camera.Move(0, 0);
+                            a = 20;
+                            break;
+                        case CameraDirection.RIGHT:
+                            camera.Move(3, 0);
+                            a = 20;
+                            break;
+                        case CameraDirection.LEFT:
+                            camera.Move(-3, 0);
+                            a = 20;
+                            break;
+                        case CameraDirection.UP:
+                            camera.Move(0, 3);
+                            a = 20;
+                            break;
+                        case CameraDirection.DOWN:
+                            camera.Move(0, -3);
+                            a = 20;
+                            break;
+                    }
                 }
-                if (cameraPos.Y > player.GetPosition().Y)
+                else
                 {
-                    cameraDirection = CameraDirection.DOWN;
+                    switch (cameraDirection)
+                    {
+                        case CameraDirection.IDLE:
+                            camera.Move(0, 0);
+                            a = 20;
+                            break;
+                        case CameraDirection.RIGHT:
+                            camera.Move(3, 0);
+                            a = 20;
+                            break;
+                        case CameraDirection.LEFT:
+                            camera.Move(-3, 0);
+                            a = 20;
+                            break;
+                        case CameraDirection.UP:
+                            camera.Move(0, 2);
+                            a = 3;
+                            break;
+                        case CameraDirection.DOWN:
+                            camera.Move(0, -2);
+                            a = 3;
+                            break;
+                    }
                 }
-                cameraPos = player.GetPosition();
             }
 
             //カメラの向きに合わせて動く
