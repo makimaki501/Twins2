@@ -74,17 +74,9 @@ namespace MusicGame.Actor.Effect
 
         }
 
-        public void DirectionTexture(Vector2 position, float scale, float shrinkRate, float duration, int count)
+        public void Texture(string name,Vector2 position, float scale, float shrinkRate, float duration, int count)
         {
-            List<string> names = new List<string>()
-            {
-                "3",
-                "2",
-                "1",
-                "go",
-            };
-
-            p = new Particle(names[count], position, 0, 0, scale, shrinkRate, duration, 1, 0, 1, Color.White);
+            p = new Particle(name, position, 0, 0, scale, shrinkRate, duration, 0,1,1, Color.White);
 
             //パーティクルを足す
             particles.Add(p);

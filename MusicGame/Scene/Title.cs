@@ -154,11 +154,6 @@ namespace MusicGame.Scene
             //    isEndFlag = true;
             //}
 
-            if (Input.GetKeyState(Keys.D1))
-            {
-                isEndFlag = true;
-            }
-
             if (Input.GetKeyState(Keys.Right))
             {
                 camera.Move(1, 0);
