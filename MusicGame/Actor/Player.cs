@@ -27,20 +27,20 @@ namespace MusicGame.Actor
         public float alpha;
         private bool _dead;
 
-        public Player(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator,float addRadian)
+        public Player(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator, float addRadian)
             : base("player3", position, 48, 48, gameDevice)
         {
             this.mediator = mediator;
             reset = false;
             stop = false;
-           this.addRadian= addRadian;
+            this.addRadian = addRadian;
             _hit = false;
             nextscene = 0;
             alpha = 1;
             _dead = false;
         }
         public Player(Player other)
-            : this(other.position, other.gameDevice, other.mediator,other.addRadian)
+            : this(other.position, other.gameDevice, other.mediator, other.addRadian)
         {
 
         }
@@ -58,7 +58,7 @@ namespace MusicGame.Actor
         {
             if (StageState.isMusic)
             {
-                 if (!stop)
+                if (!stop)
                 {
                     if (Input.GetKeyTrigger(Keys.Space))
                     {
@@ -77,7 +77,7 @@ namespace MusicGame.Actor
                                     }
                                     break;
                                 case Direction.Bottom:
-                                    if (position.Y > Pos.Y + 30 && position.X > Pos.X+48 && position.X < Pos.X + 48)
+                                    if (position.Y > Pos.Y + 30 && position.X > Pos.X - 48 && position.X < Pos.X + 48)
                                     {
                                         reset = true;
                                         stop = !stop;
@@ -98,7 +98,7 @@ namespace MusicGame.Actor
 
                                     break;
                                 case Direction.Right:
-                                    if (position.X > Pos.X + 48 && position.Y > Pos.Y - 48 && position.Y < Pos.Y+ 48)
+                                    if (position.X > Pos.X + 48 && position.Y > Pos.Y - 48 && position.Y < Pos.Y + 48)
                                     {
                                         reset = true;
                                         stop = !stop;
@@ -141,7 +141,7 @@ namespace MusicGame.Actor
                                     }
                                     break;
                                 case Direction.Bottom:
-                                    if (position.Y > Pos.Y + 48 && position.X > Pos.X -20&& position.X - 35 < Pos.X + 126)
+                                    if (position.Y > Pos.Y + 48 && position.X > Pos.X - 20 && position.X - 35 < Pos.X + 126)
                                     {
                                         reset = true;
                                         stop = !stop;
@@ -187,7 +187,7 @@ namespace MusicGame.Actor
                     if (Input.GetKeyTrigger(Keys.Space))
                     {
                         if (gameObject is TitleStartBlock || gameObject is Block
-                           || gameObject is TitleGorlBlock 
+                           || gameObject is TitleGorlBlock
                            || gameObject is StartBlock)
                         {
 
@@ -224,7 +224,7 @@ namespace MusicGame.Actor
                     isDeadFlag = true;
                 }
 
-                if(gameObject is GorlBlock && Input.GetKeyTrigger(Keys.Space))
+                if (gameObject is GorlBlock && Input.GetKeyTrigger(Keys.Space))
                 {
                     StageState.isClear = true;
                     isDeadFlag = true;
@@ -326,7 +326,7 @@ namespace MusicGame.Actor
 
         public bool IsDead(bool _dead)
         {
-            return isDeadFlag == _dead ;
+            return isDeadFlag == _dead;
         }
     }
 }
