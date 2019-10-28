@@ -29,6 +29,8 @@ namespace MusicGame.Scene
         private int sentakucnt;
         private int cnt = 0;
         private ParticleManager particleManager;
+        private Sound sound;
+
 
         public enum Direction
         {
@@ -92,6 +94,7 @@ namespace MusicGame.Scene
 
             sentakucnt = 0;
             particleManager = new ParticleManager();
+            sound = GameDevice.Instance().GetSound();
 
         }
 
@@ -167,16 +170,19 @@ namespace MusicGame.Scene
                             }
 
                             nextscene = Scene.GamePlay;
+                            sound.PlaySE("kettei");
                             isEndFlag = true;
 
 
                             break;
                         case 1:
                             nextscene = Scene.Select1;
+                            sound.PlaySE("kettei");
                             isEndFlag = true;
                             break;
                         case 2:
                             nextscene = Scene.Title;
+                            sound.PlaySE("kettei");
                             isEndFlag = true;
                             break;
                     }
@@ -186,6 +192,7 @@ namespace MusicGame.Scene
             }
             if (Input.IsKeyUp(Keys.Space))
             {
+                sound.PlaySE("sentaku");
                 sentakucnt += 1;
                 cnt = 0;
             }
