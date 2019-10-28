@@ -143,6 +143,7 @@ namespace MusicGame.Scene
             if (player2.IsDead())
             {
                 StageState.isMusic = false;
+                player._dead = true;
                 isEndFlag = true;
             }
 

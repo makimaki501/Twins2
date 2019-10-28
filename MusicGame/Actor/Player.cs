@@ -25,7 +25,8 @@ namespace MusicGame.Actor
         private bool _hit;
         public int nextscene;
         public float alpha;
-        private bool _dead;
+        public bool _dead;
+        
 
         public Player(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator, float addRadian)
             : base("player3", position, 48, 48, gameDevice)
@@ -37,7 +38,7 @@ namespace MusicGame.Actor
             _hit = false;
             nextscene = 0;
             alpha = 1;
-            _dead = false;
+            _dead = isDeadFlag;
         }
         public Player(Player other)
             : this(other.position, other.gameDevice, other.mediator, other.addRadian)
@@ -232,27 +233,27 @@ namespace MusicGame.Actor
                 if (gameObject is Stage1Block && Input.GetKeyTrigger(Keys.Space))
                 {
                     StageState.stageStage = 1;
-                    isDeadFlag = true;
+                    StageState.isDead = true;
                 }
                 if (gameObject is Stage2Block && Input.GetKeyTrigger(Keys.Space))
                 {
                     StageState.stageStage = 2;
-                    isDeadFlag = true;
+                    StageState.isDead = true;
                 }
                 if (gameObject is Stage3Block && Input.GetKeyTrigger(Keys.Space))
                 {
                     StageState.stageStage = 3;
-                    isDeadFlag = true;
+                    StageState.isDead = true;
                 }
                 if (gameObject is Stage4Block && Input.GetKeyTrigger(Keys.Space))
                 {
                     StageState.stageStage = 4;
-                    isDeadFlag = true;
+                    StageState.isDead = true;
                 }
                 if (gameObject is Stage5Block && Input.GetKeyTrigger(Keys.Space))
                 {
                     StageState.stageStage = 5;
-                    isDeadFlag = true;
+                    StageState.isDead = true;
                 }
 
             }
@@ -273,9 +274,11 @@ namespace MusicGame.Actor
                 position.X = r * (float)Math.Cos(radian) + Pos.X;
                 position.Y = r * (float)Math.Sin(radian) + Pos.Y;
             }
-
-
-
+            if (StageState.isDead)
+            {
+                isDeadFlag = true;
+                StageState.isDead = false;
+            }
             if (Input.GetKeyState(Keys.Enter))
             {
                 radian -= 0.095f;
