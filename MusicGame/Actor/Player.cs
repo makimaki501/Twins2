@@ -17,6 +17,7 @@ namespace MusicGame.Actor
         private IGameObjectMediator mediator;
         private float r = 96;//半径
         private float radian;
+        private float prevRadian;
         private float addRadian;
         private Vector2 Pos;
         private bool reset;
@@ -37,6 +38,7 @@ namespace MusicGame.Actor
             this.addRadian = addRadian;
             _hit = false;
             nextscene = 0;
+            prevRadian = 0;
             alpha = 1;
             _dead = isDeadFlag;
         }
@@ -75,6 +77,8 @@ namespace MusicGame.Actor
                                         _hit = true;
                                         position = new Vector2(gameObject.GetPosition().X + 16,
                                         gameObject.GetPosition().Y + 16);
+                                        prevRadian = 0;
+                                        radian = 0;
                                     }
                                     break;
                                 case Direction.Bottom:
@@ -85,6 +89,8 @@ namespace MusicGame.Actor
                                         _hit = true;
                                         position = new Vector2(gameObject.GetPosition().X + 16,
                                         gameObject.GetPosition().Y + 16);
+                                        prevRadian = 0;
+                                        radian = 0;
                                     }
                                     break;
                                 case Direction.Left:
@@ -95,6 +101,8 @@ namespace MusicGame.Actor
                                         _hit = true;
                                         position = new Vector2(gameObject.GetPosition().X + 16,
                                         gameObject.GetPosition().Y + 16);
+                                        prevRadian = 0;
+                                        radian = 0;
                                     }
 
                                     break;
@@ -106,6 +114,8 @@ namespace MusicGame.Actor
                                         _hit = true;
                                         position = new Vector2(gameObject.GetPosition().X + 16,
                                         gameObject.GetPosition().Y + 16);
+                                        prevRadian = 0;
+                                        radian = 0;
                                     }
                                     break;
                                 case Direction.RightD:
@@ -117,6 +127,8 @@ namespace MusicGame.Actor
                                         position = new Vector2(gameObject.GetPosition().X + 16,
                                         gameObject.GetPosition().Y + 16);
                                         gameObject.dir = Direction.Bottom;
+                                        prevRadian = 0;
+                                        radian = 0;
                                     }
                                     break;
                                 case Direction.DownL:
@@ -128,6 +140,8 @@ namespace MusicGame.Actor
                                         position = new Vector2(gameObject.GetPosition().X + 16,
                                         gameObject.GetPosition().Y + 16);
                                         gameObject.dir = Direction.Left;
+                                        prevRadian = 0;
+                                        radian = 0;
                                     }
                                     break;
                                 case Direction.UpR:
@@ -139,6 +153,8 @@ namespace MusicGame.Actor
                                         position = new Vector2(gameObject.GetPosition().X + 16,
                                         gameObject.GetPosition().Y + 16);
                                         gameObject.dir = Direction.Right;
+                                        prevRadian = 0;
+                                        radian = 0;
                                     }
                                     break;
                                 case Direction.Free:
@@ -147,6 +163,8 @@ namespace MusicGame.Actor
                                     _hit = true;
                                     position = new Vector2(gameObject.GetPosition().X + 16,
                                     gameObject.GetPosition().Y + 16);
+                                    prevRadian = 0;
+                                    radian = 0;
                                     break;
                             }
                             Console.WriteLine(gameObject.dir);
@@ -273,7 +291,16 @@ namespace MusicGame.Actor
                 radian += addRadian;
                 position.X = r * (float)Math.Cos(radian) + Pos.X;
                 position.Y = r * (float)Math.Sin(radian) + Pos.Y;
+                prevRadian = radian;
             }
+            if (StageState.isMusic)
+            {
+                if (prevRadian >= 6.3f)
+                {
+                    //isDeadFlag = true;
+                }
+            }
+
             if (StageState.isDead)
             {
                 isDeadFlag = true;
