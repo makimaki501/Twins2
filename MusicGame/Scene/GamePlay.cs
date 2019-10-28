@@ -48,7 +48,7 @@ namespace MusicGame.Scene
         private List<int> firstpositions;
         private int[,] positions;
         private Vector2 playerposition;
-        private double addradian;
+        private float addradian;
         private bool isp;
 
         public GamePlay()
