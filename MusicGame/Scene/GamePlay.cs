@@ -54,6 +54,10 @@ namespace MusicGame.Scene
         private int startcnt;
         private int cameracnt;
 
+        private int end;
+        private bool _end;
+        private bool safe;
+
         public GamePlay()
         {
             isEndFlag = false;
@@ -104,8 +108,11 @@ namespace MusicGame.Scene
             isEndFlag = false;
             playNow = false;
             isstart = false;
+            _end = false;
+            safe = false;
             cnt = 0;
             alpha = 0;
+            end = 0;
             gameObjectManager.Initialize();
             firstpositions = new List<int>() { 5, 5, 7, 6, 6, 5, 13, 7, 10, 24, 5, 14, 5, 11, 14 };
             map2 = new Map2(GameDevice.Instance());
@@ -209,8 +216,6 @@ namespace MusicGame.Scene
             if (Input.GetKeyTrigger(Keys.M) || StageState.isClear)
             {
                 cameraDirection = CameraDirection.IDLE;
-
-
                 if (!isp)
                 {
                     particlemanager.Texture("clear", new Vector2(Screen.Width / 2, 300), 1, 0, 2f, 3);
@@ -218,7 +223,6 @@ namespace MusicGame.Scene
                     particlemanager.LeftCraccar("star", new Vector2(Screen.Width / 2 + 900, 1000), 0.1f, 1, 500, 10000);
                     isp = true;
                 }
-
 
                 cnt++;
                 if (cnt > 120)
@@ -252,7 +256,7 @@ namespace MusicGame.Scene
                 }
             }
 
-            if (!player.IsStop() && !player2.IsStop() && !StageState.isClear)
+            if ((!player.IsStop() && !player2.IsStop() && !StageState.isClear) || _end)
             {
                 cameraDirection = CameraDirection.IDLE;
                 alpha += 0.05f;
@@ -300,6 +304,29 @@ namespace MusicGame.Scene
 
             if (StageState.isMusic)
             {
+                if (!_end && !safe)
+                {
+                    end++;
+                    if (Input.GetKeyTrigger(Keys.Space))
+                    {
+                        safe = true;
+                    }
+                    if (bpm == 120)
+                    {
+                        if (end == 60)
+                        {
+                            _end = true;
+                        }
+                    }
+                    else if (bpm == 150)
+                    {
+                        if (end == 48)
+                        {
+                            _end = true;
+                        }
+                    }
+                }
+
                 CameraMove(3);
             }
 
@@ -368,7 +395,7 @@ namespace MusicGame.Scene
                             a = 20;
                             break;
                         case CameraDirection.RIGHT:
-                            camera.Move(3.5f, 0);
+                            camera.Move(3.8f, 0);
                             a = 60;
                             break;
                         case CameraDirection.LEFT:
