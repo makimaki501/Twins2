@@ -149,10 +149,10 @@ namespace MusicGame.Scene
 
             }
 
-            if (!player3.IsStop() && !player4.IsStop())
-            {
-                isEndFlag = true;
-            }
+            //if (!player3.IsStop() && !player4.IsStop())
+            //{
+            //    isEndFlag = true;
+            //}
 
             if (Input.GetKeyState(Keys.D1))
             {

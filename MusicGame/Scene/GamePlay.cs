@@ -90,10 +90,11 @@ namespace MusicGame.Scene
         {
             isEndFlag = false;
             playNow = false;
+            isstart = false;
             cnt = 0;
+            alpha = 0;
             gameObjectManager.Initialize();
             firstpositions = new List<int>() { 5, 5, 7, 6, 6, 5, 13, 7, 10, 24, 5, 14, 5, 11, 14 };
-            alpha = 0;
             map2 = new Map2(GameDevice.Instance());
 
             map2.Load(StageState.worldsStage + "-" + StageState.stageStage + ".csv", "./csv/");
@@ -161,9 +162,6 @@ namespace MusicGame.Scene
                 {StartMotion.START,new Range(0,3) },
                 {StartMotion.NULL,new Range(4,5) },
             };
-            isstart = false;
-
-
         }
 
         public bool IsEnd()

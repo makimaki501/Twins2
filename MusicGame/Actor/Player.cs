@@ -25,9 +25,10 @@ namespace MusicGame.Actor
         private bool _hit;
         public int nextscene;
         public float alpha;
+        private bool _dead;
 
         public Player(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator,float addRadian)
-            : base("player3", position, 24, 24, gameDevice)
+            : base("player3", position, 48, 48, gameDevice)
         {
             this.mediator = mediator;
             reset = false;
@@ -36,6 +37,7 @@ namespace MusicGame.Actor
             _hit = false;
             nextscene = 0;
             alpha = 1;
+            _dead = false;
         }
         public Player(Player other)
             : this(other.position, other.gameDevice, other.mediator,other.addRadian)
@@ -65,7 +67,7 @@ namespace MusicGame.Actor
                             switch (gameObject.dir)
                             {
                                 case Direction.Top:
-                                    if (position.Y < Pos.Y && position.X > Pos.X - 35 && position.X < Pos.X + 126)
+                                    if (position.Y < Pos.Y && position.X > Pos.X - 48 && position.X < Pos.X + 48)
                                     {
                                         reset = true;
                                         stop = !stop;
@@ -75,7 +77,7 @@ namespace MusicGame.Actor
                                     }
                                     break;
                                 case Direction.Bottom:
-                                    if (position.Y > Pos.Y + 30 && position.X > Pos.X && position.X - 35 < Pos.X + 126)
+                                    if (position.Y > Pos.Y + 30 && position.X > Pos.X+48 && position.X < Pos.X + 48)
                                     {
                                         reset = true;
                                         stop = !stop;
@@ -96,7 +98,7 @@ namespace MusicGame.Actor
 
                                     break;
                                 case Direction.Right:
-                                    if (position.X > Pos.X + 30 && position.Y > Pos.Y - 35 && position.Y < Pos.Y + 126)
+                                    if (position.X > Pos.X + 48 && position.Y > Pos.Y - 48 && position.Y < Pos.Y+ 48)
                                     {
                                         reset = true;
                                         stop = !stop;
@@ -129,7 +131,7 @@ namespace MusicGame.Actor
                             switch (gameObject.dir)
                             {
                                 case Direction.Top:
-                                    if (position.Y < Pos.Y && position.X > Pos.X - 35 && position.X < Pos.X + 126)
+                                    if (position.Y < Pos.Y && position.X > Pos.X - 20 && position.X < Pos.X + 126)
                                     {
                                         reset = true;
                                         stop = !stop;
@@ -139,7 +141,7 @@ namespace MusicGame.Actor
                                     }
                                     break;
                                 case Direction.Bottom:
-                                    if (position.Y > Pos.Y + 30 && position.X > Pos.X && position.X - 35 < Pos.X + 126)
+                                    if (position.Y > Pos.Y + 48 && position.X > Pos.X -20&& position.X - 35 < Pos.X + 126)
                                     {
                                         reset = true;
                                         stop = !stop;
@@ -149,7 +151,7 @@ namespace MusicGame.Actor
                                     }
                                     break;
                                 case Direction.Left:
-                                    if (position.X < Pos.X && position.Y > Pos.Y - 35 && position.Y < Pos.Y + 126)
+                                    if (position.X < Pos.X && position.Y > Pos.Y - 20 && position.Y < Pos.Y + 126)
                                     {
                                         reset = true;
                                         stop = !stop;
@@ -160,7 +162,7 @@ namespace MusicGame.Actor
 
                                     break;
                                 case Direction.Right:
-                                    if (position.X > Pos.X + 30 && position.Y > Pos.Y - 35 && position.Y < Pos.Y + 126)
+                                    if (position.X > Pos.X + 20 && position.Y > Pos.Y - 20 && position.Y < Pos.Y + 126)
                                     {
                                         reset = true;
                                         stop = !stop;
@@ -320,6 +322,11 @@ namespace MusicGame.Actor
         public float AddRadian()
         {
             return addRadian;
+        }
+
+        public bool IsDead(bool _dead)
+        {
+            return isDeadFlag == _dead ;
         }
     }
 }

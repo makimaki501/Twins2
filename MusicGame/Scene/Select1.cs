@@ -45,7 +45,7 @@ namespace MusicGame.Scene
         public void Draw(Renderer renderer)
         {
             renderer.Begin();
-            renderer.DrawTexture("world"+StageState.worldsStage, Vector2.Zero);
+            renderer.DrawTexture("world" + StageState.worldsStage, Vector2.Zero);
             //map2.Draw(renderer);
             //gameObjectManager.Draw(renderer);
 
@@ -82,7 +82,7 @@ namespace MusicGame.Scene
 
 
             //最初に止まっている
-            player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 1+ 15), GameDevice.Instance(), gameObjectManager, player.AddRadian());
+            player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 1 + 15), GameDevice.Instance(), gameObjectManager, player.AddRadian());
             gameObjectManager.Add(player2);
             player.SetPos(player2.GetPosition());
             camera.SetPosition(new Vector2(Screen.Width / 2 - 48, Screen.Height / 2 + 48));
@@ -113,6 +113,14 @@ namespace MusicGame.Scene
 
         public Scene Next()
         {
+            if (player == null)
+            {
+                player2.IsDead(true);
+            }
+            else if (player2 == null)
+            {
+                player.IsDead(true);
+            }
             return Scene.GamePlay;
         }
 

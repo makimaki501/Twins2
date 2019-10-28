@@ -26,7 +26,7 @@ namespace MusicGame.Actor
         public int nextscene;
 
         public Player2(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator, float addRadian)
-            : base("player4", position, 24, 24, gameDevice)
+            : base("player4", position, 48, 48, gameDevice)
         {
             this.mediator = mediator;
             reset = false;
@@ -58,7 +58,7 @@ namespace MusicGame.Actor
                             switch (gameObject.dir)
                             {
                                 case Direction.Top:
-                                    if (position.Y < Pos.Y && position.X > Pos.X - 35 && position.X < Pos.X + 126)
+                                    if (position.Y < Pos.Y && position.X > Pos.X - 48 && position.X < Pos.X + 48)
                                     {
                                         reset = true;
                                         stop = !stop;
@@ -68,7 +68,7 @@ namespace MusicGame.Actor
                                     }
                                     break;
                                 case Direction.Bottom:
-                                    if (position.Y > Pos.Y + 30 && position.X > Pos.X && position.X - 35 < Pos.X + 126)
+                                    if (position.Y > Pos.Y + 30 && position.X > Pos.X + 48 && position.X < Pos.X + 48)
                                     {
                                         reset = true;
                                         stop = !stop;
@@ -89,7 +89,7 @@ namespace MusicGame.Actor
 
                                     break;
                                 case Direction.Right:
-                                    if (position.X > Pos.X +48 && position.Y > Pos.Y - 35 && position.Y < Pos.Y + 96)
+                                    if (position.X > Pos.X + 48 && position.Y > Pos.Y - 48 && position.Y < Pos.Y +48)
                                     {
                                         reset = true;
                                         stop = !stop;
@@ -301,6 +301,9 @@ namespace MusicGame.Actor
             return _hit;
         }
 
-
+        public bool IsDead(bool _dead)
+        {
+            return isDeadFlag == _dead;
+        }
     }
 }
