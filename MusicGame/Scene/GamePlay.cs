@@ -305,15 +305,12 @@ namespace MusicGame.Scene
 
             if (StageState.stageStage == 5)
             {
-                if (particlemanager.IsCount(180))
+                if (particlemanager.IsCount(60))
                 {
                     switch (StageState.worldsStage)
                     {
-                        case 1:
-                            particlemanager.Backparticle("onpu2", 0.1f, 0.01f, 3, 3);
-                            break;
                         case 2:
-                            particlemanager.Backparticle("star", 2f, 0.1f, 50, 3);
+                            particlemanager.Backparticle("star", 2f, 0.1f, 10, 3);
                             break;
                         case 3:
                             particlemanager.Backparticle("snow1", 0.1f, 0.01f, 3, 3);
