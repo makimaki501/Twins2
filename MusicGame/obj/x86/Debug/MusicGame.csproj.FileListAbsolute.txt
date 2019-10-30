@@ -546,3 +546,12 @@ C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\sn
 C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\titleselect1.xnb
 C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\titleselect2.xnb
 C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\titleselect3.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\GorlMove.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\LeftDown.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\LeftUp.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\RightDown.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\RightUp.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\Tate.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\TateYoko.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\Yoko.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\YokoTate.xnb

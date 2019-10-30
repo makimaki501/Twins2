@@ -71,6 +71,7 @@ namespace MusicGame.Scene
         public void Initialize()
         {
             isEndFlag = false;
+            gameObjectManager.Initialize();
             map2 = new Map2(GameDevice.Instance());
             map2.Load("StageSelect1.csv", "./csv/");
             gameObjectManager.Add(map2);
