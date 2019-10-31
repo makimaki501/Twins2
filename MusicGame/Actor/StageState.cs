@@ -18,5 +18,7 @@ namespace MusicGame.Actor
         public static bool isClear=false;
 
         public static bool isDead;
+
+        public static int sceneNumber;
     }
 }

@@ -53,6 +53,8 @@
     <Compile Include="Actor\Select1Block.cs" />
     <Compile Include="Actor\Select2Block.cs" />
     <Compile Include="Actor\Select3Block.cs" />
+    <Compile Include="Actor\StageBlock\BackBlock.cs" />
+    <Compile Include="Actor\StageBlock\NextBlock.cs" />
     <Compile Include="Actor\StageBlock\Stage1Block.cs" />
     <Compile Include="Actor\StageBlock\Stage2Block.cs" />
     <Compile Include="Actor\StageBlock\Stage3Block.cs" />
@@ -90,7 +92,6 @@
     <Compile Include="Scene\Menu.cs" />
     <Compile Include="Scene\Scene.cs" />
     <Compile Include="Scene\SceneManager.cs" />
-    <Compile Include="Scene\Select.cs" />
     <Compile Include="Scene\Select1.cs" />
     <Compile Include="Scene\Title.cs" />
     <Compile Include="Util\CountDownTimer.cs" />

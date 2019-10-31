@@ -155,6 +155,7 @@ namespace MusicGame.Scene
                                 {
                                     if (StageState.worldsStage == 3)
                                     {
+                                        StageState.isClear = false;
                                         nextscene = Scene.Select1;
                                     }
                                     else

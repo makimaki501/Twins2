@@ -105,6 +105,7 @@ namespace MusicGame.Scene
         {
             StageState.isClear = false;
             StageState.isMusic = false;
+            StageState.sceneNumber = 3;
             isEndFlag = false;
             playNow = false;
             isstart = false;
@@ -334,13 +335,27 @@ namespace MusicGame.Scene
             {
                 if (particlemanager.IsCount(60))
                 {
+                    var rnd = GameDevice.Instance().GetRandom();
+
                     switch (StageState.worldsStage)
                     {
+                        
                         case 2:
-                            particlemanager.Backparticle("star", 2f, 0.1f, 10, 3);
+                            particlemanager.Backparticle("star",new Vector2(rnd.Next(1920),rnd.Next(1080)),0,0,2,0,0, 0.5f, 30, 5);
+                            particlemanager.Backparticle("star",new Vector2(rnd.Next(3960),rnd.Next(600)),200,150,1,0,0, 0.5f, 10, 2);
                             break;
                         case 3:
-                            particlemanager.Backparticle("snow1", 0.1f, 0.01f, 3, 3);
+                            int namenumber = rnd.Next(50);
+                            if (namenumber % 2==0)
+                            {
+                                namenumber = 1;
+                            }
+                            else
+                            {
+                                namenumber = 2;
+                            }
+                            particlemanager.Backparticle("snow"+namenumber,new Vector2(rnd.Next(1920),-100),50,180,1, 0f,1, 0.1f, 1, 15);
+                            particlemanager.Backparticle("star", new Vector2(rnd.Next(1920), rnd.Next(1080)), 100, 180, 2, 0, 0, 0.5f, 30, 5);
                             break;
                     }
                 }
@@ -356,6 +371,7 @@ namespace MusicGame.Scene
             {
                 if (player2.IsStop())//もしプレイヤーが止まってたら
                 {
+                    
                     if (cameraPos.X < player2.GetPosition().X)
                     {
                         cameraDirection = CameraDirection.RIGHT;
@@ -378,6 +394,7 @@ namespace MusicGame.Scene
                 }
                 else if (player.IsStop())//もしプレイヤーが止まってたら
                 {
+                   
                     if (cameraPos.X < player.GetPosition().X)
                     {
                         cameraDirection = CameraDirection.RIGHT;

@@ -51,6 +51,7 @@ namespace MusicGame.Actor.Effect
             this.alphaAmount = alphaAmount;
             this.alpha = alpha;
             this.type = type;
+            rotate = 0;
 
 
             this.color = color;
@@ -95,6 +96,14 @@ namespace MusicGame.Actor.Effect
                 if (duration < 3)
                 {
                     alpha -= alpha * delta;
+                }
+                if (name == "snow1" || name =="snow2")
+                {
+                    rotate++;
+                }
+                if (rotate >= 360)
+                {
+                    rotate = 0;
                 }
             }
 
@@ -168,7 +177,7 @@ namespace MusicGame.Actor.Effect
         /// <param name="renderer"></param>
         public void Draw(Renderer renderer)
         {
-            renderer.DrawTexture(name, position, null, color, 0, origin, scale, SpriteEffects.None, alpha);
+            renderer.DrawTexture(name, position, null, color, MathHelper.ToRadians(rotate), origin, scale, SpriteEffects.None, alpha);
         }
     }
 }
