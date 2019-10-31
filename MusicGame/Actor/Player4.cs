@@ -23,7 +23,7 @@ namespace MusicGame.Actor
         private bool reset;
         public bool stop;
         private bool _hit;
-  
+
         public Player4(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator)
             : base("player2", position, 48, 48, gameDevice)
         {
@@ -74,7 +74,7 @@ namespace MusicGame.Actor
                                 }
                                 break;
                             case Direction.Left:
-                                if (position.X < Pos.X && position.Y > Pos.Y+10 && position.Y < Pos.Y + 96)
+                                if (position.X < Pos.X && position.Y > Pos.Y + 10 && position.Y < Pos.Y + 96)
                                 {
                                     reset = true;
                                     stop = !stop;
@@ -84,7 +84,7 @@ namespace MusicGame.Actor
                                 }
                                 break;
                             case Direction.Right:
-                                if (position.X > Pos.X + 48 && position.Y > Pos.Y+10 && position.Y < Pos.Y + 48)
+                                if (position.X > Pos.X + 48 && position.Y > Pos.Y + 10 && position.Y < Pos.Y + 48)
                                 {
                                     reset = true;
                                     stop = !stop;
@@ -124,7 +124,7 @@ namespace MusicGame.Actor
             {
                 if (gameObject.dir == Direction.Left)
                 {
-                    if (position.X < Pos.X && position.Y > Pos.Y + 10 && position.Y < Pos.Y + 96)
+                    if (position.X < Pos.X && position.Y > Pos.Y - 30 && position.Y < Pos.Y + 70)
                     {
                         reset = true;
                         stop = !stop;
@@ -145,7 +145,7 @@ namespace MusicGame.Actor
             {
                 if (gameObject.dir == Direction.Right)
                 {
-                    if (position.X > Pos.X + 48 && position.Y > Pos.Y + 10 && position.Y < Pos.Y + 48)
+                    if (position.X > Pos.X + 48 && position.Y > Pos.Y - 30 && position.Y < Pos.Y + 70)
                     {
                         reset = true;
                         stop = !stop;

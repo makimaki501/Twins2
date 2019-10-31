@@ -94,7 +94,7 @@ namespace MusicGame.Actor
                                     }
                                     break;
                                 case Direction.Left:
-                                    if (position.X < Pos.X && position.Y > Pos.Y - 35 && position.Y < Pos.Y + 96)
+                                    if (position.X < Pos.X && position.Y > Pos.Y - 48 && position.Y < Pos.Y + 48)
                                     {
                                         reset = true;
                                         stop = !stop;

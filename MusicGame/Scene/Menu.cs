@@ -144,7 +144,7 @@ namespace MusicGame.Scene
 
                 }
 
-                if (cnt >= 120)
+                if (cnt >= 90)
                 {
                     switch (sentakucnt)
                     {
