@@ -56,6 +56,9 @@ namespace MusicGame.Scene
             renderer.DrawTexture("titleselect1", new Vector2(610, 430));
             renderer.DrawTexture("titleselect2", new Vector2(765, 300));
             renderer.DrawTexture("titleselect3", new Vector2(910, 430));
+            renderer.DrawTexture("selectmark", new Vector2(128 * 6 + 30, 128 * 4 + 30), Color.LightGreen);
+            renderer.DrawTexture("selectmark", new Vector2(128 * 7 + 30, 128 * 3 + 30), Color.SkyBlue);
+            renderer.DrawTexture("selectmark", new Vector2(128 * 8 + 30, 128 * 4 + 30), Color.Coral);
             renderer.End();
         }
 

@@ -124,7 +124,7 @@ namespace MusicGame.Scene
             {
                 cnt++;
 
-                if (cnt >= 40)
+                if (cnt >= 10)
                 {
                     if (particleManager.IsCount(20))
                     {
@@ -144,7 +144,7 @@ namespace MusicGame.Scene
 
                 }
 
-                if (cnt >= 90)
+                if (cnt >= 60)
                 {
                     switch (sentakucnt)
                     {

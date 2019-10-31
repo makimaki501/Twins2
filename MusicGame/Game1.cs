@@ -132,6 +132,10 @@ namespace MusicGame
             renderer.LoadContent("titleselect3", "./Texture/");
             renderer.LoadContent("snow1", "./Texture/");
             renderer.LoadContent("snow2", "./Texture/");
+            renderer.LoadContent("hosi", "./Texture/");
+            renderer.LoadContent("selectmark", "./Texture/");
+            renderer.LoadContent("titleanaunse", "./Texture/");
+            renderer.LoadContent("nextanaunse", "./Texture/");
            
 
 

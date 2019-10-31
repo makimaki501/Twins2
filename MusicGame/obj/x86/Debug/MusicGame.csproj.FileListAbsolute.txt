@@ -568,3 +568,8 @@ C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\Musi
 C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\YokoTate.xnb
 C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\player1particle.xnb
 C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\player2particle.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\anaunse.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\hosi.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\nextanaunse.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\selectmark.xnb
+C:\Users\momom\OneDrive\デスクトップ\チーム制作\2年10月\Twins2\MusicGame\bin\Windows\x86\Debug\Content\Texture\titleanaunse.xnb
