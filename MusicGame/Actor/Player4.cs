@@ -54,7 +54,7 @@ namespace MusicGame.Actor
                         switch (gameObject.dir)
                         {
                             case Direction.Top:
-                                if (position.Y < Pos.Y && position.X > Pos.X - 48 && position.X < Pos.X + 48)
+                                if (position.Y < Pos.Y && position.X > Pos.X && position.X < Pos.X + 48)
                                 {
                                     reset = true;
                                     stop = !stop;
@@ -74,7 +74,7 @@ namespace MusicGame.Actor
                                 }
                                 break;
                             case Direction.Left:
-                                if (position.X < Pos.X && position.Y > Pos.Y - 35 && position.Y < Pos.Y + 96)
+                                if (position.X < Pos.X && position.Y > Pos.Y+10 && position.Y < Pos.Y + 96)
                                 {
                                     reset = true;
                                     stop = !stop;
@@ -84,7 +84,7 @@ namespace MusicGame.Actor
                                 }
                                 break;
                             case Direction.Right:
-                                if (position.X > Pos.X + 48 && position.Y > Pos.Y - 48 && position.Y < Pos.Y + 48)
+                                if (position.X > Pos.X + 48 && position.Y > Pos.Y+10 && position.Y < Pos.Y + 48)
                                 {
                                     reset = true;
                                     stop = !stop;
@@ -122,8 +122,19 @@ namespace MusicGame.Actor
 
             if (gameObject is Select1Block && Input.GetKeyTrigger(Keys.Space))
             {
-                StageState.worldsStage = 1;
-                isDeadFlag = true;
+                if (gameObject.dir == Direction.Left)
+                {
+                    if (position.X < Pos.X && position.Y > Pos.Y + 10 && position.Y < Pos.Y + 96)
+                    {
+                        reset = true;
+                        stop = !stop;
+                        _hit = true;
+                        position = new Vector2(gameObject.GetPosition().X + 16,
+                        gameObject.GetPosition().Y + 16);
+                        StageState.worldsStage = 1;
+                        isDeadFlag = true;
+                    }
+                }
             }
             if (gameObject is Select2Block && Input.GetKeyTrigger(Keys.Space))
             {
@@ -132,8 +143,20 @@ namespace MusicGame.Actor
             }
             if (gameObject is Select3Block && Input.GetKeyTrigger(Keys.Space))
             {
-                StageState.worldsStage = 3;
-                isDeadFlag = true;
+                if (gameObject.dir == Direction.Right)
+                {
+                    if (position.X > Pos.X + 48 && position.Y > Pos.Y + 10 && position.Y < Pos.Y + 48)
+                    {
+                        reset = true;
+                        stop = !stop;
+                        _hit = true;
+                        position = new Vector2(gameObject.GetPosition().X + 16,
+                        gameObject.GetPosition().Y + 16);
+
+                        StageState.worldsStage = 3;
+                        isDeadFlag = true;
+                    }
+                }
             }
         }
 
