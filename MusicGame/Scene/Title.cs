@@ -62,6 +62,7 @@ namespace MusicGame.Scene
         public void Initialize()
         {
             isEndFlag = false;
+            StageState.sceneNumber = 1;
             gameObjectManager.Initialize();
 
             map = new Map(GameDevice.Instance());

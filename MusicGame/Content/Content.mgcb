@@ -154,6 +154,9 @@
 #begin csv/StageSelect1.csv
 /copy:csv/StageSelect1.csv
 
+#begin csv/StageSelect2.csv
+/copy:csv/StageSelect2.csv
+
 #begin csv/Title.csv
 /copy:csv/Title.csv
 
@@ -592,6 +595,18 @@
 /processorParam:TextureFormat=Color
 /build:Texture/player1.png
 
+#begin Texture/player1particle.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Texture/player1particle.png
+
 #begin Texture/player2.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -603,6 +618,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Texture/player2.png
+
+#begin Texture/player2particle.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Texture/player2particle.png
 
 #begin Texture/player3.png
 /importer:TextureImporter

@@ -153,7 +153,7 @@ namespace MusicGame.Device
             }
 
             //ボリューム設定（BGMはSEに比べて音量半分が普通）
-            MediaPlayer.Volume = 0.5f;
+            //MediaPlayer.Volume = 0.5f;
 
             //現在のBGM名を設定
             currentBGM = name;
@@ -216,6 +216,7 @@ namespace MusicGame.Device
 
             //再生
             soundEffects[name].Play();
+            MediaPlayer.Volume = 0.2f;
         }
         #endregion //WAV(SE:SoundEffect)関連
 

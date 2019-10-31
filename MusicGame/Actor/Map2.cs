@@ -53,6 +53,8 @@ namespace MusicGame.Actor
             objectList.Add("31", new Stage3Block(Vector2.Zero, gameDevice));
             objectList.Add("41", new Stage4Block(Vector2.Zero, gameDevice));
             objectList.Add("51", new Stage5Block(Vector2.Zero, gameDevice));
+            objectList.Add("61", new NextBlock(Vector2.Zero, gameDevice));
+            objectList.Add("71", new BackBlock(Vector2.Zero, gameDevice));
 
             //作業用
             List<GameObject> workList = new List<GameObject>();
