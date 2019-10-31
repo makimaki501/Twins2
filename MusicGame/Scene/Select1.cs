@@ -45,7 +45,7 @@ namespace MusicGame.Scene
         public void Draw(Renderer renderer)
         {
             renderer.Begin();
-            renderer.DrawTexture("world" + StageState.worldsStage, Vector2.Zero);
+            renderer.DrawTexture("world" + StageState.worldsStage, new Vector2(Screen.Width / 2 - 400, 700));
             //map2.Draw(renderer);
             //gameObjectManager.Draw(renderer);
 
@@ -60,33 +60,42 @@ namespace MusicGame.Scene
                 camera.GetMatrix());
             map2.Draw(renderer);
             gameObjectManager.Draw(renderer);
-            renderer.DrawTexture("stagemark1", new Vector2(950, -20), motion.DrawingRange(), Color.LightSalmon);
-            renderer.DrawTexture("stagemark2", new Vector2(370, 180), motion.DrawingRange(), Color.Coral);
-            renderer.DrawTexture("stagemark3", new Vector2(950, 370), motion.DrawingRange(), Color.Tomato);
-            renderer.DrawTexture("stagemark4", new Vector2(370, 570), motion.DrawingRange(), Color.OrangeRed);
-            renderer.DrawTexture("stagemark5", new Vector2(950, 750), motion.DrawingRange(), Color.Red);
+            renderer.DrawTexture("stagemark1", new Vector2(87, 5), motion.DrawingRange(), Color.LightSalmon);
+            renderer.DrawTexture("stagemark2", new Vector2(375, 5), motion.DrawingRange(), Color.Coral);
+            renderer.DrawTexture("stagemark3", new Vector2(663, 5), motion.DrawingRange(), Color.Tomato);
+            renderer.DrawTexture("stagemark4", new Vector2(951, 5), motion.DrawingRange(), Color.OrangeRed);
+            renderer.DrawTexture("stagemark5", new Vector2(1239, 5), motion.DrawingRange(), Color.Red);
             renderer.End();
         }
 
         public void Initialize()
         {
             isEndFlag = false;
+            StageState.stageStage = 1;
+            StageState.sceneNumber = 2;
             gameObjectManager.Initialize();
             map2 = new Map2(GameDevice.Instance());
-            map2.Load("StageSelect1.csv", "./csv/");
+            if (StageState.worldsStage <= 2)
+            {
+                map2.Load("StageSelect1.csv", "./csv/");
+            }
+            else
+            {
+                map2.Load("StageSelect2.csv", "./csv/");
+            }
             gameObjectManager.Add(map2);
             sound.PlayBGM("WorldSelect");
 
             //最初に回っている
-            player = new Player(new Vector2(96 * 8 + 15, 96 * 1 + 15), GameDevice.Instance(), gameObjectManager, 0.1f);
+            player = new Player(new Vector2(96 * 2 + 15, 96 * 6 + 15), GameDevice.Instance(), gameObjectManager, 0.1f);
             gameObjectManager.Add(player);
 
 
             //最初に止まっている
-            player2 = new Player2(new Vector2(96 * 9 + 18, 96 * 1 + 15), GameDevice.Instance(), gameObjectManager, player.AddRadian());
+            player2 = new Player2(new Vector2(96 * 1 + 15, 96 * 6 + 15), GameDevice.Instance(), gameObjectManager, player.AddRadian());
             gameObjectManager.Add(player2);
             player.SetPos(player2.GetPosition());
-            camera.SetPosition(new Vector2(Screen.Width / 2 - 48, Screen.Height / 2 + 48));
+            camera.SetPosition(new Vector2(Screen.Width / 2 - 48, Screen.Height / 2));
             cameraPos = player2.GetPosition();
             cameraDirection = CameraDirection.IDLE;
 
@@ -114,6 +123,7 @@ namespace MusicGame.Scene
 
         public Scene Next()
         {
+            Scene nextscene = Scene.GamePlay;
             if (player == null)
             {
                 player2.IsDead(true);
@@ -122,7 +132,15 @@ namespace MusicGame.Scene
             {
                 player.IsDead(true);
             }
-            return Scene.GamePlay;
+            if (StageState.sceneNumber == 1)
+            {
+                nextscene = Scene.Title;
+            }
+            else if (StageState.sceneNumber == 2)
+            {
+                nextscene = Scene.Select1;
+            }
+            return nextscene;
         }
 
         public void Shutdown()

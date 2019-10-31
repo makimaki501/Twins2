@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/Texture/player1particle.png</SourceFile>
-  <SourceTime>2019-10-11T11:13:41.7851758+09:00</SourceTime>
+  <SourceTime>2019-11-01T00:10:19.3258569+09:00</SourceTime>
   <DestFile>C:/Users/momom/OneDrive/デスクトップ/チーム制作/2年10月/Twins2/MusicGame/Content/bin/Windows/Content/Texture/player1particle.xnb</DestFile>
-  <DestTime>2019-10-31T21:02:38.9824735+09:00</DestTime>
+  <DestTime>2019-11-01T00:14:54.7600459+09:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-09T01:35:54+09:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
