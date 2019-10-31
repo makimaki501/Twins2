@@ -168,11 +168,11 @@ namespace MusicGame.Scene
 
             if (!player.IsStop() && !player2.IsStop())
             {
-                player.SetPosition(new Vector2(96 * 9 + 15, 96 * 1 + 15));
-                player2.SetPosition(new Vector2(96 * 9 + 18, 96 * 1 + 15));
+                player.SetPosition(new Vector2(96 * 2 + 15, 96 * 6 + 15));
+                player2.SetPosition(new Vector2(96 * 1 + 15, 96 * 6 + 15));
                 player2.stop = true;
                 player.stop = false;
-                player.SetPos(new Vector2(96 * 9 + 15, 96 * 1 + 15));
+                player.SetPos(new Vector2(96 * 1 + 15, 96 * 6 + 15));
             }
 
             gameObjectManager.Update(gameTime);

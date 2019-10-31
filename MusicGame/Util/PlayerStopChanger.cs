@@ -10,17 +10,10 @@ using Microsoft.Xna.Framework;
 
 namespace MusicGame.Util
 {
-    class PlayerStopChanger
+    public class PlayerStopChanger
     {
-        private Player3 player3;
-        private Player4 player4;
+        public static bool pStop;
 
-        public PlayerStopChanger()
-        {
 
-        }
-        public void Initialize()
-        {
-        }
     }
 }

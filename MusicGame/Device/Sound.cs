@@ -216,7 +216,7 @@ namespace MusicGame.Device
 
             //再生
             soundEffects[name].Play();
-            MediaPlayer.Volume = 0.2f;
+            MediaPlayer.Volume = 0.1f;
         }
         #endregion //WAV(SE:SoundEffect)関連
 

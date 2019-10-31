@@ -305,12 +305,13 @@ namespace MusicGame.Scene
 
             if (StageState.isMusic)
             {
-                if (!_end && !safe)
+                if (!_end && !safe&&!StageState.isClear)
                 {
                     end++;
                     if (Input.GetKeyTrigger(Keys.Space))
                     {
-                        safe = true;
+                        //safe = true;
+                        end = 0;
                     }
                     if (bpm == 120)
                     {
