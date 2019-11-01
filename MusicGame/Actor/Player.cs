@@ -171,7 +171,6 @@ namespace MusicGame.Actor
                                     radian = 0;
                                     break;
                             }
-                            Console.WriteLine(gameObject.dir);
                         }
                         else if (gameObject is TitleGorlBlock || gameObject is TitleStartBlock/*||gameObject is Block*/)
                         {
