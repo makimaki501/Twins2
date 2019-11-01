@@ -305,7 +305,7 @@ namespace MusicGame.Scene
 
             if (StageState.isMusic)
             {
-                if (!_end && !safe && !StageState.isClear)
+                if (!_end && !safe&&!StageState.isClear)
                 {
                     end++;
                     if (Input.GetKeyTrigger(Keys.Space))
@@ -356,11 +356,7 @@ namespace MusicGame.Scene
                             {
                                 namenumber = 2;
                             }
-                            if (particlemanager.IsCount(60))
-                            {
-                                particlemanager.Backparticle("snow" + namenumber, new Vector2(rnd.Next(1920), -100), 50, 180, 1, 0f, 1, 0.1f, 1, 15);
-                            }
-
+                            particlemanager.Backparticle("snow" + namenumber, new Vector2(rnd.Next(1920), -100), 50, 180, 1, 0f, 1, 0.1f, 1, 15);
                             particlemanager.Backparticle("star", new Vector2(rnd.Next(1920), rnd.Next(1080)), 100, 180, 2, 0, 0, 0.5f, 30, 5);
                             break;
                     }
@@ -478,6 +474,7 @@ namespace MusicGame.Scene
             }
             if (bpm == 120)
             {
+                //ステージ3-5のカメラワーク
                 if (StageState.worldsStage == 3 && StageState.stageStage == 5)
                 {
                     switch (cameraDirection)
@@ -495,12 +492,12 @@ namespace MusicGame.Scene
                             a = 20;
                             break;
                         case CameraDirection.UP:
-                            camera.Move(0, 3.5f);
-                            a = 10;
+                            camera.Move(0, 3.3f);
+                            a = 20;
                             break;
                         case CameraDirection.DOWN:
-                            camera.Move(0, -3.5f);
-                            a = 10;
+                            camera.Move(0, -3.3f);
+                            a = 20;
                             break;
                     }
                 }

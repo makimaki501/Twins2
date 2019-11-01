@@ -169,6 +169,18 @@
 /processorParam:Quality=Best
 /build:kettei.wav
 
+#begin kettei.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:kettei.wav
+
+#begin sentaku.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sentaku.wav
+
 #begin sentaku.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -1014,6 +1026,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Texture/YokoTate.png
+
+#begin Title.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Title.mp3
 
 #begin Title.mp3
 /importer:Mp3Importer
