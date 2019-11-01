@@ -41,9 +41,6 @@ namespace MusicGame.Scene
             sound = GameDevice.Instance().GetSound();
             particleManager = new ParticleManager();
             motion = new Motion();
-
-
-           
         }
 
         public void Draw(Renderer renderer)
