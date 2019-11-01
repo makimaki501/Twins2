@@ -26,6 +26,10 @@ namespace MusicGame.Scene
         private bool playNow;
         private ParticleManager particlemanager;
         private Motion motion;
+        private Motion motion2;
+        private enum ClearMotion { NULL, CLEAR }
+        private ClearMotion clearmotion;
+        private Dictionary<ClearMotion, Range> clearmotions;
         private enum StartMotion { NULL, START }
         private StartMotion startmotion;
         private Dictionary<StartMotion, Range> startmotions;
@@ -81,7 +85,6 @@ namespace MusicGame.Scene
             }
             particlemanager.Draw(renderer);
             renderer.DrawTexture(StageState.worldsStage + "-" + StageState.stageStage, Vector2.Zero);
-
             renderer.End();
             renderer.Begin(SpriteSortMode.Deferred,
                 BlendState.AlphaBlend,
@@ -95,7 +98,12 @@ namespace MusicGame.Scene
             map2.Draw(renderer);
             gameObjectManager.Draw(renderer);
             renderer.DrawTexture("start", new Vector2(camera.Position.X - 50, player2.GetPosition().Y - 250), motion.DrawingRange(), Color.White);
-            renderer.DrawTexturealpha("gameover", camera.GetPosition(), alpha);
+            renderer.DrawTexturealpha("gameover", camera.GetPosition(), null, alpha);
+
+            renderer.End();
+            renderer.Begin();
+            renderer.DrawTexture("clear", new Vector2(Screen.Width / 2 - 400, 300), motion2.DrawingRange(), Color.White);
+
             renderer.End();
 
 
@@ -190,6 +198,19 @@ namespace MusicGame.Scene
             startcnt = 0;
             cameracnt = 0;
             a = 60;
+
+            motion2 = new Motion();
+            motion2.Add(0, new Rectangle(0, 0, 800, 400));
+            motion2.Add(1, new Rectangle(0, 0, 800, 400));
+            motion2.Add(2, new Rectangle(0, 0, 1, 1));
+            motion2.Add(3, new Rectangle(0, 0, 1, 1));
+            motion2.Initialize(new Range(2,3), new CountDownTimer(0.5f));
+            clearmotion = ClearMotion.NULL;
+            clearmotions = new Dictionary<ClearMotion, Range>()
+            {
+                {ClearMotion.CLEAR,new Range(0,1) },
+                {ClearMotion.NULL,new Range(2,3) },
+            };
         }
 
         public bool IsEnd()
@@ -219,7 +240,7 @@ namespace MusicGame.Scene
                 cameraDirection = CameraDirection.IDLE;
                 if (!isp)
                 {
-                    particlemanager.Texture("clear", new Vector2(Screen.Width / 2, 300), 1, 0, 2f, 3);
+                    ChangeMotion2(ClearMotion.CLEAR);
                     particlemanager.RightCraccar("star", new Vector2(Screen.Width / 2 - 900, 1000), 0.1f, 1, 500, 10000);
                     particlemanager.LeftCraccar("star", new Vector2(Screen.Width / 2 + 900, 1000), 0.1f, 1, 500, 10000);
                     isp = true;
@@ -301,9 +322,13 @@ namespace MusicGame.Scene
                 }
             }
             motion.Update(gameTime);
+            motion2.Update(gameTime);
+            
 
             if (StageState.isMusic)
             {
+                
+
                 if (!_end && !safe && !StageState.isClear)
                 {
                     end++;
@@ -558,17 +583,25 @@ namespace MusicGame.Scene
                 new CountDownTimer(motionbpm));
         }
 
-        private void UpdateMotion()
+        private void ChangeMotion2(ClearMotion clearmotion)
         {
-            if (isstart && startmotion != StartMotion.START)
-            {
-                ChangeMotion(StartMotion.START);
-            }
-            if (!isstart && startmotion != StartMotion.NULL)
-            {
-                ChangeMotion(StartMotion.NULL);
-            }
+
+            this.clearmotion = clearmotion;
+            motion2.Initialize(clearmotions[clearmotion],
+                new CountDownTimer(0.5f));
         }
+
+        //private void UpdateMotion()
+        //{
+        //    if (StageState.isClear&&clearmotion!=ClearMotion.CLEAR)
+        //    {
+        //        ChangeMotion2(ClearMotion.CLEAR);
+        //    }
+        //    else
+        //    {
+        //        ChangeMotion2(ClearMotion.NULL);
+        //    }
+        //}
 
     }
 }

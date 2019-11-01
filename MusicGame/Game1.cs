@@ -136,6 +136,7 @@ namespace MusicGame
             renderer.LoadContent("selectmark", "./Texture/");
             renderer.LoadContent("titleanaunse", "./Texture/");
             renderer.LoadContent("nextanaunse", "./Texture/");
+            renderer.LoadContent("anaunse", "./Texture/");
            
 
 

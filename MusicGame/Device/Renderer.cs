@@ -157,7 +157,7 @@ namespace MusicGame.Device
 
             spriteBatch.Draw(textures[assetName], position, Color.White * alpha);
         }
-        public void DrawTexturealpha(string assetName, Vector2 position, float alpha)
+        public void DrawTexturealpha(string assetName, Vector2 position, Rectangle? rect, float alpha)
         {
             //デバッグモードの時のみ、画像描画前のアセット名チェック
             Debug.Assert(
@@ -165,7 +165,7 @@ namespace MusicGame.Device
                 "描画時にアセット名の指定を間違えたか、" +
                 "画像の読み込み自体できていません");
 
-            spriteBatch.Draw(textures[assetName], position, Color.White * alpha);
+            spriteBatch.Draw(textures[assetName], position,rect, Color.White * alpha);
         }
 
         /// <summary>
