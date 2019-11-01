@@ -7,7 +7,7 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/2-1.mp3","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/2-1.xnb","SongProcessor","SongContent",141269,121,0.7772524
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/2-2.mp3","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/2-2.xnb","SongProcessor","SongContent",187662,121,0.8691504
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/2-3.mp3","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/2-3.xnb","SongProcessor","SongContent",187662,121,0.8021089
-"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/2-4.mp3","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/2-4.xnb","SongProcessor","SongContent",354010,121,1.155967
+"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/2-4.mp3","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/2-4.xnb","SongProcessor","SongContent",354010,121,1.401252
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/2-5.mp3","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/2-5.xnb","SongProcessor","SongContent",544181,121,1.447004
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/3-1.mp3","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/3-1.xnb","SongProcessor","SongContent",217755,121,0.8735996
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/3-2.mp3","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/3-2.xnb","SongProcessor","SongContent",270000,121,0.9360763
@@ -17,8 +17,8 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/csv/StageSelect1.csv","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content\csv/StageSelect1.csv","CopyItem","File",767,767,0.0065278
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/csv/StageSelect2.csv","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content\csv/StageSelect2.csv","CopyItem","File",762,762,0.0040272
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/csv/Title.csv","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content\csv/Title.csv","CopyItem","File",471,471,0.0019956
-"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/kettei.wav","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/kettei.xnb","SoundEffectProcessor","SoundEffectContent",264644,264705,0.5543661
-"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/sentaku.wav","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/sentaku.xnb","SoundEffectProcessor","SoundEffectContent",242596,242657,0.5406082
+"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/kettei.wav","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/kettei.xnb","SoundEffectProcessor","SoundEffectContent",264644,264705,0.8125106
+"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/sentaku.wav","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/sentaku.xnb","SoundEffectProcessor","SoundEffectContent",264644,264705,0.3723643
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/Texture/1-1.png","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/Texture/1-1.xnb","TextureProcessor","Texture2DContent",1366,640085,0.1714943
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/Texture/1-2.png","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/Texture/1-2.xnb","TextureProcessor","Texture2DContent",2777,640085,0.0454268
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/Texture/1-3.png","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/Texture/1-3.xnb","TextureProcessor","Texture2DContent",2346,640085,0.0339095
@@ -84,5 +84,5 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/Texture/world3.png","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/Texture/world3.xnb","TextureProcessor","Texture2DContent",6038,640085,0.0378989
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/Texture/Yoko.png","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/Texture/Yoko.xnb","TextureProcessor","Texture2DContent",2838,36949,0.0119702
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/Texture/YokoTate.png","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/Texture/YokoTate.xnb","TextureProcessor","Texture2DContent",3087,36949,0.0119689
-"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/Title.mp3","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/Title.xnb","SongProcessor","SongContent",193932,123,0.9035802
+"C:/Users/sakam/Desktop/Twins2/MusicGame/Content/Title.mp3","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/Title.xnb","SongProcessor","SongContent",193977,123,0.72181
 "C:/Users/sakam/Desktop/Twins2/MusicGame/Content/WorldSelect.mp3","C:/Users/sakam/Desktop/Twins2/MusicGame/Content/bin/Windows/Content/WorldSelect.xnb","SongProcessor","SongContent",193096,129,0.9015819

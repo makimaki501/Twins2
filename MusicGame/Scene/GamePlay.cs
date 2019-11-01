@@ -474,6 +474,7 @@ namespace MusicGame.Scene
             }
             if (bpm == 120)
             {
+                //ステージ3-5のカメラワーク
                 if (StageState.worldsStage == 3 && StageState.stageStage == 5)
                 {
                     switch (cameraDirection)
@@ -491,11 +492,11 @@ namespace MusicGame.Scene
                             a = 20;
                             break;
                         case CameraDirection.UP:
-                            camera.Move(0, 3.5f);
+                            camera.Move(0, 3.3f);
                             a = 20;
                             break;
                         case CameraDirection.DOWN:
-                            camera.Move(0, -3.5f);
+                            camera.Move(0, -3.3f);
                             a = 20;
                             break;
                     }
