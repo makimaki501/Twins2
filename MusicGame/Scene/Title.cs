@@ -52,13 +52,13 @@ namespace MusicGame.Scene
                 camera.GetMatrix());
             particleManager.Draw(renderer);
             map.Draw(renderer);
-            gameObjectManager.Draw(renderer);
             renderer.DrawTexture("titleselect1", new Vector2(610, 430));
             renderer.DrawTexture("titleselect2", new Vector2(765, 300));
             renderer.DrawTexture("titleselect3", new Vector2(910, 430));
             renderer.DrawTexture("selectmark", new Vector2(128 * 6 + 30, 128 * 4 + 30), Color.LightGreen);
             renderer.DrawTexture("selectmark", new Vector2(128 * 7 + 30, 128 * 3 + 30), Color.SkyBlue);
             renderer.DrawTexture("selectmark", new Vector2(128 * 8 + 30, 128 * 4 + 30), Color.Coral);
+            gameObjectManager.Draw(renderer);
             renderer.End();
         }
 
@@ -180,7 +180,7 @@ namespace MusicGame.Scene
             {
                 camera.Move(0, 1);
             }
-            if (player3.IsDead()||player4.IsDead())
+            if (player3.IsDead() || player4.IsDead())
             {
                 isEndFlag = true;
             }
