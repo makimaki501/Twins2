@@ -318,7 +318,7 @@ namespace MusicGame.Actor
                 prevRadian = radian;
                 var rnd = GameDevice.Instance().GetRandom();
                 int x = rnd.Next((int)GetPosition().X +40, (int)GetPosition().X+50 );
-                int y = rnd.Next((int)GetPosition().Y+40, (int)GetPosition().Y+50 );
+                int y = rnd.Next((int)GetPosition().Y+40, (int)GetPosition().Y+40 );
                 particleManager.Playerparticle("player1particle", new Vector2(x,y), 1f,0.5f, 0.5f, 100, 1);
                 particleManager.Playerparticle("player1particle", new Vector2(x,y), 1f, 0.5f, 0.5f, 100, 1);
             }

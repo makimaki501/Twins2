@@ -153,7 +153,7 @@ namespace MusicGame.Device
             }
 
             //ボリューム設定（BGMはSEに比べて音量半分が普通）
-            //MediaPlayer.Volume = 0.5f;
+            MediaPlayer.Volume = 2f;
 
             //現在のBGM名を設定
             currentBGM = name;

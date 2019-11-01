@@ -355,6 +355,18 @@
 /processorParam:TextureFormat=Color
 /build:Texture/3-5.png
 
+#begin Texture/anaunse.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Texture/anaunse.png
+
 #begin Texture/backGround1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -439,6 +451,18 @@
 /processorParam:TextureFormat=Color
 /build:Texture/GorlMove.png
 
+#begin Texture/hosi.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Texture/hosi.png
+
 #begin Texture/Idle.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -510,6 +534,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Texture/menuanaunse2.png
+
+#begin Texture/nextanaunse.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Texture/nextanaunse.png
 
 #begin Texture/nextbutton.png
 /importer:TextureImporter
@@ -703,6 +739,18 @@
 /processorParam:TextureFormat=Color
 /build:Texture/selectbutton.png
 
+#begin Texture/selectmark.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Texture/selectmark.png
+
 #begin Texture/snow1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -846,6 +894,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Texture/title.png
+
+#begin Texture/titleanaunse.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Texture/titleanaunse.png
 
 #begin Texture/titlebutton.png
 /importer:TextureImporter

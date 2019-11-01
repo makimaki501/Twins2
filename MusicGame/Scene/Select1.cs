@@ -65,6 +65,18 @@ namespace MusicGame.Scene
             renderer.DrawTexture("stagemark3", new Vector2(663, 5), motion.DrawingRange(), Color.Tomato);
             renderer.DrawTexture("stagemark4", new Vector2(951, 5), motion.DrawingRange(), Color.OrangeRed);
             renderer.DrawTexture("stagemark5", new Vector2(1239, 5), motion.DrawingRange(), Color.Red);
+            renderer.DrawTexture("selectmark", new Vector2(96 * 3 + 16, 96 * 4 + 16), Color.LightSalmon);
+            renderer.DrawTexture("selectmark", new Vector2(96 * 6 + 16, 96 * 4 + 16), Color.Coral);
+            renderer.DrawTexture("selectmark", new Vector2(96 * 9 + 16, 96 * 4 + 16), Color.Tomato);
+            renderer.DrawTexture("selectmark", new Vector2(96 * 12 + 16, 96 * 4 + 16), Color.OrangeRed);
+            renderer.DrawTexture("selectmark", new Vector2(96 * 15 + 16, 96 * 4 + 16), Color.Red);
+            renderer.DrawTexture("selectmark", new Vector2(96 * 1 + 16, 96 * 8 + 16), Color.LightGreen);
+            renderer.DrawTexture("titleanaunse", new Vector2(-45, 850));
+            if (StageState.worldsStage != 3)
+            {
+                renderer.DrawTexture("selectmark", new Vector2(96 * 17 + 16, 96 * 8 + 16), Color.Blue);
+                renderer.DrawTexture("nextanaunse", new Vector2(1480, 850));
+            }
             renderer.End();
         }
 

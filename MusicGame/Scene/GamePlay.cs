@@ -305,7 +305,7 @@ namespace MusicGame.Scene
 
             if (StageState.isMusic)
             {
-                if (!_end && !safe&&!StageState.isClear)
+                if (!_end && !safe && !StageState.isClear)
                 {
                     end++;
                     if (Input.GetKeyTrigger(Keys.Space))
@@ -356,7 +356,11 @@ namespace MusicGame.Scene
                             {
                                 namenumber = 2;
                             }
-                            particlemanager.Backparticle("snow" + namenumber, new Vector2(rnd.Next(1920), -100), 50, 180, 1, 0f, 1, 0.1f, 1, 15);
+                            if (particlemanager.IsCount(60))
+                            {
+                                particlemanager.Backparticle("snow" + namenumber, new Vector2(rnd.Next(1920), -100), 50, 180, 1, 0f, 1, 0.1f, 1, 15);
+                            }
+
                             particlemanager.Backparticle("star", new Vector2(rnd.Next(1920), rnd.Next(1080)), 100, 180, 2, 0, 0, 0.5f, 30, 5);
                             break;
                     }
@@ -492,11 +496,11 @@ namespace MusicGame.Scene
                             break;
                         case CameraDirection.UP:
                             camera.Move(0, 3.5f);
-                            a = 20;
+                            a = 10;
                             break;
                         case CameraDirection.DOWN:
                             camera.Move(0, -3.5f);
-                            a = 20;
+                            a = 10;
                             break;
                     }
                 }
