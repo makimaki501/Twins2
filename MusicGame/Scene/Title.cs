@@ -29,6 +29,7 @@ namespace MusicGame.Scene
         private bool stop3, stop4;
         private Sound sound;
         private ParticleManager particleManager;
+        private Motion motion;
 
         public Title()
         {
@@ -39,6 +40,10 @@ namespace MusicGame.Scene
             select = 0;
             sound = GameDevice.Instance().GetSound();
             particleManager = new ParticleManager();
+            motion = new Motion();
+
+
+           
         }
 
         public void Draw(Renderer renderer)
@@ -52,13 +57,15 @@ namespace MusicGame.Scene
                 camera.GetMatrix());
             particleManager.Draw(renderer);
             map.Draw(renderer);
+            
             renderer.DrawTexture("titleselect1", new Vector2(610, 430));
             renderer.DrawTexture("titleselect2", new Vector2(765, 300));
             renderer.DrawTexture("titleselect3", new Vector2(910, 430));
-            renderer.DrawTexture("selectmark", new Vector2(128 * 6 + 30, 128 * 4 + 30), Color.LightGreen);
-            renderer.DrawTexture("selectmark", new Vector2(128 * 7 + 30, 128 * 3 + 30), Color.SkyBlue);
-            renderer.DrawTexture("selectmark", new Vector2(128 * 8 + 30, 128 * 4 + 30), Color.Coral);
             gameObjectManager.Draw(renderer);
+            renderer.DrawTexture("selectmark", new Vector2(128 * 6 + 30, 128 * 4 + 30),motion.DrawingRange(), Color.LightGreen);
+            renderer.DrawTexture("selectmark", new Vector2(128 * 7 + 30, 128 * 3 + 30), motion.DrawingRange(), Color.SkyBlue);
+            renderer.DrawTexture("selectmark", new Vector2(128 * 8 + 30, 128 * 4 + 30), motion.DrawingRange(), Color.Coral);
+            
             renderer.End();
         }
 
@@ -88,6 +95,11 @@ namespace MusicGame.Scene
             metoronome.Initialize();
             metoronome.SetBpm(60);
 
+            motion.Add(0, new Rectangle(64 * 0, 64 * 0, 64, 64));
+            motion.Add(1, new Rectangle(64 * 1, 64 * 0, 64, 64));
+            motion.Add(2, new Rectangle(64 * 0, 64 * 1, 64, 64));
+            motion.Add(3, new Rectangle(64 * 1, 64 * 1, 64, 64));
+            motion.Initialize(new Range(0, 3), new CountDownTimer(0.1f));
 
         }
 
@@ -108,6 +120,7 @@ namespace MusicGame.Scene
 
         public void Update(GameTime gameTime)
         {
+            motion.Update(gameTime);
             metoronome.Update(gameTime);
             map.Update(gameTime);
             sound.PlayBGM("Title");

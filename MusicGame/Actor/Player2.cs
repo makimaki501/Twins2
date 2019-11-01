@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using MusicGame.Actor.StageBlock;
 using MusicGame.Actor.Effect;
+using MusicGame.Util;
 
 namespace MusicGame.Actor
 {
@@ -27,10 +28,13 @@ namespace MusicGame.Actor
         private bool _hit;
         public int nextscene;
         private ParticleManager particleManager;
+        private Motion motion;
+        private int size;
 
         public Player2(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator, float addRadian)
             : base("player4", position, 48, 48, gameDevice)
         {
+            size = 64;
             this.mediator = mediator;
             reset = false;
             stop = true;
@@ -39,6 +43,14 @@ namespace MusicGame.Actor
             nextscene = 0;
             prevRadian = 0;
             particleManager = new ParticleManager();
+
+            motion = new Motion();
+
+            motion.Add(0, new Rectangle(size * 0, size * 0, size, size));
+            motion.Add(1, new Rectangle(size * 1, size * 0, size, size));
+            motion.Add(2, new Rectangle(size * 0, size * 1, size, size));
+            motion.Add(3, new Rectangle(size * 1, size * 1, size, size));
+            motion.Initialize(new Range(0, 3), new CountDownTimer(0.1f));
         }
         public Player2(Player2 other)
             : this(other.position, other.gameDevice, other.mediator, other.addRadian)
@@ -53,8 +65,7 @@ namespace MusicGame.Actor
         public override void Draw(Renderer renderer)
         {
             particleManager.Draw(renderer);
-            base.Draw(renderer);
-            
+            renderer.DrawTexture(name, position, motion.DrawingRange(),Color.White);            
         }
 
         public override void Hit(GameObject gameObject)
@@ -296,6 +307,7 @@ namespace MusicGame.Actor
 
         public override void Update(GameTime gameTime)
         {
+            motion.Update(gameTime);
             if (!stop)
             {
                 if (reset)

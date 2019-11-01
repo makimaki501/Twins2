@@ -23,6 +23,7 @@ namespace MusicGame.Scene
         private Camera camera;
         private Vector2 cameraPos;
         private Motion motion;
+        private Motion motion2;
         private int cnt;
         private Sound sound;
 
@@ -38,6 +39,7 @@ namespace MusicGame.Scene
             gameObjectManager = new GameObjectManager();
             camera = new Camera(Screen.Width, Screen.Height);
             motion = new Motion();
+            motion2 = new Motion();
             cnt = 0;
             sound = GameDevice.Instance().GetSound();
         }
@@ -65,16 +67,16 @@ namespace MusicGame.Scene
             renderer.DrawTexture("stagemark3", new Vector2(663, 5), motion.DrawingRange(), Color.Tomato);
             renderer.DrawTexture("stagemark4", new Vector2(951, 5), motion.DrawingRange(), Color.OrangeRed);
             renderer.DrawTexture("stagemark5", new Vector2(1239, 5), motion.DrawingRange(), Color.Red);
-            renderer.DrawTexture("selectmark", new Vector2(96 * 3 + 16, 96 * 4 + 16), Color.LightSalmon);
-            renderer.DrawTexture("selectmark", new Vector2(96 * 6 + 16, 96 * 4 + 16), Color.Coral);
-            renderer.DrawTexture("selectmark", new Vector2(96 * 9 + 16, 96 * 4 + 16), Color.Tomato);
-            renderer.DrawTexture("selectmark", new Vector2(96 * 12 + 16, 96 * 4 + 16), Color.OrangeRed);
-            renderer.DrawTexture("selectmark", new Vector2(96 * 15 + 16, 96 * 4 + 16), Color.Red);
-            renderer.DrawTexture("selectmark", new Vector2(96 * 1 + 16, 96 * 8 + 16), Color.LightGreen);
+            renderer.DrawTexture("selectmark", new Vector2(96 * 3 + 16, 96 * 4 + 16), motion2.DrawingRange(), Color.LightSalmon);
+            renderer.DrawTexture("selectmark", new Vector2(96 * 6 + 16, 96 * 4 + 16), motion2.DrawingRange(), Color.Coral);
+            renderer.DrawTexture("selectmark", new Vector2(96 * 9 + 16, 96 * 4 + 16), motion2.DrawingRange(), Color.Tomato);
+            renderer.DrawTexture("selectmark", new Vector2(96 * 12 + 16, 96 * 4 + 16), motion2.DrawingRange(), Color.OrangeRed);
+            renderer.DrawTexture("selectmark", new Vector2(96 * 15 + 16, 96 * 4 + 16), motion2.DrawingRange(), Color.Red);
+            renderer.DrawTexture("selectmark", new Vector2(96 * 1 + 16, 96 * 8 + 16), motion2.DrawingRange(), Color.LightGreen);
             renderer.DrawTexture("titleanaunse", new Vector2(-45, 850));
             if (StageState.worldsStage != 3)
             {
-                renderer.DrawTexture("selectmark", new Vector2(96 * 17 + 16, 96 * 8 + 16), Color.Blue);
+                renderer.DrawTexture("selectmark", new Vector2(96 * 17 + 16, 96 * 8 + 16), motion2.DrawingRange(), Color.Blue);
                 renderer.DrawTexture("nextanaunse", new Vector2(1480, 850));
             }
             renderer.End();
@@ -125,7 +127,14 @@ namespace MusicGame.Scene
             motion.Add(11, new Rectangle(500 * 3, 500 * 0, 500, 500));
             motion.Add(12, new Rectangle(500 * 2, 500 * 0, 500, 500));
             motion.Add(13, new Rectangle(500 * 1, 500 * 0, 500, 500));
+           
             motion.Initialize(new Range(0, 13), new CountDownTimer(0.1f));
+
+            motion2.Add(0, new Rectangle(64 * 0, 64 * 0, 64, 64));
+            motion2.Add(1, new Rectangle(64 * 1, 64 * 0, 64, 64));
+            motion2.Add(2, new Rectangle(64 * 0, 64 * 1, 64, 64));
+            motion2.Add(3, new Rectangle(64 * 1, 64 * 1, 64, 64));
+            motion2.Initialize(new Range(0, 3), new CountDownTimer(0.1f));
         }
 
         public bool IsEnd()
@@ -163,6 +172,8 @@ namespace MusicGame.Scene
         public void Update(GameTime gameTime)
         {
             motion.Update(gameTime);
+            motion2.Update(gameTime);
+
             map2.Update(gameTime);
             StageState.isMusic = true;
 
