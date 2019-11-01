@@ -363,14 +363,26 @@ namespace MusicGame.Scene
                     switch (StageState.worldsStage)
                     {
                         case 1:
-                            //particlemanager.Backparticle("onpu2", 0.1f, 0.01f, 3, 3);
+                            int namenumber = rnd.Next(30);
+                            if (namenumber % 3 == 0)
+                            {
+                                namenumber = 1;
+                            }
+                            else
+                            {
+                                namenumber = 2;
+                            }
+                            if (particlemanager.IsCount(60))
+                            {
+                                particlemanager.Backparticle("onpu" + namenumber, new Vector2(rnd.Next(1920), rnd.Next(1080)),0, 0, 1, 0.5f, 1, 0.5f, 2, 2,3);
+                            }
                             break;
                         case 2:
-                            particlemanager.Backparticle("star", new Vector2(rnd.Next(1920), rnd.Next(1080)), 0, 0, 2, 0, 0, 0.5f, 30, 5);
-                            particlemanager.Backparticle("star", new Vector2(rnd.Next(3960), rnd.Next(600)), 200, 150, 1, 0, 0, 0.5f, 10, 2);
+                            particlemanager.Backparticle("star", new Vector2(rnd.Next(1920), rnd.Next(1080)), 0, 0, 2, 0, 0, 0.5f, 30, 5,1);
+                            particlemanager.Backparticle("star", new Vector2(rnd.Next(3960), rnd.Next(600)), 200, 150, 1, 0, 0, 0.5f, 10, 2,1);
                             break;
                         case 3:
-                            int namenumber = rnd.Next(50);
+                            namenumber = rnd.Next(50);
                             if (namenumber % 2 == 0)
                             {
                                 namenumber = 1;
@@ -381,9 +393,9 @@ namespace MusicGame.Scene
                             }
                             if (particlemanager.IsCount(60))
                             {
-                                particlemanager.Backparticle("snow" + namenumber, new Vector2(rnd.Next(1920), -100), 50, 180, 1, 0f, 1, 0.1f, 1, 15);
+                                particlemanager.Backparticle("snow" + namenumber, new Vector2(rnd.Next(1920), -100), 50, 180, 1, 0f, 1, 0.1f, 1, 15,1);
                             }
-                            particlemanager.Backparticle("star", new Vector2(rnd.Next(1920), rnd.Next(1080)), 100, 180, 2, 0, 0, 0.5f, 30, 5);
+                            particlemanager.Backparticle("star", new Vector2(rnd.Next(1920), rnd.Next(1080)), 100, 180, 2, 0, 0, 0.5f, 30, 5,1);
                             break;
                     }
                 }
