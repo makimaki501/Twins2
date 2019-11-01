@@ -146,3 +146,10 @@ C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Release\Content\Texture\
 C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Release\Content\Texture\Yoko.xnb
 C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Release\Content\Texture\YokoTate.xnb
 C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Release\Content\Texture\GorlMove.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Release\Content\Texture\anaunse.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Release\Content\Texture\hosi.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Release\Content\Texture\nextanaunse.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Release\Content\Texture\player1particle.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Release\Content\Texture\player2particle.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Release\Content\Texture\selectmark.xnb
+C:\Users\sakam\Desktop\Twins2\MusicGame\bin\Windows\x86\Release\Content\Texture\titleanaunse.xnb
